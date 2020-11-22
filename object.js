@@ -7,6 +7,6 @@ export default class Object extends Phaser.GameObjects.Sprite {
     this.on('pointerdown', () => {this.menu()});    
   }  
    menu(){
-    alert('Menú objeto');    
+    alert('Menú hablar');    
   }
 }
