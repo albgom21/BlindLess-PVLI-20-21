@@ -3,11 +3,10 @@ export default class Object extends Phaser.GameObjects.Sprite {
     super(scene,x,y,image);
 
     scene.add.existing(this);
-    this.setInteractive();
-    
-    this.on('pointerdown', () => {this.menu()});
-    
-  }   menu(){
+    this.setInteractive();    
+    this.on('pointerdown', () => {this.menu()});    
+  }  
+   menu(){
     alert('Menú objeto');    
   }
 }
