@@ -14,75 +14,32 @@
 | **Géneros:** Novela Interactiva | **Modos:** Solitario |
 | --- | --- |
 | **Público objetivo:** Dirigido a personas de entre 10 a 50 años | **Plataformas:** Página Web |
-| ![](RackMultipart20201123-4-ic96k2_html_80e69041db1c3010.png)
+| 
 
-**Logo:** |
+**Logo:** ![Logo](/favicon.png)
 
-# ÍNDICE
 
-**[Aspectos generales](#_af2woeg0sd2y) 2**
-
-**[Menú](#_v4jiqwki0nlc) 3**
-
-[Interfaz y control](#_2lgcb5vc3qpo) 4
-
-**[Jugabilidad](#_l2e70qkix4l1) 5**
-
-[Mecánica](#_cly6xb4ku0f5) 5
-
-[DEFORMACIONES](#_t4qh66bzoilk) 5
-
-[VIDA](#_oj26ypldzyx2) 5
-
-[LOTERÍA](#_ouvk7uhkd1q) 5
-
-[Dinámica](#_f47ppjfvq0we) 6
-
-[Estética](#_4jd6u22cqxpe) 6
-
-[AMBIENTACIÓN Y GRÁFICOS](#_pxngsgevzw5y) 6
-
-[EXPERIENCIA DE JUEGO](#_6lcacin9fqhd) 6
-
-**[Contenido](#_qcywjg8v9v4z) 7**
-
-[Narrativa](#_845l0uvj2rbp) 7
-
-[PERSONAJES](#_zeuwbfidlrdu) 7
-
-[RESUMEN DE ESCENAS](#_6lvokjl2b4io) 8
-
-**[Primeros minutos de juego](#_d2cyhl4q6egu) 12**
-
-**[Referencias](#_4g9go0m2yxr) 14**
-
-1.
 # Aspectos generales
 
 BlindLess es un juego basado en el libro &quot;Luces de bohemia&quot; del autor de la generación del 98, Ramón María del Valle-Inclán. En este aparecerán los lugares más relevantes mencionados en la obra, al igual que sus personajes.
 
 El juego trata de ir avanzando en la historia pudiendo elegir distintos caminos con diferentes finales con las decisiones que tome el jugador.
 
-1.
+
 # Menú ![](RackMultipart20201123-4-ic96k2_html_91bb9a9a43e390f6.png)
 
 En el menú del mapa se puede visualizar los distintos caminos que se tomarán según las decisiones del jugador, a la derecha se muestra una breve descripción de la próxima escena.
 
-  1.
+
 ## Interfaz y control ![](RackMultipart20201123-4-ic96k2_html_19c13f2d79c7fa9b.png)
 
 _**(Interfaz del juego)**_
 
 La forma con la que se interactúa con el mundo mediante clics del ratón. Esto le permite al jugador interaccionar con objetos y personajes, con los que podrá mantener conversaciones y tener el poder de decidir por dónde quiere que vaya la historia.
 
-1.
+
 # Jugabilidad
-
-  1.
-##
-## M
-
-## ecánica
+## Mecánica
 
 ### DEFORMACIONES
 
@@ -101,7 +58,7 @@ A medida que el jugador vaya interactuando con el entorno y tomando decisiones, 
 
 El jugador podrá comprar lotería en los bares u obtenerla en alguna de las escenas. En la última escena se descubrirá el boleto ganador y la historia cambiará según el resultado.
 
-  1.
+
 ## Dinámica
 
 La dinámica principal del juego es avanzar en la escena que te encuentras e ir decidiendo por que camino de la historia prefieres ir avanzando mediante las diferentes decisiones que te da a elegir.
@@ -110,7 +67,7 @@ El poder de decisión lo tiene el jugador, es decir, dependiendo de las opciones
 
 Otra dinámica incluida es el sistema de lotería. El jugador podrá obtener varios boletos para así aumentar las posibilidades de poder ganarla.
 
-  1.
+
 ## Estética
 
 ### AMBIENTACIÓN Y GRÁFICOS
@@ -124,10 +81,9 @@ El jugador será capaz de ponerse en la piel de Max Estrella, el protagonista, y
 Las decisiones que tome el jugador serán vitales para el transcurso del juego, pues limitarán sus posibilidades y abrirán, a su vez, de nuevas. Así, la toma de decisiones es un foco vital en _BlindLess_, y la experiencia que obtendrá el jugador se verá también enriquecida al verse envuelto en el mundo que creó Ramón María del Valle-Inclán en su obra.
  Asimismo, tendrá que andar con ojo mientras juega, ya que podrá obtener los diferentes coleccionables que se encuentran esparcidos por las escenas del juego, y, si consigue recogerlos todos, aportarán satisfacción al jugador que haya conseguido completar el juego al 100%. Por otra parte, el que no lo haya conseguido, sentirá frustración y querrá volver a jugar para poder pasarse el juego y finalizarlo.
 
-1.
+
 # Contenido
 
-  1.
 ## Narrativa
 
 ### PERSONAJES
@@ -222,7 +178,7 @@ Varios personajes aparecen en la taberna celebrando que se ha repartido el núme
 
 (Dar el resultado de la lotería, añadir un texto referenciando el resultado)
 
-1.
+
 # Primeros minutos de juego
 
 Al empezar el juego, el jugador verá una pantalla de inicio que le indique que haga clic para empezar a jugar.
@@ -261,9 +217,7 @@ Madama Collet leerá la carta del Buey Apis a Max, y éste la escuchará. Cuando
 
 Max está actuando extraño. Por ello, su mujer se sentirá confundida y no sabrá qué palabras escoger, quedándose callada. Tras un silencio incómodo, Max saldrá a la calle.
 
-#
 
-1.
 # Referencias
 
 Libro: Luces de bohemia
@@ -273,5 +227,3 @@ Mapa: Slay the Spire
 Menú: Gods Will Be Watching
 
 Point and Click: Swords and Sandals 4: Tavern Quests
-
-9
