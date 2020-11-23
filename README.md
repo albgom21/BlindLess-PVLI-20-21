@@ -14,7 +14,6 @@
 | **Géneros:** Novela Interactiva | **Modos:** Solitario |
 | --- | --- |
 | **Público objetivo:** Dirigido a personas de entre 10 a 50 años | **Plataformas:** Página Web |
-| 
 
 **Logo:** ![Logo](/favicon.png)
 
@@ -26,12 +25,11 @@ BlindLess es un juego basado en el libro &quot;Luces de bohemia&quot; del autor 
 El juego trata de ir avanzando en la historia pudiendo elegir distintos caminos con diferentes finales con las decisiones que tome el jugador.
 
 
-# Menú ![](RackMultipart20201123-4-ic96k2_html_91bb9a9a43e390f6.png)
-
+# Menú ![Menu](./images/Mapaideas.png)
 En el menú del mapa se puede visualizar los distintos caminos que se tomarán según las decisiones del jugador, a la derecha se muestra una breve descripción de la próxima escena.
 
 
-## Interfaz y control ![](RackMultipart20201123-4-ic96k2_html_19c13f2d79c7fa9b.png)
+## Interfaz y control ![UML](./images/interfaz.png)
 
 _**(Interfaz del juego)**_
 
@@ -166,13 +164,13 @@ Max se sienta y comienza a pronunciar un monólogo con el que termina realizando
 
 Comenzará a sentir un frío intenso y se irá desvaneciendo. Don Latino intentará llamar a su mujer pero no llega a tiempo: Max muere rígido de frío y bebido. Don Latino, al ver el cuerpo de su amigo, decidirá quitarle la cartera con el pretexto de que, así, nadie se la robará. (Quitar 10 puntos de vida y decidir la escena 10 según esté vivo o no)
 
-**Escena 10(muerto): (ESCENARIO: taberna Pica Lagartos)**
+**Escena 10 (muerto): (ESCENARIO: taberna Pica Lagartos)**
 
 Don Latino, borracho, está fingiendo que siente un gran pesar por la muerte de Max. En esta escena se darán cuenta de que el premio del décimo comprado por Max, finalmente, tocó y que es Don Latino quién está disfrutando de él. Así que todos los miembros del bar intentarán sacar tajada del premio con falsas cuentas pendientes que tenían con el fallecido.
 
 Empiezan a discutir pero, al final, la disputa se cerrará con el anuncio de la muerte de una mujer y una niña. Se sabrá que son la hija y la esposa de Max que, finalmente, se han suicidado. (Dar el resultado de la lotería, añadir un texto referenciando el resultado)
 
-**Escena 10(vivo): (ESCENARIO: taberna Pica Lagartos)**
+**Escena 10 (vivo): (ESCENARIO: taberna Pica Lagartos)**
 
 Varios personajes aparecen en la taberna celebrando que se ha repartido el número ganador de la lotería.
 
@@ -205,15 +203,15 @@ MADAMA COLLET: _Ten paciencia, Max._
 
 MAX: Elección entre 3 opciones
 
-1. &quot;Pudo esperar a que me enterrasen&quot;
+ &quot;Pudo esperar a que me enterrasen&quot;
 
 Madama Collet sentirá pena por Max, el cual no posee ganas de vivir y le hablará con un tono apenado, preocupándose por él. Si el jugador elige esta opción, la siguiente escena será la librería, ya que Max decide irse de casa para no preocupar más a su mujer.
 
-1. &quot;¡Estoy olvidado! Léeme la carta del Buey Apis&quot;
+ &quot;¡Estoy olvidado! Léeme la carta del Buey Apis&quot;
 
 Madama Collet leerá la carta del Buey Apis a Max, y éste la escuchará. Cuando acabe, Max irá a la calle a buscar a Buey Apis.
 
-1. &quot;¡Veo, y veo magníficamente&quot;
+ &quot;¡Veo, y veo magníficamente&quot;
 
 Max está actuando extraño. Por ello, su mujer se sentirá confundida y no sabrá qué palabras escoger, quedándose callada. Tras un silencio incómodo, Max saldrá a la calle.
 
