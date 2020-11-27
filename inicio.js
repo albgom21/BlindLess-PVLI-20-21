@@ -1,5 +1,4 @@
-export default class Inicio extends Phaser.Scene {
-  
+export default class Inicio extends Phaser.Scene {  
   constructor() {
     super({ key: "inicio" });    
   }
