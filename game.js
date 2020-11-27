@@ -23,9 +23,7 @@ export default class Game extends Phaser.Scene {
     
   }  
   update(time, delta) {}
-aparece(){
-  this.latCuerpo.setTexture('max');
-}
+
   //UI
   //aparece(){        
     
