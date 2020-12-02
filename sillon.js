@@ -8,9 +8,11 @@ export default class Sillon extends MyObject {
   }   
   hablar(){     
     //super.hablar()
-    alert(this.text);      
+    alert(this.text);     
+    this.menuFalse(); 
   }    
   deformar(){
     this.setTexture('max');
+    this.menuFalse();
   }
 }
