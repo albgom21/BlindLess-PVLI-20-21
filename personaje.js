@@ -1,11 +1,10 @@
 import Menu from './menu.js';
 export default class Personaje extends Phaser.GameObjects.Sprite {
   constructor(scene,x,y,image) {
-    super(scene,x,y,image);
-    const equis = this.x;
+    super(scene,x,y,image);   
     scene.add.existing(this);
     this.setInteractive();        
-    this.m =  new Menu(scene,equis,200,'#ffff','boton','boton2',this);  //Poner x e y del personaje
+    this.m =  new Menu(scene,450,100,'#ffff','boton','boton2',this);  //Poner x e y del personaje
     this.m.visible = false;
       // Al clicar un objeto, aparecerá el menú.
     this.on('pointerdown', () => {this.m.visible = true;});  
