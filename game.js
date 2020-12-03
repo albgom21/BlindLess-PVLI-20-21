@@ -1,10 +1,11 @@
-import MyObject from './myobject.js';
-import Sillon from './sillon.js';
+import Personaje from './personaje.js';
+import Latino from './latino.js';
 import Loteria from './loteria.js';
 export default class Game extends Phaser.Scene {
   
   constructor() {
     super({ key: 'game'});    
+    //this.vidaMax = 100
   }
 
   preload() {
@@ -13,6 +14,10 @@ export default class Game extends Phaser.Scene {
     this.load.image('sillon','sprites/sillon.png');
     this.load.image('latino','sprites/latino.png');
     this.load.image('latcuerpo','sprites/latcuerpo.png');
+
+    this.load.image('boton','sprites/boton.png');
+    this.load.image('boton2','sprites/boton2.png');
+    this.load.image('dialogofondo','sprites/dialogofondo.png');
 
     this.load.image('botont', 'sprites/botontickets.png');
     this.load.image('loteria','sprites/ticket.png');
@@ -23,15 +28,14 @@ export default class Game extends Phaser.Scene {
   }
 
   create() {      
+    this.nameScene = 'CASA';
+    this.add.image(640,360,'fondo');  
 
-    this.add.image(640,360,'fondo');   
-
-    this.s = new Sillon(this,600,200);  
     
-    this.latCuerpo = new MyObject(this, 1000,400,'latcuerpo'); 
-    this.gafas = new MyObject(this, 733, 350, 'gafas');
-    this.botella = new MyObject(this, 300, 264, 'botella');
-    this.corazon = new MyObject(this, 1230, 655, 'corazon');
+    this.latCuerpo = new Latino(this, 1000,400,'latcuerpo'); 
+    this.gafas = new Personaje(this, 733, 350, 'gafas');  //No pueden crearse a partir de la clase que heredan
+    this.botella = new Personaje(this, 300, 264, 'botella');  // hacer clases que hereden de Personaje
+    this.corazon = new Personaje(this, 1230, 655, 'corazon');
     this.boton = new Loteria(this, 60, 655, 'botont');
     this.ticket = new Loteria(this, 400, 500, 'loteria');
 
