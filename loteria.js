@@ -13,13 +13,8 @@ export default class Loteria extends Phaser.GameObjects.Sprite{
 
         // Estilo de las letras de los tickets de lotería.
          let style = { font: "26px Courier New", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle" };
-
-        // Número originado al azar.
-         this.numTicket;
         // Array de números representando los boletos obtenidos hasta el momento.
-         this.nums = new Array();
-        // Número ganador de la lotería.
-         this.numGanador;
+         this.nums = new Array();        
         // Booleano que comprobará si se ha ganado la lotería.
          this.ganar = false;
         // Texto que mostrará los boletos acumulados hasta el momento.
@@ -58,7 +53,10 @@ export default class Loteria extends Phaser.GameObjects.Sprite{
     // Método prototipo de la comprobación de ganar la lotería.
     // Se ejecutará al acabar el juego.
      ganador(){
-         for (i = 0; i < this.nums.length; i++) if (this.ganador == this.nums[i]) this.ganar = true;
+         for(const n of this.nums){
+            if (this.ganador === n) this.ganar = true;
+         }
+         //for (i = 0; i < this.nums.length; i++) 
          // La pantalla de fin de juego cambiará si ganar == true;
          // if (this.ganar) setPantallaFinal ( la que toque );
      }
