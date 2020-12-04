@@ -16,7 +16,7 @@ export default class Personaje extends Phaser.GameObjects.Sprite {
 // Método que ejecuta la interfaz de diálogos.
   hablar(){    
      //Aparecen caras y cuadrado con dialogo   
-    this.scene.scene.launch('ui',{p1:'max', p2:'latino',vida:this.maxLife,
+    this.scene.scene.launch('ui',{p1:'max', p2:this.name, vida:this.maxLife,
     name:this.scene.nameScene});  //this.scene.vidaMax       
     this.m.visible = false;      
   } 
