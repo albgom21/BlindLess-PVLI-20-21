@@ -12,8 +12,7 @@ export default class Personaje extends Phaser.GameObjects.Sprite {
         if(this.scene.menuActivado === false){
           this.m.visible = true;
           this.scene.menuActivado = true;}
-        }
-        );      
+        });      
          
   }
     
