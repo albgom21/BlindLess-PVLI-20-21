@@ -38,6 +38,8 @@ export default class Personaje extends Phaser.GameObjects.Sprite {
   //Método que resta/suma vida a Max
   cambiaVida(vida){
     this.scene.vidaMax += vida;
+    if(this.scene.vidaMax<0)
+      this.scene.vidaMax=0;
     alert(this.scene.vidaMax);
   }   
 }

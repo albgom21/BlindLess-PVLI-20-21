@@ -5,7 +5,7 @@ export default class Gafas extends Personaje {
     this.name = 'gafas'    //nombre del sprite
   }   
   hablar(){  
-    super.cambiaVida(-4);
+    super.cambiaVida(-20);
     super.hablar() 
   }    
   deformar(){
