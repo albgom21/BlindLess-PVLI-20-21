@@ -17,6 +17,7 @@ export default class Game extends Phaser.Scene {
     this.load.image('latino','sprites/latino.png');
     this.load.image('latcuerpo','sprites/latcuerpo.png');
 
+    this.load.image('lugar','sprites/lugar.png');
     this.load.image('boton','sprites/boton.png');
     this.load.image('boton2','sprites/boton2.png');
     this.load.image('dialogofondo','sprites/dialogofondo.png');
@@ -32,8 +33,7 @@ export default class Game extends Phaser.Scene {
   create() {      
     this.nameScene = 'CASA';
     this.add.image(640,360,'fondo'); 
-
-    
+        
     this.latCuerpo = new Latino(this, 1000,400,'latcuerpo'); 
     //this.gafas = new Personaje(this, 733, 350, 'gafas');  //No pueden crearse a partir de la clase que heredan
     this.g = new Gafas(this,733,350,'gafas');
