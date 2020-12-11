@@ -11,5 +11,6 @@ export default class Gafas extends Personaje {
   deformar(){
     super.deformar()
     this.setTexture('latino');
+    //this.setSize();
   }
 }

@@ -6,10 +6,9 @@ export default class Personaje extends Phaser.GameObjects.Sprite {
     this.setInteractive();        
     this.m = new Menu(scene,x/2 + xMenu,y/2 + yMenu,'#ffff',d,this);  //Poner x e y del personaje
     this.m.visible = false;
-    // Al clicar un objeto, aparecerá el menú si no hay otro visible
-    
+    // Al clicar un objeto, aparecerá el menú si no hay otro visible    
       this.on('pointerdown', () => {
-        if(this.scene.menuActivado === false){
+        if(!this.scene.menuActivado){
           this.m.visible = true;
           this.scene.menuActivado = true;}
         });      

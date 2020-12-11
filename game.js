@@ -37,17 +37,17 @@ export default class Game extends Phaser.Scene {
     this.latCuerpo = new Latino(this, 1000,400,'latcuerpo'); 
     //this.gafas = new Personaje(this, 733, 350, 'gafas');  //No pueden crearse a partir de la clase que heredan
     this.g = new Gafas(this,733,350,'gafas');
-    this.botella = new Personaje(this, 300, 264, 'botella');  // hacer clases que hereden de Personaje
-    this.corazon = new Personaje(this, 1230, 655, 'corazon');
-    this.boton = new Loteria(this, 60, 655, 'botont');
-    this.ticket = new Loteria(this, 400, 500, 'loteria');
+    //this.botella = new Personaje(this, 300, 264, 'botella');  // hacer clases que hereden de Personaje
+   // this.corazon = new Personaje(this, 1230, 655, 'corazon');
+   // this.boton = new Loteria(this, 60, 655, 'botont');
+   // this.ticket = new Loteria(this, 400, 500, 'loteria');
 
-    this.latCuerpo.on('pointerdown', () => {this.aparece()});   
+    //this.latCuerpo.on('pointerdown', () => {this.aparece()});   
     //this.gafas.on('pointerdown', () => {this.gafas.restaVida()});
-    this.botella.on('pointerdown', () => {this.gafas.aumentaVida()});
-    this.corazon.on('pointerdown', () => {this.gafas.mostrarVida()});
-    this.boton.on('pointerdown', () => {this.ticket.verNumeros()});
-    this.ticket.on('pointerdown', () => {this.ticket.crearNumero()});
+    //this.botella.on('pointerdown', () => {this.gafas.aumentaVida()});
+    //this.corazon.on('pointerdown', () => {this.gafas.mostrarVida()});
+    //this.boton.on('pointerdown', () => {this.ticket.verNumeros()});
+    //this.ticket.on('pointerdown', () => {this.ticket.crearNumero()});   
   }  
   update(time, delta) {}
 

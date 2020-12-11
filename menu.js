@@ -7,35 +7,27 @@ export default class Menu extends Phaser.GameObjects.Container {
     const key1 = 'boton';
     const key2 = 'boton2';
 
-    if(d===true){     
-      this.newButton('HABLAR',x, y,0, key1, fontColor, personaje, key2);
-      this.newButton('DEFORMAR',x, y,50, key1, fontColor, personaje, key2);
-      this.newButton('SALIR',x, y,100, key1, fontColor, personaje, key2);       
+    if(d){
+      this.newButton(()=>{personaje.hablar()},'HABLAR',x, y,0, key1, fontColor, key2);
+      this.newButton(()=>{personaje.deformar();},'DEFORMAR',x, y,50, key1, fontColor, key2);
+      this.newButton(()=>{personaje.salir();},'SALIR',x, y,100, key1, fontColor, key2);
     }
     else{
-      this.newButton('HABLAR',x, y,0, key1, fontColor, personaje, key2);
-      this.newButton('SALIR',x, y,50, key1, fontColor, personaje, key2);}
-    this.scene.add.existing(this);   
+      this.newButton(()=>{personaje.hablar();},'HABLAR',x, y,0, key1, fontColor, key2);
+      this.newButton(()=>{personaje.salir();},'SALIR',x, y,50, key1, fontColor, key2);}
+    this.scene.add.existing(this);
   }
-    
+
   // Método que crea un nuevo botón
-  newButton(texto, x, y, espacio, key1, fontColor, personaje, key2) {
+  newButton(f,texto, x, y, espacio, key1, fontColor, key2) {
     const button = this.scene.add.image(x, y + espacio, key1).setInteractive();
-    const buttonText = this.scene.add.text(x, y + espacio, texto, { fontSize: '26px', color: fontColor });
+    const buttonText = this.scene.add.text(x, y + espacio, texto, { fontFamily: 'Press Start 2P',fontSize: '26px', color: fontColor });
     Phaser.Display.Align.In.Center(buttonText, button);
     this.add(button);
     this.add(buttonText);
-    
+
     button.on('pointerdown', () => {  //Preguntar si hay una forma mejor de decidir que hace el botón
-      if(texto === 'HABLAR'){
-        personaje.hablar();
-      }
-      else if(texto === 'DEFORMAR'){
-        personaje.deformar();
-      }
-      else if(texto === 'SALIR'){
-        personaje.salir();
-      }
+      f();
     });
     button.on('pointerover', () => {
       button.setTexture(key2);
