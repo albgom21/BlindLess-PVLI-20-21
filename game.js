@@ -20,6 +20,9 @@ export default class Game extends Phaser.Scene {
     this.load.image('lugar','sprites/lugar.png');
     this.load.image('boton','sprites/boton.png');
     this.load.image('boton2','sprites/boton2.png');
+    this.load.image('botonGastado','sprites/botonGastado.png');
+    this.load.image('respuesta','sprites/respuesta.png');
+    this.load.image('respuesta2','sprites/respuesta2.png');
     this.load.image('dialogofondo','sprites/dialogofondo.png');
 
     this.load.image('botont', 'sprites/botontickets.png');
@@ -34,7 +37,13 @@ export default class Game extends Phaser.Scene {
     this.nameScene = 'CASA';
     this.add.image(640,360,'fondo'); 
         
-    this.latCuerpo = new Latino(this, 1000,400,'latcuerpo'); 
+    var dialogos = new Array();
+    dialogos.push({texto: 'funciona', answer: null});
+    dialogos.push({texto: 'funciona2',
+      answer: [{texto: 'si', puntos: 10},
+               {texto: 'no', puntos: 0},
+               {texto: 'no se', puntos: 50}]});
+    this.latCuerpo = new Latino(this, 1000,400,'latcuerpo', dialogos);
     //this.gafas = new Personaje(this, 733, 350, 'gafas');  //No pueden crearse a partir de la clase que heredan
     this.g = new Gafas(this,733,350,'gafas');
     //this.botella = new Personaje(this, 300, 264, 'botella');  // hacer clases que hereden de Personaje
