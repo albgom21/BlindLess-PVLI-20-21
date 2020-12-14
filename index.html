@@ -37,24 +37,19 @@
            caminos con diferentes finales con las decisiones que tome el jugador.
       </p>
     </div>
+    <canvas id = "juego"></canvas>    
     <script type="module">
       import Game from "./game.js";
       import Inicio from "./inicio.js";
       import Ui from "./ui.js";
       var config = {
-        type: Phaser.AUTO,
-        //canvas: document.getElementById('juego'),
+        type: Phaser.CANVAS,
+        canvas: document.getElementById('juego'),        
         width: 1280,
-        height: 720,
-        //poner canvas: getElemenbyId
-        //pixelArt: true,
+        height: 720,       
         input: {
           gamepad: true,
-        },
-        /*scale: {
-          mode: Phaser.Scale.FIT,
-          autoCenter: Phaser.Scale.CENTER_BOTH,
-        },*/
+        },     
         scene: [Inicio,Game,Ui],
         physics: {
           default: "arcade",
@@ -63,6 +58,7 @@
       };
       new Phaser.Game(config);
     </script>
+    <script>document.getElementById('juego').focus()</script>
    
   </body>
   

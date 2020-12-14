@@ -42,12 +42,11 @@ ul li a:hover{
 .desc{    
   padding: 175px 300px 75px;   
 }
-.game{  
-  
-  border: 2px solid #333;
-}
 .info{ 
   padding: 350px 500px;  
+}
+canvas{
+  margin-left: 300px;
 }
 h1{
   padding: 25px 50px;   
