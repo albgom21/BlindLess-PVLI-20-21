@@ -5,11 +5,14 @@ export default class Menu extends Phaser.GameObjects.Container {
     this.x = x;
     this.y = y;
     this.button = new Array();
+    this.botonGastadoH = false;
+    this.botonGastadoD = false;
+    this.personaje = personaje;
 
     if(d){
       this.newButton(()=>{personaje.hablar()},'HABLAR',x, y, 0, fontColor, 0);
       this.newButton(()=>{personaje.deformar();},'DEFORMAR',x, y, 50, fontColor, 1);
-      this.newButton(()=>{personaje.salir();},'SALIR',x, y, 100, fontColor, 2);
+      this.newButton(undefined,'SALIR',x, y, 100, fontColor, 2);
     }
     else{
       this.newButton(()=>{personaje.hablar();},'HABLAR',x, y, 0, fontColor, 0);
@@ -26,22 +29,29 @@ export default class Menu extends Phaser.GameObjects.Container {
     this.add(buttonText);
 
     this.button[i].on('pointerdown', () => {
-      f();
+      if(!this.botonGastadoH && i === 0) f();
+      else if(!this.botonGastadoD && i === 1) f();
+      else this.personaje.salir();
     });
     this.button[i].on('pointerover', () => {
-      this.button[i].setTexture('boton2');
+      if(!this.botonGastadoH && i === 0) this.button[i].setTexture('boton2');
+      else if(!this.botonGastadoD && i === 1) this.button[i].setTexture('boton2');
+      else if(i===2) this.button[i].setTexture('boton2');
     });
     this.button[i].on('pointerout', () => {
-      this.button[i].setTexture('boton');
+      if(!this.botonGastadoH && i === 0) this.button[i].setTexture('boton');
+      else if(!this.botonGastadoD && i === 1) this.button[i].setTexture('boton');
+      else if(i===2) this.button[i].setTexture('boton');
     });
   }
 
-  botonGastado(i){ // Falta cambiarlo
-    this.button[i].on('pointerover', () => {
-      this.button[i].setTexture('botonGastado');
-    });
-    this.button[i].on('pointerout', () => {
-      this.button[i].setTexture('botonGastado');
-    });
+  buttonGastado(i){ // Falta cambiarlo
+    if (i===0)this.botonGastadoH = true;
+    else if (i===1){
+      this.botonGastadoD = true;
+      this.botonGastadoH = false;
+      this.button[0].setTexture('boton');
+    }
+    this.button[i].setTexture('botonGastado');
   }
 }

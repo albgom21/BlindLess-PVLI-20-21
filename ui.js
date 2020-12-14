@@ -1,12 +1,8 @@
 import Barravida from './barravida.js';
 export default class Ui extends Phaser.Scene {  
   constructor() {
-    super({ key: "ui" });    
-    //pasarle los datos con init
-    //poner launch en lugar de run (duda del campus)
-    this.dialogo = undefined;
+    super({ key: "ui" });
   }
-  preload() {}
   
   init(datos) {
     this.p1 = datos.p1;    
@@ -21,7 +17,7 @@ export default class Ui extends Phaser.Scene {
     this.add.image(1130,550,this.p2);  
     //Fondo dialogo 
     this.add.image(640,550, 'dialogofondo');
-    this.add.text(300, 450, this.texto, { fontFamily: 'VT323',fontSize: '32px', color: '#ffff' });
+    this.add.text(315, 440, this.texto, { fontFamily: 'VT323',fontSize: '32px', color: '#ffeba8' });
     //Barra vida
     this.barraV = new Barravida(this,50,680,this.vida);
     this.add.text(140,695,this.vida,{fontFamily: 'VT323',fontSize: '22px', color: '#ffffff' });
@@ -31,7 +27,7 @@ export default class Ui extends Phaser.Scene {
     const p2fondoN = this.add.image(1150,405,'fondonombre');
     const p2N = this.add.text(1150,405,this.p2,{fontFamily: 'VT323',fontSize: '22px', color: '#ffffff' });
     //InfoLugar
-    const fondoLugar = this.add.image(640,360,'lugar'); 
+    const fondoLugar = this.add.image(640,360,'lugar');
     const nombreLugar = this.add.text(640,695,this.nombre,{fontFamily: 'VT323',fontSize: '26px', color: '#000000' }); 
     
     Phaser.Display.Align.In.Center(fondoLugar, nombreLugar);
