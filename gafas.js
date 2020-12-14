@@ -10,7 +10,7 @@ export default class Gafas extends Personaje {
   }    
   deformar(){
     super.deformar()
-    this.setTexture('latino');
-    //this.setSize();
+    this.setTexture('Latino');
+    //this.setSize(400,250,0,0);
   }
 }

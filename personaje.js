@@ -59,11 +59,11 @@ export default class Personaje extends Phaser.GameObjects.Sprite {
     this.scene.vidaMax += vida;
     if(this.scene.vidaMax<0)
       this.scene.vidaMax=0;
-    alert(this.scene.vidaMax);
+   // alert(this.scene.vidaMax);
   } 
   dialogo(dialogo){
     if(this.dialogoAct !== undefined) this.scene.scene.stop('ui');
-    this.dialogoAct = this.scene.scene.launch('ui',{p1:'max', p2:this.name, vida:this.scene.vidaMax,
+    this.dialogoAct = this.scene.scene.launch('ui',{p1:'Max', p2:this.name, vida:this.scene.vidaMax,
     name:this.scene.nameScene, texto:dialogo.texto});
     
     if(dialogo.answer !== null){
@@ -75,8 +75,8 @@ export default class Personaje extends Phaser.GameObjects.Sprite {
   }
   newAnswer(i, dialogo) {
     this.botones[i*2] = this.scene.add.image(650, 100+i*100, 'respuesta').setInteractive();
-    this.botones[i*2-1] = this.scene.add.text(650, 100+i*100, dialogo.answer[i].texto, { fontFamily: 'VT323',fontSize: '26px', color: '#ffff' });
-    Phaser.Display.Align.In.Center(this.botones[i*2-1], this.botones[i*2]);
+    this.botones[i*2+1] = this.scene.add.text(650, 100+i*100, dialogo.answer[i].texto, { fontFamily: 'VT323',fontSize: '26px', color: '#ffff' });
+    Phaser.Display.Align.In.Center(this.botones[i*2+1], this.botones[i*2]);
 
     this.botones[i*2].on('pointerdown', () => {  //Preguntar si hay una forma mejor de decidir que hace el botón
       this.scene.nextScene += dialogo.answer[i].puntos;
@@ -86,6 +86,7 @@ export default class Personaje extends Phaser.GameObjects.Sprite {
           this.dialogo(this.dialogos[this.numDial]);
         }
         else{
+          this.fin = true;
           this.estaHablando = false;
           this.scene.menuActivado = false;      
           this.scene.scene.stop('ui');

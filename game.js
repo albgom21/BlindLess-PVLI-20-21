@@ -12,9 +12,9 @@ export default class Game extends Phaser.Scene {
 
   preload() {
     this.load.image('fondo','sprites/fondo.png')
-    this.load.image('max','sprites/max.png' );
+    this.load.image('Max','sprites/Max.png' );
     this.load.image('sillon','sprites/sillon.png');
-    this.load.image('latino','sprites/latino.png');
+    this.load.image('Latino','sprites/Latino.png');
     this.load.image('latcuerpo','sprites/latcuerpo.png');
 
     this.load.image('lugar','sprites/lugar.png');
@@ -24,6 +24,7 @@ export default class Game extends Phaser.Scene {
     this.load.image('respuesta','sprites/respuesta.png');
     this.load.image('respuesta2','sprites/respuesta2.png');
     this.load.image('dialogofondo','sprites/dialogofondo.png');
+    this.load.image('fondonombre','sprites/fondonombre.png');
 
     this.load.image('botont', 'sprites/botontickets.png');
     this.load.image('loteria','sprites/ticket.png');
