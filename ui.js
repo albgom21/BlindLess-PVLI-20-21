@@ -13,6 +13,7 @@ export default class Ui extends Phaser.Scene {
   }
   create() {         
     //Personajes
+    this.add.image(1130,550,'fondopersonaje');
     this.add.image(150,550,this.p1); 
     this.add.image(1130,550,this.p2);  
     //Fondo dialogo 

@@ -25,11 +25,13 @@ export default class Game extends Phaser.Scene {
     this.load.image('respuesta2','sprites/respuesta2.png');
     this.load.image('dialogofondo','sprites/dialogofondo.png');
     this.load.image('fondonombre','sprites/fondonombre.png');
+    this.load.image('fondopersonaje','sprites/fondopersonaje.png');
 
     this.load.image('botont', 'sprites/botontickets.png');
     this.load.image('loteria','sprites/ticket.png');
     this.load.image('botella', 'sprites/botella.png');
-    this.load.image('gafas', 'sprites/gafas.png');
+    this.load.image('Gafas', 'sprites/Gafas.png');
+    this.load.image('Gafas D', 'sprites/gafasdef.png');
     this.load.image('corazon', 'sprites/corazon.png');
     
   }
@@ -51,7 +53,7 @@ export default class Game extends Phaser.Scene {
     var dialogoDef = new Array();
     dialogoDef.push({texto: 's\nhola', answer: null})
     dialogoDef.push({texto: 's\nadios', answer: null})
-    this.g = new Gafas(this,733,350,'gafas', dialogos, dialogoDef);
+    this.g = new Gafas(this,733,350,'Gafas', dialogos, dialogoDef);
     //this.botella = new Personaje(this, 300, 264, 'botella');  // hacer clases que hereden de Personaje
    // this.corazon = new Personaje(this, 1230, 655, 'corazon');
    // this.boton = new Loteria(this, 60, 655, 'botont');

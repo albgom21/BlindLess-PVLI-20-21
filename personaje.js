@@ -41,9 +41,8 @@ export default class Personaje extends Phaser.GameObjects.Container {
     this.scene.add.existing(this);
   }
     
-// Método que ejecuta la interfaz de diálogos.
-  hablar(){    
-     //Aparecen caras y cuadrado con dialogo  
+// Método que ejecuta los diálogos.
+  hablar(){        
     this.m.visible = false;
     this.hablarDialogo(this.dialogos[this.numDial]);
     this.m.buttonGastado(0);
@@ -56,6 +55,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
     this.m.buttonGastado(1);
     this.image.destroy();
     this.image = this.scene.add.image(this.x,this.y,newImage).setInteractive();
+    this.name = newImage;
     this.image.on('pointerdown', () => {
     if(!this.scene.menuActivado){
       this.m.visible = true;
