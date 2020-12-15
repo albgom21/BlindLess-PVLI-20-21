@@ -12,9 +12,9 @@ export default class Game extends Phaser.Scene {
 
   preload() {
     this.load.image('fondo','sprites/fondo.png')
-    this.load.image('Max','sprites/Max.png' );
+    this.load.image('Max','sprites/max.png' );
     this.load.image('sillon','sprites/sillon.png');
-    this.load.image('Latino','sprites/Latino.png');
+    this.load.image('Latino','sprites/latino.png');
     this.load.image('latcuerpo','sprites/latcuerpo.png');
 
     this.load.image('lugar','sprites/lugar.png');
@@ -30,7 +30,7 @@ export default class Game extends Phaser.Scene {
     this.load.image('botont', 'sprites/botontickets.png');
     this.load.image('loteria','sprites/ticket.png');
     this.load.image('botella', 'sprites/botella.png');
-    this.load.image('Gafas', 'sprites/Gafas.png');
+    this.load.image('Gafas', 'sprites/gafas.png');
     this.load.image('Gafas D', 'sprites/gafasdef.png');
     this.load.image('corazon', 'sprites/corazon.png');
     
