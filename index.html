@@ -42,7 +42,9 @@
     <canvas id = "juego"></canvas>    
     <script type="module">
       import Game from "./game.js";
+      import Mapa from "./mapa.js";
       import Inicio from "./inicio.js";
+      import Boot from "./boot.js";
       import Ui from "./ui.js";
       var config = {
         type: Phaser.CANVAS,
@@ -52,7 +54,7 @@
         input: {
           gamepad: true,
         },     
-        scene: [Inicio,Game,Ui],
+        scene: [Boot,Inicio,Game,Ui,Mapa],
         physics: {
           default: "arcade",
           arcade: { gravity: { y: 400 }, debug: false },

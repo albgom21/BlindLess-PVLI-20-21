@@ -9,33 +9,6 @@ export default class Game extends Phaser.Scene {
     this.pointScene = 0;
     this.menuActivado = false;
   }
-
-  preload() {
-    this.load.image('fondo','sprites/fondo.png')
-    this.load.image('Max','sprites/max.png' );
-    this.load.image('sillon','sprites/sillon.png');
-    this.load.image('Latino','sprites/latino.png');
-    this.load.image('latcuerpo','sprites/latcuerpo.png');
-
-    this.load.image('lugar','sprites/lugar.png');
-    this.load.image('boton','sprites/boton.png');
-    this.load.image('boton2','sprites/boton2.png');
-    this.load.image('botonGastado','sprites/botonGastado.png');
-    this.load.image('respuesta','sprites/respuesta.png');
-    this.load.image('respuesta2','sprites/respuesta2.png');
-    this.load.image('dialogofondo','sprites/dialogofondo.png');
-    this.load.image('fondonombre','sprites/fondonombre.png');
-    this.load.image('fondopersonaje','sprites/fondopersonaje.png');
-
-    this.load.image('botont', 'sprites/botontickets.png');
-    this.load.image('loteria','sprites/ticket.png');
-    this.load.image('botella', 'sprites/botella.png');
-    this.load.image('Gafas', 'sprites/gafas.png');
-    this.load.image('Gafas D', 'sprites/gafasdef.png');
-    this.load.image('corazon', 'sprites/corazon.png');
-    
-  }
-
   create() {      
     this.nameScene = 'CASA';
     this.add.image(640,360,'fondo'); 
@@ -65,13 +38,5 @@ export default class Game extends Phaser.Scene {
     //this.corazon.on('pointerdown', () => {this.gafas.mostrarVida()});
     //this.boton.on('pointerdown', () => {this.ticket.verNumeros()});
     //this.ticket.on('pointerdown', () => {this.ticket.crearNumero()});   
-  }  
-  update(time, delta) {}
-
-  //UI
-  //aparece(){        
-    
-    //this.add.image(1125,575,'latino');  
-    //this.add.image(150,575,'max');      
-  //}
+  }   
 }
