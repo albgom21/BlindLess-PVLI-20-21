@@ -34,7 +34,7 @@ En el menú del mapa se puede visualizar los distintos caminos que se tomarán s
 
 _**(Interfaz del juego)**_
 
-La forma con la que se interactúa con el mundo mediante clics del ratón. Esto le permite al jugador interaccionar con objetos y personajes, con los que podrá mantener conversaciones y tener el poder de decidir por dónde quiere que vaya la historia.
+La forma con la que se interactúa con el mundo mediante clics del ratón. Esto le permite al jugador interaccionar con objetos y personajes, con los que podrá mantener conversaciones y tener el poder de decidir por dónde quiere que vaya la historia. Para avanzar en los diálogos se pulsa espacio.
 
 
 # Jugabilidad
