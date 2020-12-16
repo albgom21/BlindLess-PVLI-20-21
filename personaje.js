@@ -11,6 +11,19 @@ export default class Personaje extends Phaser.GameObjects.Container {
     this.space = scene.input.keyboard.addKey('SPACE')
     this.m = new Menu(scene,x/2 + xMenu,y/2 + yMenu,'#ffff',d,this);  //Poner x e y del personaje
     this.m.visible = false;
+    
+    
+    const imagenDanyo = this.scene.add.image(640, 360, 'danyo').setVisible(false);
+    this.scene.cameras.main.on('camerashakestart', function () {
+      imagenDanyo.visible = true;
+  });
+
+  this.scene.cameras.main.on('camerashakecomplete', function () {
+      imagenDanyo.visible = false;
+  });
+
+    this.mensajeDanyo = false;
+    this.mensajeSanar = false;
 
     this.numDial = 0;
     this.estaHablando = false;
@@ -71,15 +84,35 @@ export default class Personaje extends Phaser.GameObjects.Container {
   } 
   //Método que resta/suma vida a Max
   cambiaVida(vida){
+    if(vida < 0){
+      this.dialogos.splice(this.numDial, 0, {texto: ('*Daño: '+vida+' de vida*'), answer: null});
+      this.scene.cameras.main.shake(500);
+      this.mensajeDanyo = true;
+    }
+    if(vida>0){
+      this.dialogos.splice(this.numDial, 0, {texto: ('*Sanado: '+vida+' de vida*'), answer: null});
+      this.mensajeSanar = true;
+    }
     this.scene.vidaMax += vida;
     if(this.scene.vidaMax<0)
       this.scene.vidaMax=0;
-   // alert(this.scene.vidaMax);
+    else if(this.scene.vidaMax>100)
+    this.scene.vidaMax=100;
   } 
   hablarDialogo(dialogo){
     if(this.dialogoAct !== undefined) this.scene.scene.stop('ui');
-    this.dialogoAct = this.scene.scene.launch('ui',{p1:'Max', p2:this.name, vida:this.scene.vidaMax,
+    if(this.mensajeDanyo) { this.dialogoAct = this.scene.scene.launch('ui',{p1:'Max', p2:this.name, vida:this.scene.vidaMax,
+    name:this.scene.nameScene, texto:dialogo.texto, color: '#ff6060'});
+    this.mensajeDanyo = false;
+    }
+    else if(this.mensajeSanar){
+      this.dialogoAct = this.scene.scene.launch('ui',{p1:'Max', p2:this.name, vida:this.scene.vidaMax,
+    name:this.scene.nameScene, texto:dialogo.texto, color: '#51d58a'});
+    this.mensajeSanar = false;
+    }
+    else  {this.dialogoAct = this.scene.scene.launch('ui',{p1:'Max', p2:this.name, vida:this.scene.vidaMax,
     name:this.scene.nameScene, texto:dialogo.texto});
+    }
     
     if(dialogo.answer !== null){
       this.estaHablando = false;
@@ -96,17 +129,19 @@ export default class Personaje extends Phaser.GameObjects.Container {
     this.botones[i*2].on('pointerdown', () => {  //Preguntar si hay una forma mejor de decidir que hace el botón
       this.scene.pointScene += answer.puntos;
       this.cambiaVida(answer.life);
+      if(this.numDial < this.dialogos.length){
+        if(answer.life >= 0) this.numDial++;
+        this.hablarDialogo(this.dialogos[this.numDial]);
+      }
+      else{
+        this.fin = true;
+        this.estaHablando = false;
+        this.scene.menuActivado = false;      
+        this.scene.scene.stop('ui');
+      }
       this.estaHablando = true;
-      this.numDial += answer.jump + 1;
-        if(this.numDial < this.dialogos.length){
-          this.hablarDialogo(this.dialogos[this.numDial]);
-        }
-        else{
-          this.fin = true;
-          this.estaHablando = false;
-          this.scene.menuActivado = false;      
-          this.scene.scene.stop('ui');
-        }
+      if(answer.life < 0) this.numDial += answer.jump + 1;
+        
       for(const n of this.botones){
         n.visible = false;
       }

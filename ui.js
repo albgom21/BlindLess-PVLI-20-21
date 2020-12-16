@@ -10,6 +10,7 @@ export default class Ui extends Phaser.Scene {
     this.vida = datos.vida;
     this.nombre = datos.name;
     this.texto = datos.texto;
+    this.color = datos.color;
   }
   create() {         
     //Personajes
@@ -18,7 +19,8 @@ export default class Ui extends Phaser.Scene {
     this.add.image(1130,550,this.p2);  
     //Fondo dialogo 
     this.add.image(640,550, 'dialogofondo');
-    this.add.text(315, 440, this.texto, { fontFamily: 'VT323',fontSize: '32px', color: '#ffeba8' });
+    if(this.color === undefined) this.add.text(315, 440, this.texto, { fontFamily: 'VT323',fontSize: '32px', color: '#ffeba8' });
+    else this.add.text(315, 440, this.texto, { fontFamily: 'VT323',fontSize: '32px', color: this.color });
     //Barra vida
     this.barraV = new Barravida(this,50,680,this.vida);
     this.add.text(140,695,this.vida,{fontFamily: 'VT323',fontSize: '22px', color: '#ffffff' });
@@ -31,6 +33,8 @@ export default class Ui extends Phaser.Scene {
     const fondoLugar = this.add.image(640,360,'lugar');
     const nombreLugar = this.add.text(640,695,this.nombre,{fontFamily: 'VT323',fontSize: '26px', color: '#000000' }); 
     
+    // if(this.restar<0) this.scene.cameras.shake(500);
+
     Phaser.Display.Align.In.Center(fondoLugar, nombreLugar);
     Phaser.Display.Align.In.Center(p1fondoN,p1N);
     Phaser.Display.Align.In.Center(p2fondoN,p2N);

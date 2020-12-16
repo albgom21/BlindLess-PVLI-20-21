@@ -5,6 +5,9 @@ export default class Inicio extends Phaser.Scene {
 
   preload() {
     this.load.image('fondo','sprites/fondo.png')
+    this.load.image('fondoShake','sprites/fondoShake.png');
+    this.load.image('fondoShakeDanyo','sprites/fondoShakeDanyo.png');
+    this.load.image('danyo','sprites/danyo.png');
     this.load.image('Max','sprites/max.png' );
     this.load.image('sillon','sprites/sillon.png');
     this.load.image('Latino','sprites/latino.png');

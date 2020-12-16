@@ -6,7 +6,7 @@ export default class Gafas extends Personaje {
     this.dialogoDef = dialogoDef;
   }   
   hablar(){  
-    super.cambiaVida(-20);
+    super.cambiaVida(20);
     super.hablar() 
   }    
   deformar(){

@@ -9,8 +9,10 @@ export default class Game extends Phaser.Scene {
     this.pointScene = 0;
     this.menuActivado = false;
   }
-  create() {      
+  create() {
+    this.scene.stop('inicio');
     this.nameScene = 'CASA';
+    this.add.image(640,360,'fondoShakeDanyo'); 
     this.add.image(640,360,'fondo'); 
         
     var dialogos = new Array();
@@ -20,8 +22,8 @@ export default class Game extends Phaser.Scene {
                {texto: 'no', puntos: 0, life: 0, jump: 0},
                {texto: 'no se', puntos: 50, life: -10, jump: 2}]});
     dialogos.push({texto: 'funciona', answer: null});
-    dialogos.push({texto: 'funciona2', answer: null});
-    dialogos.push({texto: 'funciona Salto', answer: null});
+    dialogos.push({texto: 'funciona salto', answer: null});
+    dialogos.push({texto: 'funciona Salto2', answer: null});
     this.latCuerpo = new Latino(this, 1000,400,'latcuerpo', dialogos);
     //this.gafas = new Personaje(this, 733, 350, 'gafas');  //No pueden crearse a partir de la clase que heredan
     dialogos = new Array();
