@@ -97,7 +97,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
       this.scene.pointScene += answer.puntos;
       this.cambiaVida(answer.life);
       this.estaHablando = true;
-      this.numDial++;
+      this.numDial += answer.jump + 1;
         if(this.numDial < this.dialogos.length){
           this.hablarDialogo(this.dialogos[this.numDial]);
         }

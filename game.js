@@ -16,9 +16,12 @@ export default class Game extends Phaser.Scene {
     var dialogos = new Array();
     dialogos.push({texto: 'funciona', answer: null});
     dialogos.push({texto: 'funciona2',
-      answer: [{texto: 'si', puntos: 10, life: 0},
-               {texto: 'no', puntos: 0, life: 0},
-               {texto: 'no se', puntos: 50, life: -10}]});
+      answer: [{texto: 'si', puntos: 10, life: 0, jump: 0},
+               {texto: 'no', puntos: 0, life: 0, jump: 0},
+               {texto: 'no se', puntos: 50, life: -10, jump: 2}]});
+    dialogos.push({texto: 'funciona', answer: null});
+    dialogos.push({texto: 'funciona2', answer: null});
+    dialogos.push({texto: 'funciona Salto', answer: null});
     this.latCuerpo = new Latino(this, 1000,400,'latcuerpo', dialogos);
     //this.gafas = new Personaje(this, 733, 350, 'gafas');  //No pueden crearse a partir de la clase que heredan
     dialogos = new Array();
