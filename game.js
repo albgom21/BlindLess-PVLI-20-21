@@ -8,6 +8,9 @@ export default class Game extends Phaser.Scene {
     this.vidaMax = 100;
     this.pointScene = 0;
     this.menuActivado = false;
+    this.fin = new Array(1); // array con el numero de personajes
+    this.fin[0]= false;
+    
   }
   create() {
     this.scene.stop('inicio');
@@ -24,7 +27,7 @@ export default class Game extends Phaser.Scene {
     dialogos.push({texto: 'funciona', answer: null});
     dialogos.push({texto: 'funciona salto', answer: null});
     dialogos.push({texto: 'funciona Salto2', answer: null});
-    this.latCuerpo = new Latino(this, 1000,400,'latcuerpo', dialogos);
+    this.latCuerpo = new Latino(this, 1000,400,'latcuerpo', dialogos, 0);
     //this.gafas = new Personaje(this, 733, 350, 'gafas');  //No pueden crearse a partir de la clase que heredan
     dialogos = new Array();
     dialogos.push({texto: 'funciona\nhola', answer: null});
@@ -42,6 +45,21 @@ export default class Game extends Phaser.Scene {
     //this.botella.on('pointerdown', () => {this.gafas.aumentaVida()});
     //this.corazon.on('pointerdown', () => {this.gafas.mostrarVida()});
     //this.boton.on('pointerdown', () => {this.ticket.verNumeros()});
-    //this.ticket.on('pointerdown', () => {this.ticket.crearNumero()});   
-  }   
+    //this.ticket.on('pointerdown', () => {this.ticket.crearNumero()});       
+  }  
+
+  finEscena(){    
+    var a;
+    for(const n of this.fin){
+      if (!n) a = false;
+      else a = true;
+    }  
+    if(a)
+    { //que hayan hablado todos los personajes de la escena     
+      a = false;
+      const botonEscena = this.add.image(1175,100,'botonescena').setInteractive();
+       botonEscena.on('pointerdown', () => {this.scene.launch('mapa')});  //Poner los parametros
+    }    
+  } 
+  
 }

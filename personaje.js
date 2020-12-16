@@ -1,6 +1,6 @@
 import Menu from './menu.js';
 export default class Personaje extends Phaser.GameObjects.Container {
-  constructor(scene,x,y,image,d,xMenu,yMenu, dialogos) {
+  constructor(scene,x,y,image,d,xMenu,yMenu, dialogos,fin) {
     super(scene);
     this.scene = scene;
     this.x = x;
@@ -11,6 +11,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
     this.space = scene.input.keyboard.addKey('SPACE')
     this.m = new Menu(scene,x/2 + xMenu,y/2 + yMenu,'#ffff',d,this);  //Poner x e y del personaje
     this.m.visible = false;
+    this.f = fin;
     
     
     const imagenDanyo = this.scene.add.image(640, 360, 'danyo').setVisible(false);
@@ -45,12 +46,13 @@ export default class Personaje extends Phaser.GameObjects.Container {
           }
           else{
             this.estaHablando = false;
-            this.scene.menuActivado = false;      
+            this.scene.menuActivado = false;  
+            this.scene.fin[this.f] = true;   
+            this.scene.finEscena(); 
             this.scene.scene.stop('ui');
           }
         }
-      });
-      
+      });      
     this.scene.add.existing(this);
   }
     
@@ -59,7 +61,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
     this.m.visible = false;
     this.hablarDialogo(this.dialogos[this.numDial]);
     this.m.buttonGastado(0);
-    this.estaHablando = true;
+    this.estaHablando = true;    
   } 
   // Método que deforma los objetos (aún no hecho). 
   deformar(newImage, dialogo){   
@@ -133,10 +135,11 @@ export default class Personaje extends Phaser.GameObjects.Container {
         if(answer.life >= 0) this.numDial++;
         this.hablarDialogo(this.dialogos[this.numDial]);
       }
-      else{
-        this.fin = true;
+      else{        
         this.estaHablando = false;
-        this.scene.menuActivado = false;      
+        this.scene.menuActivado = false; 
+        this.scene.fin[this.f] = true; 
+        this.scene.finEscena();        
         this.scene.scene.stop('ui');
       }
       this.estaHablando = true;
