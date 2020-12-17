@@ -1,6 +1,6 @@
 import Latino from './latino.js';
-import Loteria from './loteria.js';
 import Gafas from './gafas.js';
+import Collet from './collet.js';
 export default class Game extends Phaser.Scene {
   
   constructor() {
@@ -8,6 +8,7 @@ export default class Game extends Phaser.Scene {
     this.vidaMax = 100;
     this.pointScene = 0;
     this.menuActivado = false;
+    this.orden = false;
     this.fin = new Array(1); // array con el numero de personajes
     this.fin[0]= false;
     
@@ -15,26 +16,35 @@ export default class Game extends Phaser.Scene {
   create() {
     this.scene.stop('inicio');
     this.nameScene = 'CASA';
-    this.add.image(640,360,'fondoShakeDanyo'); 
-    this.add.image(640,360,'fondo'); 
-        
+    this.add.image(640, 360, 'fondoShakeDanyo'); 
+    this.add.image(640, 360, 'fondo'); 
+    
     var dialogos = new Array();
-    dialogos.push({texto: 'funciona', answer: null});
-    dialogos.push({texto: 'funciona2',
-      answer: [{texto: 'si', puntos: 10, life: 0, jump: 0},
-               {texto: 'no', puntos: 0, life: 0, jump: 0},
-               {texto: 'no se', puntos: 50, life: -10, jump: 2}]});
-    dialogos.push({texto: 'funciona', answer: null});
-    dialogos.push({texto: 'funciona salto', answer: null});
-    dialogos.push({texto: 'funciona Salto2', answer: null});
-    this.latCuerpo = new Latino(this, 1000,400,'latcuerpo', dialogos, 0);
+    dialogos.push({texto: ' \n Ten paciencia, Max. Ya sé que no podemos ganar \n dinero, y además solo te dieron 40 talegos por \n esas cuatro crónicas. No temo a la idea del \n suicidio colectivo, pero tenemos una hija, \n Max. ¡Es muy joven! No puede morir todavía. ', answer: null});
+    dialogos.push({texto: '¿Qué responde Max?',
+      answer: [{texto: 'También se matan los jóvenes.', points: 10, life: 0, jump: 0},
+               {texto: 'Tienes toda la razón.', points: 0, life: 0, jump: 0},
+               {texto: '¿Y si la convencemos para el suicidio colectivo?', points: 50, life: -10, jump: 2}]});
+    dialogos.push({texto: ' \n \n Max, los jóvenes no se matan por cansancio de la \n vida. Los jóvenes se matan por romanticismo. No \n desesperes. Otra puerta se abrirá. No te pongas \n a gatas, Max. Todos reconocen tu talento.    ', answer: null});
+    dialogos.push({texto: '¿Qué responde Max?',
+    answer: [{texto: 'Ninguna editora me cogeria ', points: 10, life: 0, jump: 0},
+              {texto: 'Puedo intentar hacer lo minimo por nuestra hija', points: 10, life: 0, jump: 0},
+              {texto: 'Sigo pensando en el suicidio colectivo ', points: 10, life: 0, jump: 2}
+     ]});
+    dialogos.push({texto: ' \n Pues ves a hablar con tu fiel amigo Don Latino que  \n a mí ya me tienes casi olvidada. Tú y tus  \n generosidades nos han dejado sin cena...  \n Si no fuera por nuestra hija Claudinita ya  \n podríamos estar muertos, Max.    ', answer: null});
+    this.madame = new Collet(this, 500, 400, 'Collet', dialogos, dialogoC);
+    if(this.madame.fin) this.orden = true;
     //this.gafas = new Personaje(this, 733, 350, 'gafas');  //No pueden crearse a partir de la clase que heredan
     dialogos = new Array();
-    dialogos.push({texto: 'funciona\nhola', answer: null});
     var dialogoDef = new Array();
-    dialogoDef.push({texto: 's\nhola', answer: null})
-    dialogoDef.push({texto: 's\nadios', answer: null})
-    this.g = new Gafas(this,733,350,'Gafas', dialogos, dialogoDef);
+    dialogoDef.push({texto: 's\nhola', answer: null});
+    dialogoDef.push({texto: 's\nadios', answer: null});
+    this.g = new Gafas(this, 733, 350, 'Gafas', dialogos, dialogoDef);
+    var dialogoC = new Array();
+    if (this.pointScene == 20) {
+      dialogoC.push({texto: '¡Oh, admirado y querido gran amigo mio, Max!, tu \n mujer y su  hija desde que he entrado han estado \n acribillándome por el dinero. Siguen sin fiarse de \n mí. Además el librero nos ha timado pagándonos \n ¡Solo tres pesetas! ¡Tres miseras pesetas! ¡Un \n robo! Si te presentas ahora conmigo en la tienda \n de ese granuja y le armas un escándalo, le sacas \n hasta dos duros. Tú tienes otro empaque. ', answer: null});
+    }else dialogoC.push({texto: 'Creo que tu mujer quiere hablar contigo...', answer: null});
+    this.latCuerpo = new Latino(this, 1000, 400, 'latcuerpo', dialogoC, dialogos);
     //this.botella = new Personaje(this, 300, 264, 'botella');  // hacer clases que hereden de Personaje
    // this.corazon = new Personaje(this, 1230, 655, 'corazon');
    // this.boton = new Loteria(this, 60, 655, 'botont');
@@ -57,9 +67,12 @@ export default class Game extends Phaser.Scene {
     if(a)
     { //que hayan hablado todos los personajes de la escena     
       a = false;
-      const botonEscena = this.add.image(1175,100,'botonescena').setInteractive();
-       botonEscena.on('pointerdown', () => {this.scene.launch('mapa')});  //Poner los parametros
+      const botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();
+      botonEscena.on('pointerdown', () => {this.scene.launch('LIBRERIA1')});  //Poner los parametros
     }    
   } 
   
+  getVidaMax(){
+    return this.vidaMax;
+  }
 }

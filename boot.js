@@ -33,7 +33,12 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('corazon', 'sprites/corazon.png');
     this.load.image('inicio','sprites/inicio.png');  
     this.load.image('mapa','sprites/mapa.png');
+    this.load.image('Collet', 'sprites/madameCollet.png');
     this.load.script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
+    
+    this.load.image('taberna', 'sprites/taberna.png');
+    
+    this.load.image('libreria', 'sprites/libreria.png');
    
   }
   create() {

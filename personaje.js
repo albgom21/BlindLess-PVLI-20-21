@@ -1,6 +1,6 @@
 import Menu from './menu.js';
 export default class Personaje extends Phaser.GameObjects.Container {
-  constructor(scene,x,y,image,d,xMenu,yMenu, dialogos,fin) {
+  constructor(scene, x, y, image, d, xMenu, yMenu, dialogos, fin) {
     super(scene);
     this.scene = scene;
     this.x = x;
@@ -9,7 +9,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
     this.yMenu = yMenu;
     this.image = this.scene.add.image(x,y,image).setInteractive();
     this.space = scene.input.keyboard.addKey('SPACE')
-    this.m = new Menu(scene,x/2 + xMenu,y/2 + yMenu,'#ffff',d,this);  //Poner x e y del personaje
+    this.m = new Menu(scene, x / 2 + xMenu, y / 2 + yMenu, '#ffff', d, this);  //Poner x e y del personaje
     this.m.visible = false;
     this.f = fin;
     
@@ -63,13 +63,14 @@ export default class Personaje extends Phaser.GameObjects.Container {
     this.m.buttonGastado(0);
     this.estaHablando = true;    
   } 
+
   // Método que deforma los objetos (aún no hecho). 
   deformar(newImage, dialogo){   
     this.scene.menuActivado = false;    
     this.m.visible = false;
     this.m.buttonGastado(1);
     this.image.destroy();
-    this.image = this.scene.add.image(this.x,this.y,newImage).setInteractive();
+    this.image = this.scene.add.image(this.x, this.y, newImage).setInteractive();
     this.name = newImage;
     this.image.on('pointerdown', () => {
     if(!this.scene.menuActivado){
@@ -84,35 +85,41 @@ export default class Personaje extends Phaser.GameObjects.Container {
     this.scene.scene.stop('ui');
     this.m.visible = false;
   } 
+
   //Método que resta/suma vida a Max
   cambiaVida(vida){
     if(vida < 0){
-      this.dialogos.splice(this.numDial, 0, {texto: ('*Daño: '+vida+' de vida*'), answer: null});
+      this.dialogos.splice(this.numDial, 0, {texto: ('*Daño: ' + vida + ' de vida*'), answer: null});
       this.scene.cameras.main.shake(500);
       this.mensajeDanyo = true;
     }
-    if(vida>0){
-      this.dialogos.splice(this.numDial, 0, {texto: ('*Sanado: '+vida+' de vida*'), answer: null});
+
+    if(vida > 0){
+      this.dialogos.splice(this.numDial, 0, {texto: ('*Sanado: ' + vida + ' de vida*'), answer: null});
       this.mensajeSanar = true;
     }
+
     this.scene.vidaMax += vida;
-    if(this.scene.vidaMax<0)
-      this.scene.vidaMax=0;
-    else if(this.scene.vidaMax>100)
-    this.scene.vidaMax=100;
+    if(this.scene.vidaMax < 0)
+      this.scene.vidaMax = 0;
+    else if(this.scene.vidaMax > 100)
+    this.scene.vidaMax = 100;
   } 
+
   hablarDialogo(dialogo){
     if(this.dialogoAct !== undefined) this.scene.scene.stop('ui');
-    if(this.mensajeDanyo) { this.dialogoAct = this.scene.scene.launch('ui',{p1:'Max', p2:this.name, vida:this.scene.vidaMax,
+    if(this.mensajeDanyo) { 
+      this.dialogoAct = this.scene.scene.launch('ui', {p1:'Max', p2:this.name, vida:this.scene.vidaMax,
     name:this.scene.nameScene, texto:dialogo.texto, color: '#ff6060'});
     this.mensajeDanyo = false;
     }
     else if(this.mensajeSanar){
-      this.dialogoAct = this.scene.scene.launch('ui',{p1:'Max', p2:this.name, vida:this.scene.vidaMax,
+      this.dialogoAct = this.scene.scene.launch('ui', {p1:'Max', p2:this.name, vida:this.scene.vidaMax,
     name:this.scene.nameScene, texto:dialogo.texto, color: '#51d58a'});
     this.mensajeSanar = false;
     }
-    else  {this.dialogoAct = this.scene.scene.launch('ui',{p1:'Max', p2:this.name, vida:this.scene.vidaMax,
+    else  {
+      this.dialogoAct = this.scene.scene.launch('ui', {p1:'Max', p2:this.name, vida:this.scene.vidaMax,
     name:this.scene.nameScene, texto:dialogo.texto});
     }
     
@@ -123,13 +130,14 @@ export default class Personaje extends Phaser.GameObjects.Container {
       }
     }
   }
-  newAnswer(i, answer) {
-    this.botones[i*2] = this.scene.add.image(650, 100+i*100, 'respuesta').setInteractive();
-    this.botones[i*2+1] = this.scene.add.text(650, 100+i*100, answer.texto, { fontFamily: 'VT323',fontSize: '26px', color: '#000000' });
-    Phaser.Display.Align.In.Center(this.botones[i*2+1], this.botones[i*2]);
 
-    this.botones[i*2].on('pointerdown', () => {  //Preguntar si hay una forma mejor de decidir que hace el botón
-      this.scene.pointScene += answer.puntos;
+  newAnswer(i, answer) {
+    this.botones[i * 2] = this.scene.add.image(650, 100 + i * 100, 'respuesta').setInteractive();
+    this.botones[i * 2 + 1] = this.scene.add.text(650, 100 + i * 100, answer.texto, { fontFamily: 'VT323',fontSize: '26px', color: '#000000' });
+    Phaser.Display.Align.In.Center(this.botones[i * 2 + 1], this.botones[i * 2]);
+
+    this.botones[i * 2].on('pointerdown', () => {  //Preguntar si hay una forma mejor de decidir que hace el botón
+      this.scene.pointScene += answer.points;
       this.cambiaVida(answer.life);
       if(this.numDial < this.dialogos.length){
         if(answer.life >= 0) this.numDial++;
@@ -149,11 +157,11 @@ export default class Personaje extends Phaser.GameObjects.Container {
         n.visible = false;
       }
     });
-    this.botones[i*2].on('pointerover', () => {
-      this.botones[i*2].setTexture('respuesta2');
+    this.botones[i * 2].on('pointerover', () => {
+      this.botones[i * 2].setTexture('respuesta2');
     });
-    this.botones[i*2].on('pointerout', () => {
-      this.botones[i*2].setTexture('respuesta');
+    this.botones[i * 2].on('pointerout', () => {
+      this.botones[i * 2].setTexture('respuesta');
     });
   }
 }

@@ -1,8 +1,8 @@
 import Personaje from './personaje.js';
-export default class Latino extends Personaje {
+export default class Collet extends Personaje {
   constructor(scene, x, y, image, dialogos, fin) {
     super(scene, x, y, image, false, -60, -50, dialogos, fin);
-    this.name = 'Latino'       //nombre del sprite y personaje
+    this.name = 'Collet'       //nombre del sprite y personaje
     this.scene = scene;
   }   
   hablar(){    
@@ -11,6 +11,9 @@ export default class Latino extends Personaje {
   }    
   deformar(){
     super.deformar()
-    this.setTexture('Latino');
+    this.setTexture('collet');
+  }
+  finHablar(fin){
+    fin = true;
   }
 }

@@ -12,7 +12,7 @@ export default class Mapa extends Phaser.Scene {
   }
   create() {         
     //Mapa
-    const mapa = this.add.image(640,360,'mapa').setInteractive();
+    const mapa = this.add.image(640, 360, 'mapa').setInteractive();
     mapa.on('pointerdown', () => {this.scene.launch(this.proxEscena)});//no funciona el cambio de escena
     //Texto puntos y vidas
     //Segun la proxEscena poner el circulo acorde con ifs
