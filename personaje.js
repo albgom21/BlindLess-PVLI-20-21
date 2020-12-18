@@ -127,7 +127,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
     
     if(dialogo.answer){
       this.estaHablando = false;
-      for(var i = 0; i < dialogo.answer.length; i++){
+      for(let i = 0; i < dialogo.answer.length; i++){
         this.newAnswer(i, dialogo.answer[i]);
       }
     }

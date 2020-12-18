@@ -3,7 +3,7 @@ export default class Mapa extends Phaser.Scene {
     super({ key: "mapa" });
   }
   
-  init(datos) {
+  init(datos) {    
     this.proxEscena = datos.proxEscena; 
     this.nombreEscena = datos.nombreEscena;
     this.vida = datos.vida;
@@ -12,6 +12,7 @@ export default class Mapa extends Phaser.Scene {
   }
   create() {         
     //Mapa
+    //poner en stop la escena anterior
     const mapa = this.add.image(640, 360, 'mapa').setInteractive();
     mapa.on('pointerdown', () => {this.scene.launch(this.proxEscena)});//no funciona el cambio de escena
     //Texto puntos y vidas

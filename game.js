@@ -19,7 +19,7 @@ export default class Game extends Phaser.Scene {
     this.add.image(640, 360, 'fondoShakeDanyo'); 
     this.add.image(640, 360, 'fondo'); 
     
-    var dialogos = new Array();
+    let dialogos = new Array();
     dialogos.push({texto: ' \n Ten paciencia, Max. Ya sé que no podemos ganar \n dinero, y además solo te dieron 40 talegos por \n esas cuatro crónicas. No temo a la idea del \n suicidio colectivo, pero tenemos una hija, \n Max. ¡Es muy joven! No puede morir todavía. '});
     dialogos.push({texto: '¿Qué responde Max?',
       answer: [{texto: 'También se matan los jóvenes.', points: 10, life: 0, jump: 0},
@@ -36,11 +36,11 @@ export default class Game extends Phaser.Scene {
     if(this.madame.fin) this.orden = true;
     //this.gafas = new Personaje(this, 733, 350, 'gafas');  //No pueden crearse a partir de la clase que heredan
     dialogos = new Array();
-    var dialogoDef = new Array();
+    let dialogoDef = new Array();
     dialogoDef.push({texto: 's\nhola'});
     dialogoDef.push({texto: 's\nadios'});
     this.g = new Gafas(this, 733, 350, 'Gafas', dialogos, dialogoDef);
-    var dialogoC = new Array();
+    let dialogoC = new Array();
     if (this.pointScene == 20) {
       dialogoC.push({texto: '¡Oh, admirado y querido gran amigo mio, Max!, tu \n mujer y su  hija desde que he entrado han estado \n acribillándome por el dinero. Siguen sin fiarse de \n mí. Además el librero nos ha timado pagándonos \n ¡Solo tres pesetas! ¡Tres miseras pesetas! ¡Un \n robo! Si te presentas ahora conmigo en la tienda \n de ese granuja y le armas un escándalo, le sacas \n hasta dos duros. Tú tienes otro empaque. '});
     }else dialogoC.push({texto: 'Creo que tu mujer quiere hablar contigo...'});
@@ -69,9 +69,9 @@ export default class Game extends Phaser.Scene {
     { //que hayan hablado todos los personajes de la escena
       a = false;
       const botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();
-      botonEscena.on('pointerdown', () => {this.scene.launch('mapa')});  //Poner los parametros
-    }   
-  } 
+      botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{proxEscena:'game',nombreEscena:'CASA',vida:this.vidaMax,suma:10,resta:20})});  //Poner los parametros
+    }       
+  }
   
   getVidaMax(){
     return this.vidaMax;
