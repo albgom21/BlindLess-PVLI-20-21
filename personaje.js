@@ -87,15 +87,15 @@ export default class Personaje extends Phaser.GameObjects.Container {
   } 
 
   //Método que resta/suma vida a Max
-  cambiaVida(vida){
+  cambiaVida(vida,razon){
     if(vida < 0){
-      this.dialogos.splice(this.numDial, 0, {texto: ('*Daño: ' + vida + ' de vida*'), answer: null});
+      this.dialogos.splice(this.numDial, 0, {texto: ('*Daño: ' + vida + ' de vida debido a '+razon+'*'), answer: null});
       this.scene.cameras.main.shake(500);
       this.mensajeDanyo = true;
     }
 
     if(vida > 0){
-      this.dialogos.splice(this.numDial, 0, {texto: ('*Sanado: ' + vida + ' de vida*'), answer: null});
+      this.dialogos.splice(this.numDial, 0, {texto: ('*Sanado: ' + ' de vida debido a '+razon+'*'), answer: null});
       this.mensajeSanar = true;
     }
 
@@ -138,7 +138,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
 
     this.botones[i * 2].on('pointerdown', () => {  //Preguntar si hay una forma mejor de decidir que hace el botón
       this.scene.pointScene += answer.points;
-      this.cambiaVida(answer.life);
+      this.cambiaVida(answer.life,answer.razon);
       if(this.numDial < this.dialogos.length){
         if(answer.life >= 0) this.numDial++;
         this.hablarDialogo(this.dialogos[this.numDial]);
