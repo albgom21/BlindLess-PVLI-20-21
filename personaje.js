@@ -95,7 +95,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
     }
 
     if(vida > 0){
-      this.dialogos.splice(this.numDial, 0, {texto: ('*Sanado: ' + ' de vida debido a '+razon+'*'), answer: null});
+      this.dialogos.splice(this.numDial, 0, {texto: ('*Sanado: ' + vida + ' de vida debido a '+razon+'*'), answer: null});
       this.mensajeSanar = true;
     }
 
