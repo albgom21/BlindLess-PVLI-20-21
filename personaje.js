@@ -107,6 +107,8 @@ export default class Personaje extends Phaser.GameObjects.Container {
   } 
 
   hablarDialogo(dialogo){
+    if(dialogo.personaje)
+      this.name = dialogo.personaje;
     if(this.dialogoAct !== undefined) this.scene.scene.stop('ui');
     if(this.mensajeDanyo) { 
       this.dialogoAct = this.scene.scene.launch('ui', {p1:'Max', p2:this.name, vida:this.scene.vidaMax,
@@ -123,7 +125,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
     name:this.scene.nameScene, texto:dialogo.texto});
     }
     
-    if(dialogo.answer !== null){
+    if(dialogo.answer){
       this.estaHablando = false;
       for(var i = 0; i < dialogo.answer.length; i++){
         this.newAnswer(i, dialogo.answer[i]);
