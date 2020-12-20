@@ -131,6 +131,8 @@ export default class Personaje extends Phaser.GameObjects.Container {
         this.newAnswer(i, dialogo.answer[i]);
       }
     }
+
+    if(dialogo.jump) this.numDial += dialogo.jump;
   }
 
   newAnswer(i, answer) {

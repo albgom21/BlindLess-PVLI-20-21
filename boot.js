@@ -4,9 +4,8 @@ export default class Inicio extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('fondo','sprites/fondo.png')
-    this.load.image('fondoShake','sprites/fondoShake.png');
-    this.load.image('fondoShakeDanyo','sprites/fondoShakeDanyo.png');
+    this.load.image('fondo','fondos/fondo.png')
+    this.load.image('fondoShakeDanyo','fondos/fondoShakeDanyo.png');
     this.load.image('danyo','sprites/danyo.png');
     this.load.image('Max','sprites/max.png' );
     this.load.image('sillon','sprites/sillon.png');
@@ -36,9 +35,9 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('Collet', 'sprites/madameCollet.png');
     this.load.script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
     
-    this.load.image('taberna', 'sprites/taberna.png');
+    this.load.image('taberna', 'fondos/taberna.png');
     
-    this.load.image('libreria', 'sprites/libreria.png');
+    this.load.image('libreria', 'fondos/libreria.png');
    
   }
   create() {
