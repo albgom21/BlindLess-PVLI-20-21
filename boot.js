@@ -33,10 +33,7 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('Gafas', 'sprites/gafas.png');
     this.load.image('Gafas D', 'sprites/gafasdef.png');
     this.load.image('corazon', 'sprites/corazon.png');
-    
-  
-    
-   
+       
     //Fondos
     this.load.image('inicio','fondos/inicio.png');  
     this.load.image('fondoShakeDanyo','fondos/fondoShakeDanyo.png');    
@@ -46,6 +43,7 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('libreria', 'sprites/libreria.png');
     this.load.image('taberna', 'fondos/taberna.png');
     
+    this.load.image('rectangulo', 'sprites/rectangulo.png');
 
     this.load.script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
    

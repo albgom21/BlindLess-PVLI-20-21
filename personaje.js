@@ -1,6 +1,6 @@
 import Menu from './menu.js';
 export default class Personaje extends Phaser.GameObjects.Container {
-  constructor(scene, x, y, image, d, xMenu, yMenu, dialogos, fin) {
+  constructor(scene, x, y, image, d, xMenu, yMenu, dialogos, fin,aparece) {
     super(scene);
     this.scene = scene;
     this.x = x;
@@ -12,7 +12,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
     this.m = new Menu(scene, x / 2 + xMenu, y / 2 + yMenu, '#ffff', d, this);  //Poner x e y del personaje
     this.m.visible = false;
     this.f = fin;
-    
+    this.aparece = aparece;
     
     const imagenDanyo = this.scene.add.image(640, 360, 'danyo').setVisible(false);
     this.scene.cameras.main.on('camerashakestart', function () {
@@ -47,7 +47,10 @@ export default class Personaje extends Phaser.GameObjects.Container {
           else{
             this.estaHablando = false;
             this.scene.menuActivado = false;  
-            this.scene.fin[this.f] = true;   
+            this.scene.fin[this.f] = true;  
+            if(this.aparece){
+              this.scene.aparece();
+            }            
             this.scene.finEscena(); 
             this.scene.scene.stop('ui');
           }
@@ -89,16 +92,14 @@ export default class Personaje extends Phaser.GameObjects.Container {
   //Método que resta/suma vida a Max
   cambiaVida(vida,razon){
     if(vida < 0){
-      this.dialogos.splice(this.numDial, 0, {texto: ('*Daño: ' + vida + ' de vida debido a '+razon+'*'), answer: null});
+      this.dialogos.splice(this.numDial, 0, {texto: ('*Daño: ' + vida + ' de vida debido a ' + razon + '*'), answer: null});
       this.scene.cameras.main.shake(500);
       this.mensajeDanyo = true;
     }
-
-    if(vida > 0){
-      this.dialogos.splice(this.numDial, 0, {texto: ('*Sanado: ' + vida + ' de vida debido a '+razon+'*'), answer: null});
+    else if(vida > 0){
+      this.dialogos.splice(this.numDial, 0, {texto: ('*Sanado: ' + vida + ' de vida debido a ' + razon + '*'), answer: null});
       this.mensajeSanar = true;
     }
-
     this.scene.vidaMax += vida;
     if(this.scene.vidaMax < 0)
       this.scene.vidaMax = 0;
@@ -120,18 +121,16 @@ export default class Personaje extends Phaser.GameObjects.Container {
     name:this.scene.nameScene, texto:dialogo.texto, color: '#51d58a'});
     this.mensajeSanar = false;
     }
-    else  {
+    else {
       this.dialogoAct = this.scene.scene.launch('ui', {p1:'Max', p2:this.name, vida:this.scene.vidaMax,
     name:this.scene.nameScene, texto:dialogo.texto});
-    }
-    
+    }    
     if(dialogo.answer){
       this.estaHablando = false;
       for(let i = 0; i < dialogo.answer.length; i++){
         this.newAnswer(i, dialogo.answer[i]);
       }
     }
-
     if(dialogo.jump) this.numDial += dialogo.jump;
   }
 
@@ -140,11 +139,11 @@ export default class Personaje extends Phaser.GameObjects.Container {
     this.botones[i * 2 + 1] = this.scene.add.text(650, 100 + i * 100, answer.texto, { fontFamily: 'VT323',fontSize: '26px', color: '#000000' });
     Phaser.Display.Align.In.Center(this.botones[i * 2 + 1], this.botones[i * 2]);
 
-    this.botones[i * 2].on('pointerdown', () => {  //Preguntar si hay una forma mejor de decidir que hace el botón
+    this.botones[i * 2].on('pointerdown', () => {  
       this.scene.pointScene += answer.points;
       this.cambiaVida(answer.life,answer.razon);
       if(this.numDial < this.dialogos.length){
-        if(answer.life >= 0) this.numDial++;
+        if(answer.life === 0) this.numDial++;
         this.hablarDialogo(this.dialogos[this.numDial]);
       }
       else{        
@@ -155,7 +154,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
         this.scene.scene.stop('ui');
       }
       this.estaHablando = true;
-      if(answer.life < 0) this.numDial += answer.jump + 1;
+      if(answer.life !== 0) this.numDial += answer.jump + 1;            
         
       for(const n of this.botones){
         n.visible = false;
