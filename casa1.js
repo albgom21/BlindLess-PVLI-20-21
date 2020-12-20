@@ -17,6 +17,8 @@ export default class Casa1 extends Phaser.Scene {
     this.nameScene = 'CASA';
     this.add.image(640, 360, 'fondoShakeDanyo'); 
     this.add.image(640, 360, 'casa');     
+    
+
     let dialogos = new Array();
     dialogos.push({texto: 'Ten paciencia, Max. Ya sé que no podemos ganar\ndinero, y además solo te dieron 40 talegos por\nesas cuatro crónicas.'});
     dialogos.push({texto: 'No temo a la idea del suicidio colectivo, pero\ntenemos una hija, Max. ¡Es muy joven!\nNo puede morir todavía.'});
@@ -33,13 +35,18 @@ export default class Casa1 extends Phaser.Scene {
      ]});
     dialogos.push({texto: 'Pues ves a hablar con tu fiel amigo Don Latino que\na mí ya me tienes casi olvidada. Tú y tus\ngenerosidades nos han dejado sin cena...'});
     dialogos.push({texto: 'Si no fuera por nuestra hija Claudinita ya\npodríamos estar muertos, Max.'});
+
     this.madame = new Collet(this, 500, 400, 'madamcuerpo', dialogos, 0,true);   
     dialogos = new Array();
+    dialogos.push({texto: '(Tan solo son unas gafas...)'});
     let dialogoDef = new Array();
-    dialogoDef.push({texto: 's\nhola'});
-    dialogoDef.push({texto: 's\nadios'});
-    this.g = new Gafas(this, 733, 350, 'Gafas', dialogos, dialogoDef);        
+    dialogoDef.push({texto: '¿Creías que no podía hablar?'});
+    dialogoDef.push({texto: 'No creo que en tu situación te sea de gran ayuda.'});
+    this.g = new Gafas(this, 733, 350, 'Gafas', dialogos, dialogoDef);    
+    const contxt = this.add.image(640, 360, 'contexto').setInteractive();       
+    contxt.on('pointerdown', () => {contxt.visible = false});    
   }  
+
 aparece(){  
   let dialogos = new Array();
   dialogos.push({texto: '¡Oh, admirado y querido gran amigo mio, Max!, tu\nmujer y su hija desde que he entrado han estado\nacribillándome por el dinero.'});

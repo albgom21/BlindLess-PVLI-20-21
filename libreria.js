@@ -5,7 +5,7 @@ export default class Libreria extends Phaser.Scene {
       super({ key: "libreria" });      
     this.pointScene = 0;
     this.menuActivado = false;    
-    this.fin = new Array(2); // array con el numero de personajes    
+    this.fin = new Array(1); // array con el numero de personajes    
     this.key = 'libreria';
     }
     init(datos){
@@ -15,7 +15,7 @@ export default class Libreria extends Phaser.Scene {
   create(){
     this.scene.stop('inicio');
     this.nameScene = 'LIBRERIA';
-    //this.add.image(640, 360, 'fondoShakeDanyo'); 
+    this.add.image(640, 360, 'fondoShakeDanyo'); 
     this.add.image(640, 360, 'libreria');
     let dialogos = new Array();
     dialogos.push({texto: 'Mi nombre es Zaratustra y soy el dueño de\nesta librería. ¿A qué debo el placer?'});
@@ -54,7 +54,8 @@ export default class Libreria extends Phaser.Scene {
     dialogos.push({texto: '¡Espera Max no salgas corriendo!'});
     this.zarCuerpo = new Zaratustra(this, 1000, 400, 'zaratustracuerpo', dialogos, 0);    
     dialogos = new Array();
-    this.latCuerpo = new Latino(this, 500, 400, 'latcuerpo', dialogos, 1);        
+    //this.latCuerpo = new Latino(this, 500, 400, 'latcuerpo', dialogos, 1);        
+    this.add.image(500, 400, 'latcuerpo');
   }
   finEscena(){    
     let a = true;
