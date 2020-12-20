@@ -13,7 +13,7 @@ export default class Libreria extends Phaser.Scene {
     }
     
   create(){
-    this.scene.stop('inicio');
+    this.scene.stop('mapa');
     this.nameScene = 'LIBRERIA';
     this.add.image(640, 360, 'fondoShakeDanyo'); 
     this.add.image(640, 360, 'libreria');
@@ -40,7 +40,7 @@ export default class Libreria extends Phaser.Scene {
     dialogos.push({texto: 'Seguro que le interesa, se lo envuelvo\nen un instante.'});
     dialogos.push({texto: 'Al freír será el reír…',
       personaje: 'Latino', jump: 8});
-    dialogos.push({texto: '… ¿Qué? ¿Están ustedes enfadados conmigo\npor alguna razón?'});
+    dialogos.push({texto: '… ¿Qué? ¿Están ustedes enfadados conmigo\npor alguna razón?',personaje:'Zaratustra'});
     dialogos.push({texto: 'Así es, Zaratustra. Has vendido los libros de Max\na un precio fatídico. Exigimos que nos devuelvas\nlos libros que tan mal has tratado.',
       personaje: 'Latino'});
     dialogos.push({texto: 'Disculpen mi ostentación, pero no tengo ni\nidea de qué están hablando',
