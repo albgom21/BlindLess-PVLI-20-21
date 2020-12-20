@@ -8,9 +8,5 @@ export default class Latino extends Personaje {
   hablar(){    
     super.hablar()
     //this.scene.fin[0] = true;
-  }    
-  deformar(){
-    super.deformar()
-    this.setTexture('Latino');
-  }
+  }   
 }

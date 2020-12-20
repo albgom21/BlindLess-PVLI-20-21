@@ -4,20 +4,21 @@ import Collet from './collet.js';
 export default class Game extends Phaser.Scene {
   
   constructor() {
-    super({ key: 'game'});    
+    super({ key: 'casa1'});    
     this.vidaMax = 100;
     this.pointScene = 0;
     this.menuActivado = false;
     this.orden = false;
     this.fin = new Array(2); // array con el numero de personajes
-    this.fin[0]= false;
+    //this.fin[0]= false;
+    this.key = 'casa1';
     
   }
   create() {
     this.scene.stop('inicio');
     this.nameScene = 'CASA';
     this.add.image(640, 360, 'fondoShakeDanyo'); 
-    this.add.image(640, 360, 'fondo'); 
+    this.add.image(640, 360, 'casa'); 
     
     let dialogos = new Array();
     dialogos.push({texto: 'Ten paciencia, Max. Ya sé que no podemos ganar\ndinero, y además solo te dieron 40 talegos por\nesas cuatro crónicas.'});
@@ -35,7 +36,7 @@ export default class Game extends Phaser.Scene {
      ], personaje:'Collet'});
     dialogos.push({texto: 'Pues ves a hablar con tu fiel amigo Don Latino que\na mí ya me tienes casi olvidada. Tú y tus\ngenerosidades nos han dejado sin cena...'});
     dialogos.push({texto: 'Si no fuera por nuestra hija Claudinita ya\npodríamos estar muertos, Max.'});
-    this.madame = new Collet(this, 500, 400, 'Collet', dialogos, 0);
+    this.madame = new Collet(this, 500, 400, 'madamcuerpo', dialogos, 0);
     if(this.madame.fin) this.orden = true;
     //this.gafas = new Personaje(this, 733, 350, 'gafas');  //No pueden crearse a partir de la clase que heredan
     dialogos = new Array();
@@ -47,18 +48,7 @@ export default class Game extends Phaser.Scene {
     dialogos.push({texto: '¡Oh, admirado y querido gran amigo mio, Max!, tu\nmujer y su  hija desde que he entrado han estado\nacribillándome por el dinero.'});
     dialogos.push({texto: 'Siguen sin fiarse de mí.\nAdemás el librero nos ha timado pagándonos\n¡Solo tres pesetas! ¡Tres miseras pesetas!\n¡Un robo!'});
     dialogos.push({texto: 'Si te presentas ahora conmigo en la tienda\nde ese granuja y le armas un escándalo, le sacas\nhasta dos duros. Tú tienes otro empaque.'});
-    this.latCuerpo = new Latino(this, 1000, 400, 'latcuerpo', dialogos, 1);
-    //this.botella = new Personaje(this, 300, 264, 'botella');  // hacer clases que hereden de Personaje
-   // this.corazon = new Personaje(this, 1230, 655, 'corazon');
-   // this.boton = new Loteria(this, 60, 655, 'botont');
-   // this.ticket = new Loteria(this, 400, 500, 'loteria');
-
-    //this.latCuerpo.on('pointerdown', () => {this.aparece()});   
-    //this.gafas.on('pointerdown', () => {this.gafas.restaVida()});
-    //this.botella.on('pointerdown', () => {this.gafas.aumentaVida()});
-    //this.corazon.on('pointerdown', () => {this.gafas.mostrarVida()});
-    //this.boton.on('pointerdown', () => {this.ticket.verNumeros()});
-    //this.ticket.on('pointerdown', () => {this.ticket.crearNumero()});       
+    this.latCuerpo = new Latino(this, 1000, 400, 'latcuerpo', dialogos, 1);    
   }  
 
   finEscena(){    
@@ -72,11 +62,7 @@ export default class Game extends Phaser.Scene {
     { //que hayan hablado todos los personajes de la escena
       a = false;
       const botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();
-      botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{proxEscena:'game',nombreEscena:'CASA',vida:this.vidaMax,suma:10,resta:20})});  //Poner los parametros
+      botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{antEscena:this.key,proxEscena:'libreria',nombreEscena:'LIBRERIA',vida:this.vidaMax,suma:10,resta:20})});
     }       
-  }
-  
-  getVidaMax(){
-    return this.vidaMax;
-  }
+  }  
 }

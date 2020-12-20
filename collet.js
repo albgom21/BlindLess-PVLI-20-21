@@ -6,14 +6,6 @@ export default class Collet extends Personaje {
     this.scene = scene;
   }   
   hablar(){    
-    super.hablar()
-    //this.scene.fin[0] = true;
-  }    
-  deformar(){
-    super.deformar()
-    this.setTexture('collet');
-  }
-  finHablar(fin){
-    fin = true;
-  }
+    super.hablar()    
+  }      
 }

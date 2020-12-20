@@ -4,6 +4,6 @@ export default class Inicio extends Phaser.Scene {
   }
   create() {
     const inicio = this.add.image(640,360,'inicio').setInteractive();      
-    inicio.on('pointerdown', () => {this.scene.launch('game')});    
+    inicio.on('pointerdown', () => {this.scene.launch('casa1')});    
   }
 }
