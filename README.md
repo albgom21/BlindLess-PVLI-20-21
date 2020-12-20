@@ -1,6 +1,6 @@
 # BlindLess-PVLI-20-21
 
-## Integrantes:
+## Integrantes de MASA:
 * Adrián Migueles D'Ambrosio
 * Alberto Gómez Castaño
 * Mario Miguel Cuartero
@@ -226,3 +226,11 @@ Mapa: Slay the Spire
 Menú: Gods Will Be Watching
 
 Point and Click: Swords and Sandals 4: Tavern Quests
+
+# Comunicación
+
+La comunicación se ha establecido mediante la plataforma Discord, con varios canales para el arte o cosas de carácter general.
+
+# Gestión
+
+La gestión del proyecto se ha hecho mediante la plataforma Pivotal Tracker, con dailies semanales para repartir el trabajo de cada miembro cada semana, siguiendo la metodología ágil de Scrum.
