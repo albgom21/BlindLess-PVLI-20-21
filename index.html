@@ -42,6 +42,7 @@
     <canvas id = "juego"></canvas>    
     <script type="module">
       import Casa1 from "./casa1.js";
+      import Calle1 from "./calle1.js";
       import Mapa from "./mapa.js";
       import Libreria from "./libreria.js";
       import Inicio from "./inicio.js";
@@ -55,7 +56,7 @@
         input: {
           gamepad: true,
         },     
-        scene: [Boot, Inicio, Casa1, Ui, Mapa,Libreria],
+        scene: [Boot, Inicio, Casa1,Calle1,Mapa,Libreria,Ui],
         physics: {
           default: "arcade",
           arcade: { gravity: { y: 400 }, debug: false },

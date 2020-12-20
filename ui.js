@@ -30,9 +30,13 @@ export default class Ui extends Phaser.Scene {
     // Nombres personajes
     const p1fondoN = this.add.image(90, 405, 'fondonombre');
     const p1N = this.add.text(90, 405, this.p1, {fontFamily: 'VT323', fontSize: '24px', color: '#ffffff' });
-    const p2fondoN = this.add.image(1150, 405, 'fondonombre');
-    const p2N = this.add.text(1150, 405, this.p2, {fontFamily: 'VT323', fontSize: '22px', color: '#ffffff' });
-
+    const p2fondoN = this.add.image(1150, 405, 'fondonombre'); 
+    let tamLetraP2 = '22px';  
+    if(this.p2.length > 7) {
+       tamLetraP2 = '15px';   
+    }     
+    const p2N = this.add.text(1150, 405, this.p2, {fontFamily: 'VT323', fontSize:tamLetraP2 , color: '#ffffff' });
+    
     // InfoLugar
     const fondoLugar = this.add.image(640, 360, 'lugar');
     const nombreLugar = this.add.text(640, 695, this.nombre, {fontFamily: 'VT323', fontSize: '26px', color: '#000000' }); 

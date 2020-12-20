@@ -1,25 +1,21 @@
 import Latino from './latino.js';
 import Gafas from './gafas.js';
 import Collet from './collet.js';
-export default class Game extends Phaser.Scene {
+export default class Casa1 extends Phaser.Scene {
   
   constructor() {
     super({ key: 'casa1'});    
     this.vidaMax = 100;
     this.pointScene = 0;
-    this.menuActivado = false;
-    this.orden = false;
-    this.fin = new Array(2); // array con el numero de personajes
-    //this.fin[0]= false;
-    this.key = 'casa1';
-    
+    this.menuActivado = false;   
+    this.fin = new Array(2); // array con el numero de personajes  
+    this.key = 'casa1';    
   }
-  create() {
+  create() {  //Refactorizar dialogos y escena
     this.scene.stop('inicio');
     this.nameScene = 'CASA';
     this.add.image(640, 360, 'fondoShakeDanyo'); 
-    this.add.image(640, 360, 'casa'); 
-    
+    this.add.image(640, 360, 'casa');     
     let dialogos = new Array();
     dialogos.push({texto: 'Ten paciencia, Max. Ya sé que no podemos ganar\ndinero, y además solo te dieron 40 talegos por\nesas cuatro crónicas.'});
     dialogos.push({texto: 'No temo a la idea del suicidio colectivo, pero\ntenemos una hija, Max. ¡Es muy joven!\nNo puede morir todavía.'});
@@ -36,9 +32,7 @@ export default class Game extends Phaser.Scene {
      ], personaje:'Collet'});
     dialogos.push({texto: 'Pues ves a hablar con tu fiel amigo Don Latino que\na mí ya me tienes casi olvidada. Tú y tus\ngenerosidades nos han dejado sin cena...'});
     dialogos.push({texto: 'Si no fuera por nuestra hija Claudinita ya\npodríamos estar muertos, Max.'});
-    this.madame = new Collet(this, 500, 400, 'madamcuerpo', dialogos, 0);
-    if(this.madame.fin) this.orden = true;
-    //this.gafas = new Personaje(this, 733, 350, 'gafas');  //No pueden crearse a partir de la clase que heredan
+    this.madame = new Collet(this, 500, 400, 'madamcuerpo', dialogos, 0);   
     dialogos = new Array();
     let dialogoDef = new Array();
     dialogoDef.push({texto: 's\nhola'});
@@ -58,8 +52,7 @@ export default class Game extends Phaser.Scene {
       if (this.fin[i]) i++;
       else a = false;
     }
-    if(a)
-    { //que hayan hablado todos los personajes de la escena
+    if(a) { //Que hayan hablado todos los personajes de la escena
       a = false;
       const botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();
       botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{antEscena:this.key,proxEscena:'libreria',nombreEscena:'LIBRERIA',vida:this.vidaMax,suma:10,resta:20})});

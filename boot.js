@@ -4,8 +4,7 @@ export default class Inicio extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('casa','fondos/casa.png')
-    this.load.image('fondoShakeDanyo','fondos/fondoShakeDanyo.png');
+ 
     this.load.image('danyo','sprites/danyo.png');
     this.load.image('Max','sprites/max.png' );
     this.load.image('sillon','sprites/sillon.png');
@@ -34,14 +33,21 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('Gafas', 'sprites/gafas.png');
     this.load.image('Gafas D', 'sprites/gafasdef.png');
     this.load.image('corazon', 'sprites/corazon.png');
-    this.load.image('inicio','sprites/inicio.png');  
+    
+  
+    
+   
+    //Fondos
+    this.load.image('inicio','fondos/inicio.png');  
+    this.load.image('fondoShakeDanyo','fondos/fondoShakeDanyo.png');    
     this.load.image('mapa','fondos/mapa.png');
-    
-    this.load.script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
-    
+    this.load.image('casa','fondos/casa.png')    
+    this.load.image('calle', 'fondos/calle.jpg');
+    this.load.image('libreria', 'fondos/libreria.png');
     this.load.image('taberna', 'fondos/taberna.png');
     
-    this.load.image('libreria', 'fondos/libreria.png');
+
+    this.load.script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');
    
   }
   create() {
