@@ -18,6 +18,8 @@
 
 **Logo:** ![Logo](/favicon.png)
 
+**Capturas de juego** ![Cap](./images/captura.png)![Cap2](./images/captura2.png)![Cap3](./images/captura3.png)
+
 
 # Aspectos generales
 
