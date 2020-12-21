@@ -71,8 +71,8 @@ export default class Mapa extends Phaser.Scene {
     const r = this.add.image(1092,200,'rectangulo');
     const n = this.add.text(1000, 100, this.nombreEscena, { fontFamily: 'VT323',fontSize: '82px', color: '#e09b41' });
     this.add.text(1010, 530, this.vida+'/100', { fontFamily: 'VT323',fontSize: '72px', color: '#edab07' });
-    this.add.text(1065,310,this.suma,{fontFamily: 'VT323',fontSize: '68px', color: '#558722' });
-    this.add.text(1065,400,this.resta,{fontFamily: 'VT323',fontSize: '68px', color: '#AC3232' });
+    this.add.text(1075,310,this.suma,{fontFamily: 'VT323',fontSize: '68px', color: '#558722' });
+    this.add.text(1070,400,this.resta,{fontFamily: 'VT323',fontSize: '68px', color: '#AC3232' });
     Phaser.Display.Align.In.Center(n,r);
  }
 }

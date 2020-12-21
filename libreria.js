@@ -28,9 +28,9 @@ export default class Libreria extends Phaser.Scene {
     dialogos.push({texto: '¿Está usted seguro de querer comprar\nun libro, don Estrella?',
       personaje: 'Zaratustra'});
     dialogos.push({texto: '¿Qué responde Max?',
-      answer: [{texto: 'Sí, estoy seguro. Anhelo leerlo.', points: 0, life: -5, jump: 0, razon:'no puede leer\n y ha gastado todo su dinero.'},
+      answer: [{texto: 'Sí, estoy seguro. Anhelo leerlo.', points: 0, life: -5, jump: 0, razon:'no puede leer\n y ha gastado parte de su dinero.'},
                {texto: 'No. No lo quiero. ¡Vayámonos de aquí Don Latino!', points: 0, life: 2, jump: 2, razon: 'no han podido engañarle\n y han perdido el tiempo.'},
-               {texto: '¿Me recomienda algún libro?', points: 0, life: -7, jump: 3,razon:'le han timado\n vendiendote un libro'}]});
+               {texto: '¿Me recomienda algún libro?', points: 0, life: -7, jump: 3,razon:'te han timado\n vendiendote un libro'}]});
     dialogos.push({texto: 'De acuerdo entonces, es todo suyo.\nDéme un segundo para envolverlo.'});
     dialogos.push({texto: 'Max, ¿has perdido la cabeza?\n¿Cómo se supone que vas a leer un libro\nsiendo invidente?',
       personaje: 'Latino', jump: 12});
@@ -68,7 +68,7 @@ export default class Libreria extends Phaser.Scene {
     { //que hayan hablado todos los personajes de la escena
       a = false;
       const botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();
-      botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{antEscena:this.key,proxEscena:'libreria',nombreEscena:'TABERNA',vida:this.vidaMax,suma:10,resta:20})});
+      botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{antEscena:this.key,proxEscena:'libreria',nombreEscena:'TABERNA',vida:this.vidaMax,suma:4,resta:10})});
     }       
   }  
 }

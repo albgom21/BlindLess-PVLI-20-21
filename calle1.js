@@ -5,7 +5,7 @@ export default class Calle1 extends Phaser.Scene {
     
   create(){
     this.scene.stop('mapa');
-      const libreria = this.add.image(640, 360, 'calle').setInteractive();
-      //libreria.on('pointerdown', () => {this.scene.launch(this.proxEscena)});
+     this.add.image(640, 360, 'calle');
+     this.add.image(400, 400, 'latcuerpo');
   }
 }
