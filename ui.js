@@ -32,7 +32,10 @@ export default class Ui extends Phaser.Scene {
     const p1N = this.add.text(90, 405, this.p1, {fontFamily: 'VT323', fontSize: '24px', color: '#ffffff' });
     const p2fondoN = this.add.image(1150, 405, 'fondonombre'); 
     let tamLetraP2 = '22px';  
-    if(this.p2.length > 7) {
+    if(this.p2.length == 8) {
+      tamLetraP2 = '19px';   
+   } 
+    else if(this.p2.length > 7) {
        tamLetraP2 = '15px';   
     }     
     const p2N = this.add.text(1150, 405, this.p2, {fontFamily: 'VT323', fontSize:tamLetraP2 , color: '#ffffff' });

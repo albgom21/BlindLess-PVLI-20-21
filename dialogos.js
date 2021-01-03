@@ -71,6 +71,15 @@
     dLibreriaZar.push({texto: '¿¡Qué!? ¿Cómo has po-', personaje: 'Latino'});
     dLibreriaZar.push({texto: '¡Espera Max no salgas corriendo!'});
 
+    //Bares(para comprar loteria)
+    let dBares = new Array();
+    dBares.push({texto: 'Buenas, ¿le gustaría comprar algo de lotería\npor 5 ptos de vida?',
+      answer: [{texto: 'Claro, ha eso he venido.', points: 1, life: -5, jump: 0, razon:'gastar el poco dinero\nque tienes.'},
+               {texto: 'No, gracias creía que me ofrecerías otra cosa', points: 0, life: 0, jump: 0},
+               {texto: 'Me he confundido de garito', points: 0, life: 0, jump: 0}]});    
+    dBares.push({texto: 'Vale, espero verte pronto'});
+
+
     const d = {
       //Casa1
       mcCasa1: dCasa1MC,
@@ -79,7 +88,10 @@
       gafasDCasa1: dCasa1GafasD,
 
       //Libreria
-      zarLibreria: dLibreriaZar
+      zarLibreria: dLibreriaZar,
+
+      //Bares
+      bares: dBares
 
       }
  

@@ -14,6 +14,8 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('Collet', 'sprites/madameCollet.png');
     this.load.image('zaratustracuerpo','sprites/zaratustracuerpo.png');
     this.load.image('Zaratustra', 'sprites/zaratustra.png');
+    this.load.image('Camarero', 'sprites/barman.png'); 
+    this.load.image('camarerocuerpo', 'sprites/barmancuerpo.png');
 
     this.load.image('lugar','sprites/lugar.png');
     this.load.image('boton','sprites/boton.png');

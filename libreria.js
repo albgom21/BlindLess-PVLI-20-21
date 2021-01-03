@@ -34,7 +34,7 @@ export default class Libreria extends Phaser.Scene {
     { //que hayan hablado todos los personajes de la escena
       a = false;
       const botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();
-      botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{antEscena:this.key,proxEscena:'libreria',nombreEscena:'TABERNA',vida:this.vidaMax,suma:4,resta:10})});
+      botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{antEscena:this.key,proxEscena:'taberna2',nombreEscena:'TABERNA',vida:this.vidaMax,suma:4,resta:10})});
     }       
   }  
 }
