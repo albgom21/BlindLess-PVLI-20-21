@@ -130,6 +130,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
       for(let i = 0; i < dialogo.answer.length; i++){
         this.newAnswer(i, dialogo.answer[i]);
       }
+      this.animacionRespuestas(this.botones);
     }
     if(dialogo.jump) this.numDial += dialogo.jump;
   }
@@ -166,5 +167,25 @@ export default class Personaje extends Phaser.GameObjects.Container {
     this.botones[i * 2].on('pointerout', () => {
       this.botones[i * 2].setTexture('respuesta');
     });
+  }
+
+  animacionRespuestas(objects, start = true){
+    for(let i =0; i < objects.length; ++i){
+      let value = 50;
+      let imgAlpha = 0
+      objects[i].y += value
+      objects[i].alpha = 0
+      imgAlpha = 1
+      value *= -1
+  
+      this.scene.tweens.add({
+          targets: objects[i],
+          duration: 350,
+          y: objects[i].y + value,
+          alpha: imgAlpha,
+          ease: 'Circ',
+          onComplete: () => { if (!start) objects[i].y -= value }
+      })
+    }
   }
 }
