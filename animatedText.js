@@ -9,7 +9,7 @@ export default class AnimatedText extends Phaser.GameObjects.Text {
         this.depth = 100
         this.setScrollFactor(0)
 
-        let copy = this.text
+        let copy = text
         this.text = ""
         this.i = 0
         this.timer = scene.time.addEvent({
