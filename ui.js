@@ -1,4 +1,6 @@
 import Barravida from './barravida.js';
+import AnimatedText from './animatedText.js';
+
 export default class Ui extends Phaser.Scene {  
   constructor() {
     super({ key: "ui" });
@@ -20,8 +22,8 @@ export default class Ui extends Phaser.Scene {
 
     // Fondo diálogo 
     this.add.image(640, 550, 'dialogofondo');
-    if(this.color === undefined) this.add.text(315, 440, this.texto, { fontFamily: 'VT323', fontSize: '30px', color: '#ffeba8' });
-    else this.add.text(315, 440, this.texto, { fontFamily: 'VT323', fontSize: '32px', color: this.color });
+    if(this.color === undefined) this.timer = new AnimatedText(this, this.texto,'#ffeba8')
+    else this.timer = new AnimatedText(this, this.texto,this.color)
 
     // Barra vida
     this.barraV = new Barravida(this, 50, 680, this.vida);
