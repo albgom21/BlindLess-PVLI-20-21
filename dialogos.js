@@ -1,5 +1,5 @@
 //Casa1
-  let dCasa1MC = new Array(); 
+  let dCasa1MC = []; 
     dCasa1MC.push({texto: 'Ten paciencia, Max. Ya sé que no podemos ganar\ndinero, y además solo te dieron 40 talegos por\nesas cuatro crónicas.'});
     dCasa1MC.push({texto: 'No temo a la idea del suicidio colectivo, pero\ntenemos una hija, Max. ¡Es muy joven!\nNo puede morir todavía.'});
     dCasa1MC.push({texto: '¿Qué responde Max?',
@@ -16,7 +16,7 @@
     dCasa1MC.push({texto: 'Pues ves a hablar con tu fiel amigo Don Latino que\na mí ya me tienes casi olvidada. Tú y tus\ngenerosidades nos han dejado sin cena...'});
     dCasa1MC.push({texto: 'Si no fuera por nuestra hija Claudinita ya\npodríamos estar muertos, Max.'});
    
-    let dCasa1Lat = new Array(); 
+    let dCasa1Lat = []; 
     dCasa1Lat.push({texto: '¡Oh, admirado y querido gran amigo mio, Max!, tu\nmujer y su hija desde que he entrado han estado\nacribillándome por el dinero.'});
     dCasa1Lat.push({texto: 'Siguen sin fiarse de mí.\nAdemás el librero nos ha timado pagándonos\n¡Solo tres pesetas! ¡Tres miseras pesetas!\n¡Un robo!'});
     dCasa1Lat.push({texto: 'Si te presentas ahora conmigo en la tienda\nde ese granuja y le armas un escándalo, le sacas\nhasta dos duros. Tú tienes otro empaque.'});
@@ -27,15 +27,15 @@
      ]});
      dCasa1Lat.push({texto: 'Max, el aire te refrescará. Aquí hace un calor de\nhorno, pues en la calle corre fresco.¡Vamos!'});
 
-    let dCasa1Gafas = new Array();
+    let dCasa1Gafas = [];
     dCasa1Gafas.push({texto: '(Tan solo son unas gafas...)'});
 
-    let dCasa1GafasD = new Array();
+    let dCasa1GafasD = [];
     dCasa1GafasD.push({texto: '¿Creías que no podía hablar?'});
     dCasa1GafasD.push({texto: 'No creo que en tu situación te sea de gran ayuda.'});
 
     //Libreria
-    let dLibreriaZar = new Array();
+    let dLibreriaZar = [];
     dLibreriaZar.push({texto: 'Mi nombre es Zaratustra y soy el dueño de\nesta librería. ¿A qué debo el placer?'});
     dLibreriaZar.push({texto: 'Hemos venido a reclamar un aumento de cobro\npor los libros de Max Estrella que vendimos\nanteriormente aquí. ¿Verdad, Max?',
       personaje: 'Latino'});
@@ -72,7 +72,7 @@
     dLibreriaZar.push({texto: '¡Espera Max no salgas corriendo!'});
 
     //Bares(para comprar loteria)
-    let dBares = new Array();
+    let dBares = [];
     dBares.push({texto: 'Buenas, ¿le gustaría comprar algo de lotería\npor 5 ptos de vida?',
       answer: [{texto: 'Claro, ha eso he venido.', points: 1, life: -5, jump: 0, razon:'gastar el poco dinero\nque tienes.'},
                {texto: 'No, gracias creía que me ofrecerías otra cosa', points: 0, life: 0, jump: 0},

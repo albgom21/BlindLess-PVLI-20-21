@@ -76,7 +76,7 @@ export default class Ui extends Phaser.Scene {
   
       this.tweens.add({
           targets: objects[i],
-          duration: 150,
+          duration: 350,
           y: objects[i].y + value,
           alpha: imgAlpha,
           ease: 'Circ',
