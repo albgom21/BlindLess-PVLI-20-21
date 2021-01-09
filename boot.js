@@ -4,10 +4,8 @@ export default class Inicio extends Phaser.Scene {
   }
 
   preload() {
- 
-    this.load.image('danyo','sprites/danyo.png');
-    this.load.image('Max','sprites/max.png' );
-    this.load.image('sillon','sprites/sillon.png');
+    //Personajes   
+    this.load.image('Max','sprites/max.png' );    
     this.load.image('Latino','sprites/latino.png');
     this.load.image('latcuerpo','sprites/latcuerpo.png');
     this.load.image('madamcuerpo','sprites/madamecuerpo.png');
@@ -16,6 +14,9 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('Zaratustra', 'sprites/zaratustra.png');
     this.load.image('Camarero', 'sprites/barman.png'); 
     this.load.image('camarerocuerpo', 'sprites/barmancuerpo.png');
+    this.load.image('Gobernante', 'sprites/gobernante.png'); 
+    this.load.image('gobernantecuerpo', 'sprites/gobernantecuerpo.png');
+
 
     this.load.image('lugar','sprites/lugar.png');
     this.load.image('boton','sprites/boton.png');
@@ -27,17 +28,26 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('dialogofondo','sprites/dialogofondo.png');
     this.load.image('fondonombre','sprites/fondonombre.png');
     this.load.image('fondopersonaje','sprites/fondopersonaje.png');
+    this.load.image('corazon', 'sprites/corazon.png');
 
+    //Objetos
+    this.load.image('sillon','sprites/sillon.png');
     this.load.image('circulo','sprites/circulo.png');
     this.load.image('botont', 'sprites/botontickets.png');
     this.load.image('loteria','sprites/ticket.png');
     this.load.image('botella', 'sprites/botella.png');
     this.load.image('Gafas', 'sprites/gafas.png');
     this.load.image('Gafas D', 'sprites/gafasdef.png');
-    this.load.image('corazon', 'sprites/corazon.png');
+    this.load.image('Libro','sprites/libromax.png');
+    this.load.image('Libros','sprites/libros.png');
+    this.load.image('Libros D','sprites/librosd.png');
+    this.load.image('Premio','sprites/premio.png');
+    this.load.image('Premio D','sprites/premiod.png');
+    
        
     //Fondos
     this.load.image('inicio','fondos/inicio.png');  
+    this.load.image('danyo','sprites/danyo.png');
     this.load.image('fondoShakeDanyo','fondos/fondoShakeDanyo.png');    
     this.load.image('mapa','fondos/mapa.png');
     this.load.image('casa','sprites/casa.png')    
