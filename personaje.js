@@ -30,12 +30,13 @@ export default class Personaje extends Phaser.GameObjects.Container {
     this.estaHablando = false;
     this.dialogos = dialogos;
     this.dialogoAct = undefined;
-    this.botones = new Array();
+    this.botones = [];
 
     // Al clicar un objeto, aparecerá el menú si no hay otro visible    
       this.image.on('pointerdown', () => {
         if(!this.scene.menuActivado){
           this.m.visible = true;
+          this.m.animacionMenu()
           this.scene.menuActivado = true;}
         });      
       this.space.on('down', event => {
@@ -78,6 +79,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
     this.image.on('pointerdown', () => {
     if(!this.scene.menuActivado){
       this.m.visible = true;
+      this.m.animacionMenu()
       this.scene.menuActivado = true;}
     });
     this.numDial = 0;
@@ -169,22 +171,18 @@ export default class Personaje extends Phaser.GameObjects.Container {
     });
   }
 
-  animacionRespuestas(objects, start = true){
+  animacionRespuestas(objects){
     for(let i =0; i < objects.length; ++i){
       let value = 50;
-      let imgAlpha = 0
       objects[i].y += value
       objects[i].alpha = 0
-      imgAlpha = 1
-      value *= -1
   
       this.scene.tweens.add({
           targets: objects[i],
           duration: 350,
-          y: objects[i].y + value,
-          alpha: imgAlpha,
-          ease: 'Circ',
-          onComplete: () => { if (!start) objects[i].y -= value }
+          y: objects[i].y - value,
+          alpha: 1,
+          ease: 'Circ'
       })
     }
   }

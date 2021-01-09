@@ -65,22 +65,18 @@ export default class Ui extends Phaser.Scene {
     if(this.primerTexto) this.animacionPrimerTexto(this.objectsUi);
   }
 
-  animacionPrimerTexto(objects, start = true){
+  animacionPrimerTexto(objects){
     for(let i =0; i < objects.length; ++i){
       let value = 50;
-      let imgAlpha = 0
       objects[i].y += value
       objects[i].alpha = 0
-      imgAlpha = 1
-      value *= -1
   
       this.tweens.add({
           targets: objects[i],
           duration: 350,
-          y: objects[i].y + value,
-          alpha: imgAlpha,
-          ease: 'Circ',
-          onComplete: () => { if (!start) objects[i].y -= value }
+          y: objects[i].y - value,
+          alpha: 1,
+          ease: 'Circ'
       })
     }
   }
