@@ -113,17 +113,17 @@ export default class Personaje extends Phaser.GameObjects.Container {
     if(this.dialogoAct !== undefined) this.scene.scene.stop('ui');
     if(this.mensajeDanyo) { 
       this.dialogoAct = this.scene.scene.launch('ui', {p1:'Max', p2:this.name, vida:this.scene.vidaMax,
-    name:this.scene.nameScene, texto:dialogo.texto, color: '#ff6060'});
+    name:this.scene.nameScene, texto:dialogo.texto, color: '#ff6060', primerTexto: (this.numDial === 0)});
     this.mensajeDanyo = false;
     }
     else if(this.mensajeSanar){
       this.dialogoAct = this.scene.scene.launch('ui', {p1:'Max', p2:this.name, vida:this.scene.vidaMax,
-    name:this.scene.nameScene, texto:dialogo.texto, color: '#51d58a'});
+    name:this.scene.nameScene, texto:dialogo.texto, color: '#51d58a', primerTexto: (this.numDial === 0)});
     this.mensajeSanar = false;
     }
     else {
       this.dialogoAct = this.scene.scene.launch('ui', {p1:'Max', p2:this.name, vida:this.scene.vidaMax,
-    name:this.scene.nameScene, texto:dialogo.texto});
+    name:this.scene.nameScene, texto:dialogo.texto, primerTexto: (this.numDial === 0)});
     }    
     if(dialogo.answer){
       this.estaHablando = false;
