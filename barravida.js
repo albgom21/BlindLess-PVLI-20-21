@@ -23,7 +23,7 @@ export default class Barravida{
 
         //  Vida
         if (this.value < 30){
-            this.barra.fillStyle(0xa99d9d); //fondo tojizo
+            this.barra.fillStyle(0xa99d9d); //fondo rojizo
             this.barra.fillRect(this.x + 2, this.y + 2, 196, 12);
             this.barra.fillStyle(0xBF1A2F);  //vida roja     
         }              

@@ -41,9 +41,9 @@ export default class Loteria extends Phaser.GameObjects.Sprite{
      }
 
     // Método que escribe en pantalla los boletos actuales.
-    // escribirBoletos(){
-    //     this.txt.text = this.nums;
-    //}
+     escribirBoletos(){
+         this.txt.text = this.nums;
+    }
 
     // Método que activa/desactiva la interfaz en la que aparecen números de lotería.
      verNumeros(){

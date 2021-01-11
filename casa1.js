@@ -2,6 +2,9 @@ import Latino from './latino.js';
 import Gafas from './gafas.js';
 import Collet from './collet.js';
 import dialogos from './dialogos.js';
+import Loteria from './loteria.js';
+import Inventario from './inventario.js';
+import Tickets from './tickets.js';
 export default class Casa1 extends Phaser.Scene {
   
   constructor() {
@@ -10,18 +13,29 @@ export default class Casa1 extends Phaser.Scene {
     this.pointScene = 0;
     this.menuActivado = false;   
     this.apareceLatino = false;
-    this.fin = new Array(2); // array con el numero de personajes  
+    this.fin = new Array(2); // array con el número de personajes  
     this.key = 'casa1';    
   }
-  create() {  //Refactorizar dialogos y escena
+  create() {  // Refactorizar diálogos y escena
     this.scene.stop('inicio');
     this.nameScene = 'CASA';
     this.add.image(640, 360, 'fondoShakeDanyo'); 
     this.add.image(640, 360, 'casa');         
-    this.madame = new Collet(this, 500, 400, 'madamcuerpo', dialogos.mcCasa1, 0,true);       
+    this.madame = new Collet(this, 500, 400, 'madamcuerpo', dialogos.mcCasa1, 0, true);       
     this.g = new Gafas(this, 733, 350, 'Gafas', dialogos.gafasCasa1, dialogos.gafasDCasa1);    
-    const contxt = this.add.image(640, 360, 'contexto').setInteractive();       
-    contxt.on('pointerdown', () => {contxt.visible = false});    
+    const contxt = this.add.image(640, 360, 'contexto').setInteractive();   
+
+    this.botonT = new Loteria(this, 1230, 670, 'botonTicket');
+    this.botonT.visible = false;
+
+    contxt.on('pointerdown', () => {contxt.visible = false; this.botonT.visible = true;});  
+
+    this.botonT.on('pointerdown', () => {
+      //this.inventario = new Inventario(this, 640, 360);
+      //this.ticket = new Tickets(this, 640, 320, this.botonT.crearNumero());
+      this.botonT.crearNumero(); 
+      this.botonT.verNumeros()
+    })
   }  
 
 aparece(){     

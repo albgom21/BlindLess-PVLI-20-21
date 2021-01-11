@@ -66,7 +66,7 @@ export default class Ui extends Phaser.Scene {
   }
 
   animacionPrimerTexto(objects){
-    for(let i =0; i < objects.length; ++i){
+    for(let i = 0; i < objects.length; ++i){
       let value = 50;
       objects[i].y += value
       objects[i].alpha = 0
