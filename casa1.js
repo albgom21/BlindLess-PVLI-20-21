@@ -16,7 +16,7 @@ export default class Casa1 extends Phaser.Scene {
     this.fin = new Array(2); // array con el número de personajes  
     this.key = 'casa1';    
   }
-  create() {  // Refactorizar diálogos y escena
+  create() {  // Refactorizar diálogos y escena       
     this.scene.stop('inicio');
     this.nameScene = 'CASA';
     this.add.image(640, 360, 'fondoShakeDanyo'); 
@@ -26,8 +26,7 @@ export default class Casa1 extends Phaser.Scene {
     const contxt = this.add.image(640, 360, 'contexto').setInteractive();   
 
     this.botonT = new Loteria(this, 1230, 670, 'botonTicket');
-    this.botonT.visible = false;
-
+    this.botonT.visible = false;  
     contxt.on('pointerdown', () => {contxt.visible = false; this.botonT.visible = true;});  
 
     this.botonT.on('pointerdown', () => {
@@ -35,7 +34,7 @@ export default class Casa1 extends Phaser.Scene {
       //this.ticket = new Tickets(this, 640, 320, this.botonT.crearNumero());
       this.botonT.crearNumero(); 
       this.botonT.verNumeros()
-    })
+    }) 
   }  
 
 aparece(){     

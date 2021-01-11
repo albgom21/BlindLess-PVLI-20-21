@@ -44,6 +44,20 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('Libros D','sprites/librosd.png');
     this.load.image('Premio','sprites/premio.png');
     this.load.image('Premio D','sprites/premiod.png');
+
+
+
+    //Minijuego
+    this.load.image('plat', 'spritesminijuego/plat.png');
+    this.load.image('m', 'spritesminijuego/m.png');
+    this.load.image('mujer', 'spritesminijuego/mujer.png');
+    this.load.image('mui', 'spritesminijuego/mui.png');
+    this.load.image('spike', 'spritesminijuego/spike.png');
+    this.load.image('final', 'spritesminijuego/final.png');
+    this.load.image('fondo', 'spritesminijuego/fondo.png');    
+    this.load.image('cartel', 'spritesminijuego/cartel.png');    
+    this.load.spritesheet('coin', 'spritesminijuego/coinsheet.png', { frameWidth: 24, frameHeight: 30 });
+    this.load.spritesheet('character', 'spritesminijuego/character.png', { frameWidth: 40, frameHeight: 50 });
     
        
     //Fondos

@@ -14,16 +14,21 @@ export default class Taberna2 extends Phaser.Scene {
   init(datos) {
     this.vidaMax = datos.vidaMax;
     this.puntosAnt = datos.puntos; //puntos que vienen de la taberna1
+    this.sumaVida = datos.sumaVida;
   }
   create() {  
+    this.once = false;
     this.scene.stop('mapa');
-    this.nameScene = 'TABERNA';
+    this.nameScene = 'TABERNA';    
     this.add.image(640, 360, 'fondoShakeDanyo'); 
     this.add.image(640, 360, 'taberna');   
     this.camCuerpo = new Camarero(this,500,281,'camarerocuerpo',dialogos.bares,0,true);    
     if(this.pointScene > 0){ //Si se ha elegido comprar la lotería aparece el boton y el ticket
       this.aparece();      
     }
+
+    this.minijuego = this.add.image(950, 55,'cartel').setInteractive();    
+    this.minijuego.on('pointerdown', () => {if(!this.menuActivado){this.scene.launch('minijuego',{vida:this.vidaMax}),this.minijuego.destroy()}});
   }  
 
 aparece(){

@@ -36,7 +36,8 @@
            El juego trata de ir avanzando en la historia pudiendo elegir distintos
            caminos con diferentes finales con las decisiones que tome el jugador.
            <br><br><strong><i>Controles</i></strong><br> <strong>Click</strong> - Interactuar<br>
-             <strong>Espacio</strong> - Pasar diálogo
+             <strong>Espacio</strong> - Pasar diálogo<br>
+             <strong>AWD</strong>-<strong>Flechas</strong> - Moverse en el minijuego
       </p>
     </div>
     <canvas id = "juego"></canvas>    
@@ -46,6 +47,7 @@
       import Mapa from "./mapa.js";
       import Libreria from "./libreria.js";
       import Taberna2 from "./taberna2.js";
+      import Minijuego from "./minijuego.js";
       import Inicio from "./inicio.js";
       import Boot from "./boot.js";
       import Ui from "./ui.js";
@@ -53,14 +55,11 @@
         type: Phaser.CANVAS,
         canvas: document.getElementById('juego'),        
         width: 1280,
-        height: 720,       
-        input: {
-          gamepad: true,
-        },     
-        scene: [Boot, Inicio, Casa1,Calle1,Mapa,Libreria,Taberna2,Ui],
+        height: 720,               
+        scene: [Boot, Inicio, Casa1,Calle1,Mapa,Libreria,Taberna2,Minijuego,Ui],
         physics: {
           default: "arcade",
-          arcade: { gravity: { y: 400 }, debug: false },
+          arcade: { gravity: { y: 700 }, debug: true },
         },
       };
       new Phaser.Game(config);
