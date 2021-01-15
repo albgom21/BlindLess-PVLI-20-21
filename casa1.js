@@ -39,11 +39,20 @@ export default class Casa1 extends Phaser.Scene {
 
 aparece(){     
   this.latCuerpo = new Latino(this, 1000, 400, 'latcuerpo', dialogos.latCasa1, 1);    
+  this.latCuerpo.image.x = 1100;
+  this.latCuerpo.image.alpha = 0;
+  this.tweens.add({
+    targets: this.latCuerpo.image,
+    duration: 1000,
+    x: 1000,
+    alpha: 1,
+    ease: 'Linear'
+})
 }
   finEscena(){    
     let a = true ;
     let i = 0;
-    while(a && i<this.fin.length){
+    while(a && i < this.fin.length) {
       if (this.fin[i]) i++;
       else a = false;
     }
@@ -58,4 +67,6 @@ aparece(){
       }      
     }       
   }  
+
+  
 }

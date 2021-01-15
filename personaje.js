@@ -38,24 +38,9 @@ export default class Personaje extends Phaser.GameObjects.Container {
           this.m.visible = true;
           this.m.animacionMenu()
           this.scene.menuActivado = true;}
-        });      
-      this.space.on('down', event => {
-        if(this.estaHablando){
-          this.numDial++;
-          if(this.numDial < this.dialogos.length){
-            this.hablarDialogo(this.dialogos[this.numDial]);
-          }
-          else{
-            this.estaHablando = false;
-            this.scene.menuActivado = false;  
-            this.scene.fin[this.f] = true;  
-            if(this.aparece){
-              this.scene.aparece();
-            }            
-            this.scene.finEscena(); 
-            this.scene.scene.stop('ui');
-          }
-        }
+        });
+      this.space.on('down', () => {
+        this.seguirDialogos();
       });      
     this.scene.add.existing(this);
   }
@@ -114,18 +99,15 @@ export default class Personaje extends Phaser.GameObjects.Container {
       this.name = dialogo.personaje;
     if(this.dialogoAct !== undefined) this.scene.scene.stop('ui');
     if(this.mensajeDanyo) { 
-      this.dialogoAct = this.scene.scene.launch('ui', {p1:'Max', p2:this.name, vida:this.scene.vidaMax,
-    name:this.scene.nameScene, texto:dialogo.texto, color: '#ff6060', primerTexto: (this.numDial === 0)});
+      this.dialogoAct = this.scene.scene.launch('ui', {p1:'Max', texto:dialogo.texto, color: '#ff6060', primerTexto: (this.numDial === 0), personaje: this});
     this.mensajeDanyo = false;
     }
     else if(this.mensajeSanar){
-      this.dialogoAct = this.scene.scene.launch('ui', {p1:'Max', p2:this.name, vida:this.scene.vidaMax,
-    name:this.scene.nameScene, texto:dialogo.texto, color: '#51d58a', primerTexto: (this.numDial === 0)});
+      this.dialogoAct = this.scene.scene.launch('ui', {p1:'Max', texto:dialogo.texto, color: '#51d58a', primerTexto: (this.numDial === 0), personaje: this});
     this.mensajeSanar = false;
     }
     else {
-      this.dialogoAct = this.scene.scene.launch('ui', {p1:'Max', p2:this.name, vida:this.scene.vidaMax,
-    name:this.scene.nameScene, texto:dialogo.texto, primerTexto: (this.numDial === 0)});
+      this.dialogoAct = this.scene.scene.launch('ui', {p1:'Max', texto:dialogo.texto, primerTexto: (this.numDial === 0), personaje: this});
     }    
     if(dialogo.answer){
       this.estaHablando = false;
@@ -135,6 +117,25 @@ export default class Personaje extends Phaser.GameObjects.Container {
       this.animacionRespuestas(this.botones);
     }
     if(dialogo.jump) this.numDial += dialogo.jump;
+  }
+
+  seguirDialogos(){
+    if(this.estaHablando){
+      this.numDial++;
+      if(this.numDial < this.dialogos.length){
+        this.hablarDialogo(this.dialogos[this.numDial]);
+      }
+      else{
+        this.estaHablando = false;
+        this.scene.menuActivado = false;  
+        this.scene.fin[this.f] = true;  
+        if(this.aparece){
+          this.scene.aparece();
+        }            
+        this.scene.finEscena(); 
+        this.scene.scene.stop('ui');
+      }
+    }
   }
 
   newAnswer(i, answer) {
@@ -172,15 +173,15 @@ export default class Personaje extends Phaser.GameObjects.Container {
   }
 
   animacionRespuestas(objects){
-    for(let i =0; i < objects.length; ++i){
+    for(const n of objects){
       let value = 50;
-      objects[i].y += value
-      objects[i].alpha = 0
+      n.y += value
+      n.alpha = 0
   
       this.scene.tweens.add({
-          targets: objects[i],
+          targets: n,
           duration: 350,
-          y: objects[i].y - value,
+          y: n.y - value,
           alpha: 1,
           ease: 'Circ'
       })
