@@ -28,8 +28,8 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
   preUpdate(t,d) {    
     super.preUpdate(t,d);         
-    if(!this.scene.stop){      
-      if ((this.w.isDown ||this.cursors.up.isDown) && this.body.velocity.y === 0) {
+    if(!this.scene.stop){   
+      if ((Phaser.Input.Keyboard.JustDown(this.w) ||(Phaser.Input.Keyboard.JustDown(this.cursors.up.isDown))) && this.body.velocity.y === 0 && !this.body.onCollide) {
         if(this.setas){
           this.body.setVelocityY(this.jumpSpeed*2);
           this.setas = false;

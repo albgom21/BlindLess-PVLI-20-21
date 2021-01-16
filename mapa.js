@@ -13,10 +13,15 @@ export default class Mapa extends Phaser.Scene {
   }
   create() {         
     //Mapa
+    this.cameras.main.fadeIn(1500); 
     //poner en stop la escena anterior
     this.scene.stop(this.antEscena);
     const mapa = this.add.image(640, 360, 'mapa').setInteractive();
-    mapa.on('pointerdown', () => {this.scene.launch(this.proxEscena,{vidaMax:this.vida})});//no funciona el cambio de escena
+    this.cameras.main.once('camerafadeincomplete', () => {
+      mapa.on('pointerdown', () => {this.scene.launch(this.proxEscena,{vidaMax:this.vida})});
+  });
+   
+    
     //Texto puntos y vidas
     //Segun la proxEscena poner el circulo acorde con ifs
     //Para la izq x = 528

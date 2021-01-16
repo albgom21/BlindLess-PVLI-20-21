@@ -17,6 +17,7 @@ export default class Taberna2 extends Phaser.Scene {
     this.sumaVida = datos.sumaVida;
   }
   create() {  
+    this.cameras.main.fadeIn(1500); 
     this.once = false;
     this.scene.stop('mapa');
     this.nameScene = 'TABERNA';    
@@ -26,7 +27,9 @@ export default class Taberna2 extends Phaser.Scene {
     if(this.pointScene > 0){ //Si se ha elegido comprar la lotería aparece el boton y el ticket
       this.aparece();      
     }
-
+    this.cameras.main.once('camerafadeoutcomplete', () => {
+      this.scene.launch('mapa',{antEscena:this.key,proxEscena:'calle1',nombreEscena:'CALLE',vida:this.vidaMax,suma:4,resta:11});
+  });
     this.minijuego = this.add.image(950, 55,'cartel').setInteractive();    
     this.minijuego.on('pointerdown', () => {if(!this.menuActivado){this.scene.launch('minijuego',{vida:this.vidaMax}),this.minijuego.destroy()}});
   }  
@@ -46,14 +49,19 @@ finEscena() {
       else a = false;
     }
     if(a) { //Que hayan hablado todos los personajes de la escena
-      a = false;
-      let botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();
-      if(this.puntosAnt >= 10){
-        botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{antEscena:this.key, proxEscena:'ministerio1', nombreEscena:'MINISTERIO', vida:this.vidaMax, suma:2, resta:14})});
-      }
-      else{
-        //botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{antEscena:this.key, proxEscena:'bunoleria', nombreEscena:'BUÑOLERIA', vida:this.vidaMax, suma:4, resta:11})});
+      a = false;     
+      if(this.game.monedas!== 0){
+        if(this.vidaMax + this.game.monedas > 100){
+          this.vidaMax = 100;
+          this.game.monedas = 0;
+        }
+        else{
+          this.vidaMax += this.game.monedas;
+          this.game.monedas = 0;
+        }
       }      
-    }       
-  }  
+      let botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();
+      botonEscena.once('pointerdown', () => {this.cameras.main.fadeOut(1500)});     
+  }       
+}  
 }

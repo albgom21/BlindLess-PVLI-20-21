@@ -13,6 +13,7 @@ export default class Minijuego extends Phaser.Scene {
   }  
   
   create() {   
+    this.cameras.main.fadeIn(500); 
     this.scene.pause('taberna2');
     this.add.image(640,360, 'fondo');    
     
@@ -118,13 +119,14 @@ this.anims.create({
       this.fin = false;
       this.pantallaFin.setVisible(true);        
       const monedas = this.player.score;     
+      this.game.monedas = this.player.score;
       const imagen = this.pantallaFin.setDepth(1);
       if(monedas !== 1){
-        this.texto = this.add.text(640,0, "Has conseguido " + monedas + " monedas que se convertirán en " + monedas + " puntos de vida",
+        this.texto = this.add.text(640,0, "Has conseguido " + monedas + " monedas que se convertirán en " + monedas + " puntos de vida \n                      al pasar de escena",
         { fontFamily: 'VT323',fontSize: '36px', color: '#281501' }).setDepth(2);
       }
       else{
-        this.texto = this.add.text(640,0, "Has conseguido " + monedas + " moneda que se convertirá en " + monedas + " punto de vida",
+        this.texto = this.add.text(640,0, "Has conseguido " + monedas + " moneda que se convertirá en " + monedas + " punto de vida \n                      al pasar de escena",
         { fontFamily: 'VT323',fontSize: '36px', color: '#281501' }).setDepth(2);
       }
      

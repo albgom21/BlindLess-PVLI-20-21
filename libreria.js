@@ -14,6 +14,7 @@ export default class Libreria extends Phaser.Scene {
     }
     
   create(){
+    this.cameras.main.fadeIn(1500); 
     this.scene.stop('mapa');
     this.nameScene = 'LIBRERIA';
     this.add.image(640, 360, 'fondoShakeDanyo'); 
@@ -22,6 +23,10 @@ export default class Libreria extends Phaser.Scene {
     this.zarCuerpo = new Zaratustra(this, 1000, 400, 'zaratustracuerpo', dialogos.zarLibreria, 0);  
     //this.latCuerpo = new Latino(this, 500, 400, 'latcuerpo', dialogos, 1);        
     this.add.image(500, 400, 'latcuerpo');
+
+    this.cameras.main.once('camerafadeoutcomplete', () => {
+      this.scene.launch('mapa', {antEscena:this.key, proxEscena:'taberna1', nombreEscena:'TABERNA', vida:this.vidaMax, suma:10, resta:7})
+  });
   }
   finEscena(){    
     let a = true;
@@ -34,7 +39,7 @@ export default class Libreria extends Phaser.Scene {
     { //que hayan hablado todos los personajes de la escena
       a = false;
       const botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();
-      botonEscena.on('pointerdown', () => {this.scene.launch('mapa', {antEscena:this.key, proxEscena:'taberna1', nombreEscena:'TABERNA', vida:this.vidaMax, suma:10, resta:7})});
+      botonEscena.once('pointerdown', () => {this.cameras.main.fadeOut(1500)});          
     }       
   }  
 }

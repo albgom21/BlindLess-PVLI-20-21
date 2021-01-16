@@ -17,7 +17,8 @@ export default class Casa1 extends Phaser.Scene {
     this.key = 'casa1';    
     this.nums = [];
   }
-  create() {  // Refactorizar diálogos y escena       
+  create() {  // Refactorizar diálogos y escena      
+    this.cameras.main.fadeIn(1500); 
     this.scene.stop('inicio');
     this.nameScene = 'CASA';
     this.add.image(640, 360, 'fondoShakeDanyo'); 
@@ -26,13 +27,21 @@ export default class Casa1 extends Phaser.Scene {
     this.g = new Gafas(this, 733, 350, 'Gafas', dialogos.gafasCasa1, dialogos.gafasDCasa1);    
     const contxt = this.add.image(640, 360, 'contexto').setInteractive();   
     this.botonT = new Loteria(this, 1230, 670, 'botonTicket');
-    this.botonT.visible = false;  
+    this.botonT.visible = false;      
     contxt.on('pointerdown', () => {contxt.visible = false; this.botonT.visible = true;});  
     this.botonT.on('pointerdown', () => {
       this.nums.push(this.botonT.crearNumero());
       this.ticket = new Tickets(this, 150, 300, this.nums[0]);
       this.scene.launch('inventario');
     }) 
+    this.cameras.main.once('camerafadeoutcomplete', () => {
+      if(this.pointScene >= 10){
+       this.scene.launch('mapa',{antEscena:this.key,proxEscena:'libreria',nombreEscena:'LIBRERIA',vida:this.vidaMax,suma:2,resta:14});
+      }
+      else{
+      this.scene.launch('mapa',{antEscena:this.key,proxEscena:'calle1',nombreEscena:'CALLE',vida:this.vidaMax,suma:4,resta:11});
+      }  
+  });
   }  
 
 aparece(){     
@@ -56,15 +65,8 @@ aparece(){
     }
     if(a) { //Que hayan hablado todos los personajes de la escena
       a = false;
-      let botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();
-      if(this.pointScene >= 10){
-        botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{antEscena:this.key,proxEscena:'libreria',nombreEscena:'LIBRERIA',vida:this.vidaMax,suma:2,resta:14})});
-      }
-      else{
-        botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{antEscena:this.key,proxEscena:'calle1',nombreEscena:'CALLE',vida:this.vidaMax,suma:4,resta:11})});
-      }      
+      let botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();    
+        botonEscena.once('pointerdown', () => {this.cameras.main.fadeOut(1500)});     
     }       
-  }  
-
-  
+  }    
 }

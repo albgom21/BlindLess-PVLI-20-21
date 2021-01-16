@@ -13,11 +13,17 @@ export default class Calle1 extends Phaser.Scene {
     }
     
   create(){
+    this.cameras.main.fadeIn(1500); 
     this.scene.stop('mapa');
     this.nameScene = 'CALLE';
     this.add.image(640, 360, 'calle');
     this.donLatino = new Latino(this, 400, 400, 'latcuerpo', dialogos.dCalle1, 0, false);
     if(this.pointScene > 10) this.donLatino.aparece = true;
+
+
+    this.cameras.main.once('camerafadeoutcomplete', () => {
+      this.scene.launch('mapa',{antEscena:this.key, proxEscena:'taberna1', nombreEscena:'TABERNA', vida:this.vidaMax, suma:10, resta:7}) 
+  });
   }
 
   aparece(){
@@ -34,10 +40,7 @@ export default class Calle1 extends Phaser.Scene {
     if(a) { //Que hayan hablado todos los personajes de la escena
       a = false;
       let botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();
-        botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{antEscena:this.key, proxEscena:'taberna1', nombreEscena:'TABERNA', vida:this.vidaMax, suma:10, resta:7})});
-      
+        botonEscena.once('pointerdown', () => {this.cameras.main.fadeOut(1500)});      
     }      
    }
-
-
 }

@@ -13,6 +13,7 @@ export default class Taberna1 extends Phaser.Scene {
       this.vidaMax = datos.vidaMax;
     }
     create() {  
+      this.cameras.main.fadeIn(1500); 
       this.scene.stop('mapa');
       this.nameScene = 'TABERNA';    
       this.add.image(640, 360, 'fondoShakeDanyo'); 
@@ -21,6 +22,10 @@ export default class Taberna1 extends Phaser.Scene {
       if(this.pointScene > 0){                              // *****
         this.add.image(700, 400, 'lapisabiencuerpo');       // *****
       }
+
+      this.cameras.main.once('camerafadeoutcomplete', () => {
+        this.scene.launch('mapa',{antEscena:this.key, proxEscena:'taberna2', nombreEscena:'TABERNA', vida:this.vidaMax, suma:10, resta:10})
+    });
     }
     
   finEscena(){    
@@ -32,9 +37,8 @@ export default class Taberna1 extends Phaser.Scene {
     }
     if(a) { //Que hayan hablado todos los personajes de la escena
       a = false;
-      let botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();
-        botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{antEscena:this.key, proxEscena:'ministerio1', nombreEscena:'TABERNA', vida:this.vidaMax, suma:10, resta:10})});
-      
+      let botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();     
+        botonEscena.once('pointerdown', () => {this.cameras.main.fadeOut(1500)});     
     }      
 }
 }

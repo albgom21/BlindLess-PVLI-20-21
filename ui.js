@@ -54,7 +54,7 @@ export default class Ui extends Phaser.Scene {
     Phaser.Display.Align.In.Center(p2fondoN,p2N);
     
     
-    const botonHablar = this.add.image(840,360, 'botonescena').setInteractive();
+    const botonHablar = this.add.image(869,645, 'botonhablar').setInteractive();
     botonHablar.on('pointerdown', () => {
       this.personaje.seguirDialogos();
       });
