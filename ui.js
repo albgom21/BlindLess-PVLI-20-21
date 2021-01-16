@@ -1,5 +1,5 @@
 import Barravida from './barravida.js';
-import AnimatedText from './animatedtext.js';
+import AnimatedText from './textoanimado.js';
 
 export default class Ui extends Phaser.Scene {  
   constructor() {
