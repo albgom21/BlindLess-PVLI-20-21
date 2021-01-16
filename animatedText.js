@@ -1,5 +1,4 @@
 import Stats from './dialogostats.js';
-
 export default class AnimatedText extends Phaser.GameObjects.Text {
     constructor(scene, text, c) {
         super(scene, Stats.xDialogTextPos, Stats.yDialogTextPos, text,
