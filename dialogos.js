@@ -302,7 +302,18 @@
     dMinis3casaGober.push({texto: 'Pues eso sería todo. En unos días le notificaremos\npara hablar de trámites.'});
     dMinis3casaGober.push({texto: 'Muchas gracias por todo.'});
 
-
+//ESCENA FINAL TABERNA 4 (MAX FALLECE)
+    let taberna4M = [];
+    taberna4M.push({texto: '¡Qué pena más grande! ¡Hoy se ha enterrado \nal poeta más grande de España! ¡Qué gran talento poseía!'});
+    taberna4M.push({texto: '¡En su honor, publicaré todos sus escritos! \n¡Merecía el reconocimiento de todo el país, no obstante, vivió de \nla manera más miserable! ¡Qué injusta es la vida para algunos! \n¡Que alguien me ponga algo para beber!'});
+    taberna4M.push({texto: '¡No gaste tanto o se quedará tieso!'});
+    taberna4M.push({texto: '¡Cállese! Tengo dinero hasta para comprarte a ti. '});
+    taberna4M.push({texto: '¿De dónde habrá conseguido usted semejante cantidad \nde dinero? Seguro que cobró el décimo que le vendí a Max.'});
+    taberna4M.push({texto: '¡Jamás haría algo así!'});
+    taberna4M.push({texto: '¡MENTIRA! Todavía me debes esas diez mil pesetas, cobarde.'});
+    taberna4M.push({texto: 'Ya se las devolveré mujer. Leamos el periódico, que \nla situación en España no podría estar peor.'});
+    taberna4M.push({texto: 'Han encontrado el cadáver de dos señoras en la calle \nde Bastardillos. ¿Se habrán suicidado?'});
+    taberna4M.push({texto: 'Sospecho que son la esposa y la hija de nuestro Max. \n¡Qué pena más grande!'});
 
     // BARES (LOTERÍA) ------------------------------------------------------
     let dBares = [];
@@ -332,6 +343,7 @@
 
       // TABERNA
        dTaberna1 : taberna2,
+       dTaberna4: taberna4M,
 
       // MINISTERIO1
        dMinisterio1 : ministerio1,
