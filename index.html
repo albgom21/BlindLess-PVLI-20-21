@@ -46,17 +46,20 @@
       import Calle1 from "./calle1.js";
       import Mapa from "./mapa.js";
       import Libreria from "./libreria.js";
+      import Taberna1 from "./taberna.js";
       import Taberna2 from "./taberna2.js";
+      import Ministerio1 from "./ministerio1.js";
       import Minijuego from "./minijuego.js";
       import Inicio from "./inicio.js";
       import Boot from "./boot.js";
       import Ui from "./ui.js";
+      import Inventario from "./inventario.js";
       var config = {
         type: Phaser.CANVAS,
         canvas: document.getElementById('juego'),        
         width: 1280,
         height: 720,               
-        scene: [Boot, Inicio, Casa1,Calle1,Mapa,Libreria,Taberna2,Minijuego,Ui],
+        scene: [Boot, Inicio, Casa1, Calle1, Mapa, Libreria, Taberna1,Taberna2, Ministerio1, Minijuego, Ui, Inventario],
         physics: {
           default: "arcade",
           arcade: { gravity: { y: 700 }, debug: false },

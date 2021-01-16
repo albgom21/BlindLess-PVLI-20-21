@@ -49,10 +49,10 @@ finEscena() {
       a = false;
       let botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();
       if(this.puntosAnt >= 10){
-        botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{antEscena:this.key,proxEscena:'libreria',nombreEscena:'LIBRERIA',vida:this.vidaMax,suma:2,resta:14})});
+        botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{antEscena:this.key, proxEscena:'ministerio1', nombreEscena:'MINISTERIO', vida:this.vidaMax, suma:2, resta:14})});
       }
       else{
-        botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{antEscena:this.key,proxEscena:'calle1',nombreEscena:'CALLE',vida:this.vidaMax,suma:4,resta:11})});
+        //botonEscena.on('pointerdown', () => {this.scene.launch('mapa',{antEscena:this.key, proxEscena:'bunoleria', nombreEscena:'BUÑOLERIA', vida:this.vidaMax, suma:4, resta:11})});
       }      
     }       
   }  

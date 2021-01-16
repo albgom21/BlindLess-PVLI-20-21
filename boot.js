@@ -16,6 +16,10 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('camarerocuerpo', 'sprites/barmancuerpo.png');
     this.load.image('Gobernante', 'sprites/gobernante.png'); 
     this.load.image('gobernantecuerpo', 'sprites/gobernantecuerpo.png');
+    this.load.image('Peregrino', 'sprites/dongayperegrino.png');
+    this.load.image('peregrinocuerpo', 'sprites/dongayperegrinocuerpo.png');
+    this.load.image('La Pisa Bien', 'sprites/lapisabien.png');
+    this.load.image('lapisabiencuerpo', 'sprites/lapisabiencuerpo.png');
 
 
     this.load.image('lugar','sprites/lugar.png');
@@ -30,6 +34,7 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('fondonombre','sprites/fondonombre.png');
     this.load.image('fondopersonaje','sprites/fondopersonaje.png');
     this.load.image('corazon', 'sprites/corazon.png');
+    this.load.image('inventario', 'sprites/inventario.png');
 
     //Objetos
     this.load.image('sillon','sprites/sillon.png');
@@ -70,6 +75,7 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('libreria', 'sprites/libreria.png');
     this.load.image('taberna', 'fondos/taberna.png');
     this.load.image('contexto', 'fondos/contexto.png');
+    this.load.image('ministerio', 'fondos/ministerio.png');
     
     this.load.image('rectangulo', 'sprites/rectangulo.png');
 

@@ -36,7 +36,6 @@ export default class Loteria extends Phaser.GameObjects.Sprite{
     // Método que crea un número aleatorio y lo guarda en el array de tickets.
      crearNumero(){
          this.numRandom();
-         this.nums.push(this.numTicket);
          this.txt.text = this.nums;
      }
 

@@ -15,6 +15,7 @@ export default class Casa1 extends Phaser.Scene {
     this.apareceLatino = false;
     this.fin = new Array(2); // array con el número de personajes  
     this.key = 'casa1';    
+    this.nums = [];
   }
   create() {  // Refactorizar diálogos y escena       
     this.scene.stop('inicio');
@@ -24,16 +25,13 @@ export default class Casa1 extends Phaser.Scene {
     this.madame = new Collet(this, 500, 400, 'madamcuerpo', dialogos.mcCasa1, 0, true);       
     this.g = new Gafas(this, 733, 350, 'Gafas', dialogos.gafasCasa1, dialogos.gafasDCasa1);    
     const contxt = this.add.image(640, 360, 'contexto').setInteractive();   
-
     this.botonT = new Loteria(this, 1230, 670, 'botonTicket');
     this.botonT.visible = false;  
     contxt.on('pointerdown', () => {contxt.visible = false; this.botonT.visible = true;});  
-
     this.botonT.on('pointerdown', () => {
-      //this.inventario = new Inventario(this, 640, 360);
-      //this.ticket = new Tickets(this, 640, 320, this.botonT.crearNumero());
-      this.botonT.crearNumero(); 
-      this.botonT.verNumeros()
+      this.nums.push(this.botonT.crearNumero());
+      this.ticket = new Tickets(this, 150, 300, this.nums[0]);
+      this.scene.launch('inventario');
     }) 
   }  
 
