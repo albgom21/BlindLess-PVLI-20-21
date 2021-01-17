@@ -4,7 +4,7 @@ export default class Inicio extends Phaser.Scene {
   }
   create() {    
     const inicio = this.add.image(640,360,'inicio').setInteractive();      
-    this.cameras.main.once('camerafadeoutcomplete', () => {this.scene.launch('casa1')});
+    this.cameras.main.once('camerafadeoutcomplete', () => {this.scene.launch('casa2sp')});
     inicio.once('pointerdown', () => {this.cameras.main.fadeOut(250)});    
   }
 }

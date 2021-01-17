@@ -51,10 +51,10 @@ export default class Mapa extends Phaser.Scene {
     else if(this.proxEscena ==='calabozo'){
       this.add.image(632,427,'circulo');
     }
-    else if(this.proxEscena ==='casa2'){
+    else if(this.proxEscena ==='casa2sp' || this.proxEscena ==='casa2cp'){
       this.add.image(528,385,'circulo');
     }
-    else if(this.proxEscena ==='ministerio3'){
+    else if(this.proxEscena ==='ministerio3casa' || this.proxEscena === 'ministerio3calabozo'){
       this.add.image(632,354,'circulo');
     }
     else if(this.proxEscena ==='taberna3'){

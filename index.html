@@ -43,16 +43,21 @@
     <canvas id = "juego"></canvas>    
     <script type="module">
       import Casa1 from "./casa1.js";
+      import Casa2sp from "./casa2sp.js";
+      import Casa2cp from "./casa2cp.js";
       import Calle1 from "./calle1.js";
       import Mapa from "./mapa.js";
       import Libreria from "./libreria.js";
       import Taberna1 from "./taberna.js";
       import Taberna2 from "./taberna2.js";
+      import Taberna3 from "./taberna3.js";
       import Bunyoleria from "./bunyoleria.js";
       import CalleGormada from "./calleGormada.js";
       import Calabozo from "./calabozo.js";
       import Ministerio1 from "./ministerio1.js";
       import Ministerio2 from "./ministerio2.js";
+      import Ministerio3casa from "./ministerio3casa.js";
+      import Ministerio3calabozo from "./ministerio3calabozo.js";
       import Minijuego from "./minijuego.js";
       import Inicio from "./inicio.js";
       import Boot from "./boot.js";
@@ -63,7 +68,7 @@
         canvas: document.getElementById('juego'),        
         width: 1280,
         height: 720,               
-        scene: [Boot, Inicio, Casa1, Calle1, Mapa, Libreria, Taberna1,Taberna2, Bunyoleria, CalleGormada, Calabozo, Ministerio1, Ministerio2, Minijuego, Ui, Inventario],
+        scene: [Boot, Inicio, Casa1, Casa2sp, Casa2cp, Calle1, Mapa, Libreria, Taberna1,Taberna2,Taberna3, Bunyoleria, CalleGormada, Calabozo, Ministerio1, Ministerio2,Ministerio3casa,Ministerio3calabozo, Minijuego, Ui, Inventario],
         physics: {
           default: "arcade",
           arcade: { gravity: { y: 700 }, debug: false },

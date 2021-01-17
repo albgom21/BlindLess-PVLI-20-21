@@ -22,8 +22,8 @@ export default class Taberna1 extends Phaser.Scene {
       if(!this.latCuerpo.aparecera){                                   // *****
         this.add.image(700, 400, 'lapisabiencuerpo');       // *****
       }
-
       this.cameras.main.once('camerafadeoutcomplete', () => {
+        //Poner que según los puntos con otro parámetro vaya a ministerio1 o buñoleria
         this.scene.launch('mapa',{antEscena:this.key, proxEscena:'taberna2', nombreEscena:'TABERNA', vida:this.vidaMax, suma:10, resta:10})
     });
     }

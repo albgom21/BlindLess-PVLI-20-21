@@ -65,7 +65,7 @@
     calle1.push({texto: 'La comida inglesa, en comparación con la española, no \nes más que bazofia. Hazme caso, disfrutas mucho más aquí.',personaje: 'Peregrino'});
     calle1.push({texto: '[Tampoco es que pruebe mucha comida aquí...]'});
     calle1.push({texto: '¿Y cuánto tiempo te quedas? Max y yo ahora íbamos de camino a la taberna, ¿quieres venir?', personaje: 'Latino'});
-    calle1.push({texto: 'Me temo que eso no será posible… Una de las facetas más \nimportantes en la vida del hombre es el matrimonio, y \n he de atender a mi esposa ahora.', personaje: 'DonGayPeregrino'});
+    calle1.push({texto: 'Me temo que eso no será posible… Una de las facetas más \nimportantes en la vida del hombre es el matrimonio, y \n he de atender a mi esposa ahora.', personaje: 'Peregrino'});
     calle1.push({texto: 'Vaya, hombre… qué pifia de mozo. Vámonos, Max.', personaje: 'Latino'});
     calle1.push({texto: 'Ya veo...'});
      
