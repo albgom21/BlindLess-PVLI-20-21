@@ -1,6 +1,6 @@
 import Menu from './menu.js';
 export default class Personaje extends Phaser.GameObjects.Container {
-  constructor(scene, x, y, image, d, xMenu, yMenu, dialogos, fin,aparece) {
+  constructor(scene, x, y, image, d, xMenu, yMenu, dialogos, fin, aparece, aparecera) {
     super(scene);
     this.scene = scene;
     this.x = x;
@@ -13,6 +13,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
     this.m.visible = false;
     this.f = fin;
     this.aparece = aparece;
+    this.aparecera = aparecera;
     
     const imagenDanyo = this.scene.add.image(640, 360, 'danyo').setVisible(false);
     this.scene.cameras.main.on('camerashakestart', function () {
@@ -116,6 +117,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
       }
       this.animacionRespuestas(this.botones);
     }
+    if(this.aparecera) this.scene.aparecer();    
     if(dialogo.jump) this.numDial += dialogo.jump;
   }
 
@@ -132,6 +134,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
         if(this.aparece){
           this.scene.aparece();
         }            
+          
         this.scene.finEscena(); 
         this.scene.scene.stop('ui');
       }
@@ -158,7 +161,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
         this.scene.scene.stop('ui');
       }
       this.estaHablando = true;
-      if(answer.life !== 0) this.numDial += answer.jump + 1;            
+      if(answer.life !== 0) this.numDial += answer.jump + 1;     
         
       for(const n of this.botones){
         n.visible = false;

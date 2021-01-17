@@ -1,12 +1,12 @@
 import dialogos from './dialogos.js';
-import Gobernante from './gobernante.js';
-export default class Ministerio1 extends Phaser.Scene {
+import Oficial from './oficial.js';
+export default class Ministerio2 extends Phaser.Scene {
   
     constructor() {
-      super({ key: 'ministerio1'});     
+      super({ key: 'ministerio2'});     
       this.menuActivado = false;       
       this.fin = new Array(1); // array con el numero de personajes con los que hablar
-      this.key = 'ministerio1';    
+      this.key = 'ministerio2';    
       this.pointScene = 0;
     } 
     init(datos) {
@@ -18,11 +18,12 @@ export default class Ministerio1 extends Phaser.Scene {
       this.nameScene = 'MINISTERIO';    
       this.add.image(640, 360, 'fondoShakeDanyo'); 
       this.add.image(640, 360, 'ministerio');  
-      this.gobernante = new Gobernante(this, 300, 450, 'gobernantecuerpo', dialogos.dMinisterio1, 0);
+      this.add.image(200, 400, 'gobernantecuerpo');
+      // debería ser la imagen del Oficial, no la del gobernante.
+      this.oficial = new Oficial(this, 1000, 400, 'gobernantecuerpo', dialogos.ministerio2, 0);
 
       this.cameras.main.once('camerafadeoutcomplete', () => { //FALTA 
-        if (this.pointScene > 0) this.scene.launch('mapa', {antEscena: this.key, proxEscena: 'casa2', nombreEscena:'CASA', vida:this.vidaMax, suma: 0, resta: 0});
-        else this.scene.launch('mapa',{antEscena:this.key, proxEscena:'calabozo', nombreEscena:'CALABOZO', vida:this.vidaMax, suma: 0, resta: 0});
+        this.scene.launch('mapa',{antEscena:this.key, proxEscena:'calabozo', nombreEscena:'CALABOZO', vida:this.vidaMax, suma:0, resta:0}) 
     });
     }
     

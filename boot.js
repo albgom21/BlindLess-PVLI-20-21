@@ -20,6 +20,8 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('peregrinocuerpo', 'sprites/dongayperegrinocuerpo.png');
     this.load.image('La Pisa Bien', 'sprites/lapisabien.png');
     this.load.image('lapisabiencuerpo', 'sprites/lapisabiencuerpo.png');
+    this.load.image('Mateo', 'sprites/mateo.png');
+    this.load.image('mateocuerpo', 'sprites/mateocuerpo.png');
 
 
     this.load.image('lugar','sprites/lugar.png');
@@ -77,7 +79,9 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('taberna', 'fondos/taberna.png');
     this.load.image('contexto', 'fondos/contexto.png');
     this.load.image('ministerio', 'fondos/ministerio.png');
-    
+    this.load.image('bunyoleria', 'fondos/bunyoleria.png');
+    this.load.image('calabozo', 'fondos/calabozo.png');
+
     this.load.image('rectangulo', 'sprites/rectangulo.png');
 
     this.load.script('webfont', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js');

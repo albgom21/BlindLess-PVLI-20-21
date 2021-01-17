@@ -116,7 +116,7 @@
          {texto:'No sé qué hacer sin la compensación económica que me debía, pero es mejor olvidarle.', points: 10, life: 0, jump: 0},
          {texto:'¡¡¡NO DESESPERE!!! lA noCCHe esStá paRra ahohgHgar laSs pPenasSs.', points: 10, life: 0, jump: 0}]});
     taberna2.push({texto:'TiennneSs raZzón, MaXx. ESstToy connTtenNto dde tenneRr \nunn amMiggo comMo tTú.'});
-    taberna2.push({texto:'¡Oye! Tú eres el Max Estrella, ¿verdad?', personaje: 'La Pisa Bien'});
+    taberna2.push({texto:'¡Oye! Tú eres el Max Estrella, ¿verdad?', personaje: 'La Pisa Bien', aparecera:true});
     taberna2.push({texto:'¿Qué responde Max?',
   answer: [{texto:'Sí, soy yo. ¿qQuÉ ppASa?', points: 0, life: 0, jump: 0},
             {texto:'No lo tengo muy claro.', points: 0, life: 0, jump: 0},
@@ -160,13 +160,139 @@
     answer: [
      {texto:'De otro modo, no tengo ni idea de cómo mantener a mi familia…', points: 0, life: +10, jump: 2, razon:'Acepta la \n ayuda del gobierno.'},
      {texto:'¿No me ha escuchado? ¡¿HE SIDO POCO CLARO?!', points: 0, life: -10, jump: 1, razon:'Se ha vuelto \n loco.'},
-     {texto:'¿Qué? Me duele un poco la cabeza, me retiraré, si no es molestia…', points: 0, life: 0, jump: 0}
+     {texto:'¿Qué? Me duele un poco la cabeza, me retiraré, si no es molestia…', points: 10, life: 0, jump: 0}
 ]});
      ministerio1.push({texto:'Oh… como usted vea. Qué buen vasallo \nsi tuviera buen señor…', jump: 4});
      ministerio1.push({texto:'¿Cómo dice? … He intentado tranquilizarle pero sigue \nusted igual de violento.', jump: 3});
      ministerio1.push({texto:'De acuerdo. Si es de vuestro agrado, procedemos \na hablar acerca de las tramitaciones necesarias…'});
      ministerio1.push({texto:'Perfecto, pero discúlpeme, tengo que ir a casa un \nmomento.'});
      ministerio1.push({texto:'¿Qué? ¡Espere!'});
+
+    // MINISTERIO2 ------------------------------------------------------
+    let dMinisterio2 = [];
+    dMinisterio2.push({texto:'Aquí traigo al susodicho. Se encontraba con un civil \nmás, pero ya he tratado con él.', personaje: 'Oficial'});
+    dMinisterio2.push({texto:'¿Qué responde Max?', 
+    answer:[
+      {texto:'Yo no he hecho nada, soy completamente inocente.', points: 0, life: 0, jump: 0},
+      {texto:'¿Por qué estoy aquí?¿Por tomarme un par de cervezas? ', points: 0, life: 0, jump: 2},
+      {texto:'...', points: 0, life: 0, jump: 2}
+    ]});
+    dMinisterio2.push({texto:'Eso lo decidiremos aquí hoy, que para eso ha venido \nusted aquí. '});
+    dMinisterio2.push({texto:'¿Qué he hecho? '});
+    dMinisterio2.push({texto:'Usted ha infrigido las normas civiles: estaba causando \ndisturbios en las vías públicas de la ciudad mientras \ngritaba y bebía.'});
+    dMinisterio2.push({texto:'¿Qué responde Max?', 
+    answer:[
+      {texto:'¡Venga ya! No es nada tan desproporcionado.', points: 0, life: 0, jump: 0},
+      {texto:'¿Seguro que no está imaginándose cosas, oficial?', points: 0, life: 0, jump: 0},
+      {texto:'¡¡¡NUNCA ME COGERÉIS!!!', points: 0, life: -3, jump: 2, razon:'vacilar al oficial.'}
+    ]});
+    dMinisterio2.push({texto:'¡Se acabó! He tenido suficiente de esta cháchara. Como \nno se comporte, va a pasar un tiempo en el calabozo.'});
+    dMinisterio2.push({texto:'¿Qué responde Max?', 
+    answer:[
+      {texto:'Eso es lo que usted se cree.', points: 0, life: 0, jump: 0},
+      {texto:'No sé de que está hablando.', points: 0, life: 0, jump: 0},
+      {texto:'¿Cuánto es “un tiempo”?', points: 0, life: 0, jump: 0}
+    ]});
+    dMinisterio2.push({texto:'¡HA SIDO SUFICIENTE! Venga conmigo, que va directo al \nboquete.'});
+
+    // BUÑOLERÍA ------------------------------------------------------
+    let dBunyoleria = [];
+    dBunyoleria.push({texto:'*hip* Ya hemos llegado, Max… está al otro costado de la \ncallejuela, pero ha parecido eterno. Mucha bula \ntienen los jóvenes que aguantan estos vapuleos...'});
+    dBunyoleria.push({texto:'¿Qué responde Max?',
+    answer:[
+       {texto:'*hip* ... *hip*', points:0, life:0, jump:0},
+       {texto:'Opino igual… oiga, ¿no huele mucho como a papel en esta buñolería?', points:0, life:0, jump:0},
+       {texto:'De acto, creo que no me encuentro bien… Siento como si fuera a go-', points:20, life:0, jump:16}
+  ]});
+    dBunyoleria.push({texto:'Hm… parece haber aquí yertos unos cuántos libros. A ver… \n*se coloca las gafas*'})<
+    dBunyoleria.push({texto:'Según pone aquí, son de unos autores modernistas de la \népoca. ¿Te interesa que lea alguno, Max?'});
+    dBunyoleria.push({texto:'¿Qué responde Max?',
+    answer:[
+       {texto:'¿Modernistas? Nunca me han gustado… Se creen unos iluminados.', points:0, life:0, jump:1},
+       {texto:'Me encantaría, de hecho. Si es tan amable.', points:0, life:0, jump:1},
+       {texto:'Igual deberíamos irnos de aquí, Don Latino. No tengo buen barrunto. ', points:0, life:0, jump:0}
+  ]});
+    dBunyoleria.push({texto:'¿Qué dices, hombre? No seas así. Vamos a quedarnos para ver si hay algo de interés.'});
+    dBunyoleria.push({texto:'Vamos a ver qué hay por aquí… “Un menesteroso escritor”. \nEste parece interesante. '});
+    dBunyoleria.push({texto:'“Esta es la historia de Xam, un escritor que pasaba sus \ntiempos rumiando acerca de la naturaleza. Nunca tuvo \nmucho, fue más bien pobre, y murió siendo un mero \ngranjero sin que nadie le conociera”'});
+    dBunyoleria.push({texto:'¿Qué piensa Max?',
+    answer:[
+       {texto:'Siento que su vida fue mala porque nadie le conoció.', points:0, life:-2, jump:0, razon: 'Max Estrella no pensaría \nlo mismo.'},
+       {texto:'Siento que su vida fue buena porque hacía lo que le gustaba.', points:0, life:+2, jump:0, razon: 'Max Estrella pensaría lo \nmismo.'},
+       {texto:'Siento que su vida fue mala porque no tenía dinero.', points:0, life:0, jump:0}
+  ]});
+    dBunyoleria.push({texto:'Bastante soporífero. Veamos el siguiente: “Tres, y la \nbohemia”.'});
+    dBunyoleria.push({texto:'“El escritor eclipsado por las nuevas corrientes que \naparecieron en el mundo, Tres. Lo único que Tres \nvaloraba era la antigua manera de ver el mundo, y la \nbelleza que eso conllevaba. Para Tres, sus dos mundos \ncolacionaban”'});
+
+    dBunyoleria.push({texto:'¿Qué piensa Max?',
+    answer:[
+       {texto:'Tiene dos mundos: el que vive, y el que percibe. No es muy ajeno a mí', points:0, life:+2, jump:0, razon: 'Max Estrella pensaría lo mismo.'},
+       {texto:'Es mucho más importante el mundo que percibe uno*', points:0, life:0, jump:0},
+       {texto:'*¿Hay por qué valorar la antigua manera de ver el mundo?*', points:0, life:-2, jump:0, razon: 'Max Estrella no pensaría lo mismo.'}
+  ]});
+    dBunyoleria.push({texto:'¿Hmm? Veo que no te están interesando mucho los libros, \nMax. Tienes razón, son bastante aburridos. Vámonos de \naquí.'});
+    dBunyoleria.push({texto:'Buenas noches. ¿Hay aquí alguien llamado Max Estrella?', personaje: 'Oficial'});
+    dBunyoleria.push({texto:'Sí, soy yo. ¿Qué ocurre?'});
+    dBunyoleria.push({texto:'Ha sido usted acusado de robar los décimos de una \nciudadana conocida por el pseudónimo de La Pisa Bien. \nVenga conmigo a los ministerios.'});
+    dBunyoleria.push({texto:'¿Qué?'});
+    dBunyoleria.push({texto:'Esa demonche nos ha querido traer la ruina…', personaje: 'Latino', jump: 3});
+    dBunyoleria.push({texto:'¿¡Gormar!? Max, no puedes echar la primera papilla aquí, \ntenemos que ir rápido al aseo.'});
+    dBunyoleria.push({texto:'*EL BUÑOLERO:* Aquí no hay aseo, buen hombre.'});
+    dBunyoleria.push({texto:'¿Qué? Oh, no… Max, ¡vamos fuera!'});
+
+    // CALLE CUANDO SALE A LA CALLE A VOMITAR ------------------------------------------------------
+    let dBenyota = [];
+    dBenyota.push({texto:'*vomitando en el suelo* Ugh… no me ha sentado nada \nbien el beodo de antes…'});
+    dBenyota.push({texto:'Y que lo digas… '});
+    dBenyota.push({texto:'¡Pardiez! Lo que faltaba para ponernos en un brete… \nBuenas noches, oficial.'});
+    dBenyota.push({texto:'Buenas noches. Aunque no lo parecen para vuestro amigo \nahí detrás. ¿Le intenta esconder o algo?',personaje: 'Oficial'});
+    dBenyota.push({texto:'¿Quién, yo? ¡De ningún modo! No sería amigo del que es \nla caraba en esta situación tan desagradable.'});
+    dBenyota.push({texto:'¿Qué responde Max?', 
+    answer: [
+       {texto:'Don Latino, ¿de qué habla usted? Si somos amigos desde antes de que perdiera la vista…', points: 0, life: 0, jump: 0},
+       {texto:'*brrruuughhh*', points: 0, life: -3, jump: 2, razon: 'no parar de vomitar.'},
+       {texto:'¿Usted es un oficial? Le dan el calificativo a cualquier persona hoy en día...', points: 0, life: -7, jump: 2, razon: 'vacilar al oficial.'}
+  ]});
+    dBenyota.push({texto:'Conque pretendía usted tener bula para aprovecharse de \nsu amigo invidente y salir con el rabo entre las \npiernas, ¿eh? ', personaje: 'Oficial'});
+    dBenyota.push({texto:'Al ministerio conmigo, los dos.', jump: 1});
+    dBenyota.push({texto:'Se acabó. Venga usted conmigo de inmediato al \nministerio.'});
+    
+    // CALABOZO ------------------------------------------------------
+    let dCalabozo = [];
+    dCalabozo.push({texto:'Ya he tratado con su amigo, usted, Max Estrella, pasará \nla noche aquí, en la celda de Mateo.', personaje: 'Oficial'});
+    dCalabozo.push({texto:'¿Alguien nuevo? Genial…', personaje: 'Mateo'});
+    dCalabozo.push({texto:'¿Qué responde Max?',
+    answer: [
+     {texto:'Buenas noches, don Mateo. Mi nombre es Max Estrella.', points: 0, life: 0, jump: 0},
+     {texto:'…¿Qué he hecho?¿Cómo he podido acabar aquí?', points: 0, life: 0, jump: 0},
+     {texto:'...', points: 0, life: 0, jump: 0}
+  ]});
+    dCalabozo.push({texto:'Encantado de conocerle, Max. No pase pena, las noches \nse pasan rápido aquí.'});
+    dCalabozo.push({texto:'¿Cómo es que usted está aquí, don Mateo? No parece del \ntipo que delinquen.'});
+    dCalabozo.push({texto:'De hecho, no he cometido ningún delito. Soy un obrero, \ny mis compañeros y yo participamos en una huelga debida \na las execrables condiciones en las que trabajamos para \nel Estado.'});
+    dCalabozo.push({texto:'No se garantiza nuestra seguridad en ningún momento, \nlas facilidades están en un estado sórdido, trabajamos \njornada completa y cobramos menos del mínimo…'});
+    
+    dCalabozo.push({texto:'¿Qué responde Max?',
+    answer: [
+      {texto:'...', points: 0, life: 0, jump: 0},
+      {texto:'Pero… ¿por qué le han detenido?¿No es una huelga por sus derechos?', points: 0, life: 0, jump: 2},
+      {texto:'Entonces, ¿le dejarán salir, verdad? No ha cometido ningún delito.', points: 0, life: 0, jump: 2}
+        ]});
+
+    dCalabozo.push({texto:'Bueno, no pretendo amuermarle con mi historia… De \ncualquier modo dentro de nada me sacarán de aquí, para siempre.'});
+    dCalabozo.push({texto:'¿Qué responde Max?',
+    answer: [
+      {texto:'¿A qué se refiere con para siempre? ¿Queda exento de por vida?', points: 0, life: 0, jump: 0},
+      {texto:'...', points: 0, life: 0, jump: 3},
+      {texto:'¿Van a quitarle de en medio?', points: 0, life: 0, jump: 0}
+]});
+    dCalabozo.push({texto:'Así es… Solo era una huelga, pero al soltarme será un \n“intento de fuga” en el cual los oficiales se verán \nobligados a dispararme por la espalda mientras “huyo”.'});
+    dCalabozo.push({texto:'Pero… ¡eso es horrible! ¡No pueden hacer eso!'});
+    dCalabozo.push({texto:'Así de injusto es el Est-'});
+    dCalabozo.push({texto:'Mateo, queda usted puesto en libertad. Vamos.', personaje: 'Oficial'});
+    dCalabozo.push({texto:'¡No! ¡No pueden llevárselo!'});
+    dCalabozo.push({texto:'No se preocupe, Max. Disfrute de su vida como pueda.', personaje: 'Mateo'});
+    dCalabozo.push({texto:'¡Noooooo!'});
 
     // CASA2 (SIN PAGA)  ------------------------------------------------------
     let dCasa2spMadam = [];
@@ -345,8 +471,18 @@
        dTaberna1 : taberna2,
        dTaberna4: taberna4M,
 
+      // BUÑOLERÍA
+       dBunyols : dBunyoleria,
+       dBunyel : dBenyota,
+       
+      // CALABOZO
+       calabozo : dCalabozo,
+
       // MINISTERIO1
        dMinisterio1 : ministerio1,
+
+      // MINISTERIO2
+       ministerio2 : dMinisterio2,
 
       // MINISTERIO3
        goberMinis3Casa: dMinis3casaGober,

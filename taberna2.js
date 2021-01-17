@@ -28,7 +28,7 @@ export default class Taberna2 extends Phaser.Scene {
       this.aparece();      
     }
     this.cameras.main.once('camerafadeoutcomplete', () => {
-      this.scene.launch('mapa',{antEscena:this.key,proxEscena:'calle1',nombreEscena:'CALLE',vida:this.vidaMax,suma:4,resta:11});
+      this.scene.launch('mapa',{antEscena:this.key,proxEscena:'bunyoleria',nombreEscena:'BUÑOLERIA',vida:this.vidaMax,suma:4,resta:4});
   });
     this.minijuego = this.add.image(950, 55,'cartel').setInteractive();    
     this.minijuego.on('pointerdown', () => {if(!this.menuActivado){this.scene.launch('minijuego',{vida:this.vidaMax}),this.minijuego.destroy()}});
