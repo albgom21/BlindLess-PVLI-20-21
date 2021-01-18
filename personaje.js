@@ -82,11 +82,15 @@ export default class Personaje extends Phaser.GameObjects.Container {
     if(vida < 0){
       this.dialogos.splice(this.numDial, 0, {texto: ('*Daño: ' + vida + ' de vida debido a ' + razon + '*'), answer: null});
       this.scene.cameras.main.shake(500);
-      this.mensajeDanyo = true;
+      this.mensajeDanyo = true;      
+      this.restarvida = this.scene.sound.add("restarvida",{volume: 0.5});
+      this.restarvida.play();
     }
     else if(vida > 0){
       this.dialogos.splice(this.numDial, 0, {texto: ('*Sanado: ' + vida + ' de vida debido a ' + razon + '*'), answer: null});
       this.mensajeSanar = true;
+      this.ganarvida = this.scene.sound.add("ganarvida",{volume: 0.35});
+      this.ganarvida.play();
     }
     this.scene.vidaMax += vida;
     if(this.scene.vidaMax < 0)
@@ -189,5 +193,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
           ease: 'Circ'
       })
     }
+    this.sacardialogos = this.scene.sound.add("sacardialogos",{volume: 0.5});
+    this.sacardialogos.play();
   }
 }

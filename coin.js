@@ -8,7 +8,9 @@ export default class Coin extends Phaser.GameObjects.Sprite {
     this.play('c',true);
     super.preUpdate(t,d);    
     if (this.scene.physics.overlap(this.scene.player, this)) {
-      this.scene.player.updateScore();
+      this.scene.player.updateScore();    
+      this.ganarmonedas = this.scene.sound.add("ganarmonedas",{volume: 0.05});
+      this.ganarmonedas.play();
       this.destroy();     
     }
   }

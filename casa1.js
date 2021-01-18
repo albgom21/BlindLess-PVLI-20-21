@@ -27,7 +27,9 @@ export default class Casa1 extends Phaser.Scene {
     this.g = new Gafas(this, 733, 350, 'Gafas', dialogos.gafasCasa1, dialogos.gafasDCasa1);    
     const contxt = this.add.image(640, 360, 'contexto').setInteractive();   
     this.botonT = new Loteria(this, 1230, 670, 'botonTicket');
-    this.botonT.visible = false;      
+    this.botonT.visible = false;    
+    this.minijuego = this.add.image(950, 55,'cartel').setInteractive();    
+    this.minijuego.on('pointerdown', () => {if(!this.menuActivado){this.scene.launch('minijuego',{vida:this.vidaMax}),this.minijuego.destroy()}});  
     contxt.on('pointerdown', () => {contxt.visible = false; this.botonT.visible = true;});  
     this.botonT.on('pointerdown', () => {
       this.nums.push(this.botonT.crearNumero());

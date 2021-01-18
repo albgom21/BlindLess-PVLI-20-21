@@ -4,6 +4,14 @@ export default class Inicio extends Phaser.Scene {
   }
 
   preload() {
+    //Sonidos
+    this.load.audio("ganarmonedas", "sounds/ganarmonedasminijuego.mp3");
+    this.load.audio("ganarvida", "sounds/ganarvida.wav");
+    this.load.audio("restarvida", "sounds/restarvida.wav");
+    this.load.audio("sacardialogos", "sounds/sacardialogos.mp3");
+
+
+
     //Personajes   
     this.load.image('Max','sprites/max.png' );    
     this.load.image('Latino','sprites/latino.png');
