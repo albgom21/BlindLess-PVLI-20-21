@@ -449,6 +449,57 @@
                {texto: 'Me he confundido de garito.', points: 0, life: 0, jump: 0}]});    
     dBares.push({texto: 'Vale, espero verle pronto.'});
 
+    // CALLE 2 ------------------------------------------------------------------
+    let calle2Vieja = [];
+    calle2Vieja.push({texto: '¡Morenos! ¡Chis!... ¡Morenos!\n¿Queréis venir un ratito?'});
+    calle2Vieja.push({texto: '¿Qué responde Max?',
+    answer: [{texto: '¿Latino quién es esta señora?', points: 0, life: -3, jump: 0, razon:'no reconocer a las personas\npor su ceguera.'},
+            {texto: 'No quiero saber nada vayámonos', points: 10, life: 5, jump: 3, razon:'esquivar a las prostitutas\nde la calle sin perder dinero.'},
+            {texto: 'Me siento un poco cansado', points: 0, life: -8, jump: 5,razon:'tener frio de estar en la calle.'}]});
+    calle2Vieja.push({texto: 'Una prostituta vieja que nos dice de ir con ella.', personaje: 'Latino'});
+    calle2Vieja.push({texto: '¡Mira el camelista! Esperaros, que llamó a una amiguita.\n¡Lunares! ¡Lunares!', personaje: 'Vieja', jump:5});
+    calle2Vieja.push({texto: 'Max mira por allí es la patrulla de Caballería, acerquémonos\na ver lo que ocurre.', personaje: 'Latino'});
+    calle2Vieja.push({texto: 'Nunca son buenas noticias cuando se acercan por estos\nlugares, me marcho.', personaje: 'Vieja', jump:3});
+    calle2Vieja.push({texto: 'Pues tengo para usted la chica ideal.\nEsperaros, que llamó a una amiguita. ¡Lunares! ¡Lunares!'});
+    calle2Vieja.push({texto: 'Ya le estas dando bola a esta señora no te entiendo Max.', personaje: 'Latino'});
+
+    let calle2Lunares = [];
+    calle2Lunares.push({texto: '¡Ay, qué pollos más elegantes!\nVosotros me sacáis esta noche de la calle.'});
+    calle2Lunares.push({texto: 'Nos ponen piso.', personaje: 'Vieja'});
+    calle2Lunares.push({texto: 'Dejadme una perra, y me completáis una peseta para la cama.', personaje: 'Lunares'});
+    calle2Lunares.push({texto: '¡Roñas, siquiera un pitillo!', personaje: 'Vieja'});
+    calle2Lunares.push({texto: '¿Qué responde Max?',
+    answer: [{texto: 'Toma un habano', points: 0, life: -2, jump: 4, razon:'es pobre y les ha dado\nun habano'},
+            {texto: 'No tengo nada para ustedes', points: 10, life: 5, jump: 0, razon:'esquivar a las prostitutas\nde la calle sin perder dinero.'},
+            {texto: 'Perdone señora no se ni como es usted', points: 0, life: 0, jump: 10}]});
+    calle2Lunares.push({texto: 'Max mira por allí es la patrulla de Caballería, acerquémonos a\nver lo que ocurre.', personaje: 'Latino'});
+    calle2Lunares.push({texto: 'Nunca son buenas noticias cuando se acercan por estos lugares, me marcho.', personaje: 'Vieja'});
+    calle2Lunares.push({texto: 'Espereme que yo tampoco quiero saber nada.', personaje: 'Lunares', jump: 21});
+    calle2Lunares.push({texto: '¡Guasíbilis!'});
+    calle2Lunares.push({texto: 'Apáñalo, panoli.', personaje: 'Lunares'});
+    calle2Lunares.push({texto: '¡Sí que lo apaño! ¡Y es de sortija!', personaje: 'Vieja'});
+    calle2Lunares.push({texto: 'Ya me permitirás alguna chupada.', personaje: 'Lunares'});
+    calle2Lunares.push({texto: 'Éste me lo guardo.', personaje: 'Vieja'});
+    calle2Lunares.push({texto: 'Gracias por su aporte, le dejo con la Lunares y asi\npodrás ver como es ella, me voy con su compañero.', jump: 2});
+    calle2Lunares.push({texto: 'Pues le dejo con la Lunares y asi podras ver como es ella me voy con su compañero.'});
+    calle2Lunares.push({texto: 'Max ¡Algo verás! Tócame. Estoy muy dura. Pálpame el pecho...\nNo tengas reparo... ¡Tú eres un poeta!', personaje: 'Lunares'});
+    calle2Lunares.push({texto: 'Si yo te pusiese al tanto de mi vida, sacabas una historia\nde las primeras. Responde: ¿Cómo me encuentras?'});
+    calle2Lunares.push({texto: '¿Qué responde Max?',
+    answer: [{texto: 'Una ninfa', points: 0, life: 0, jump: 0},
+            {texto: 'No no siento nada por el frío de la noche', points: 0, life: -8, jump: 2, razon:'tener frio de estar en la calle.'}]});
+    calle2Lunares.push({texto: '¡Tienes el hablar muy dilustrado! Ven. Entrégame la mano.\nVamos a situarnos en un lugar más oscuro. Verás cómo te cachondeo.', jump:2});
+    calle2Lunares.push({texto: 'Ven. Entrégame la mano. Vamos a situarnos en un lugar\nmás oscuro. Verás cómo te cachondeo.'});
+    calle2Lunares.push({texto: '¿Quieres saber como soy? ¡Soy muy negra y muy fea!'});
+    calle2Lunares.push({texto: 'Aun así yo guardo el pan de higos para el gachó que me sepa\ncamelar. Yo miro mucho lo que hago. La Cotillona me habló para\nllevarme a una casa. ¡Una casa de mucho postín!\nNo quise ir...'});
+    calle2Lunares.push({texto: 'Así que con pagar la cama concluyes. Si quedas contento y\nquieres convidarme a un café con churros, tampoco me niego.'});
+    calle2Lunares.push({texto: 'Max vayámonos de aquí que acabo de ver\na la patrulla de Caballería.', personaje: 'Latino'});
+    calle2Lunares.push({texto: '¿Qué responde Max?',
+    answer: [{texto: 'Esperese Latino que quiero ver que pasa', points: 10, life: 0, jump: 4},
+            {texto: 'Esta señora tenía ya un trato conmigo', points: 0, life: -2, jump: 0, razon:'seguir el juego a\nla prostituta.'},
+            {texto: 'No aguanto mas vayámonos a casa', points: 0, life: -8, jump: 4, razon:'tener frio de estar en la calle.'}]});
+    calle2Lunares.push({texto: 'Nunca son buenas noticias cuando se acercan por estos\nlugares, me marcho.', personaje: 'Vieja'});
+    calle2Lunares.push({texto: 'Espereme que yo tampoco quiero saber nada', personaje: 'Lunares'});
+    calle2Lunares.push({texto: 'Vayamos camino a casa Max, no quiero saber nada de ellos.', personaje: 'Latino'});
 
     // Identificadores de los diálogos.
     const d = {
@@ -463,6 +514,10 @@
 
       // CALLE1
        dCalle1 : calle1,
+
+      // CALLE2
+       dVieja: calle2Vieja,
+       dLunares: calle2Lunares,
 
       // LIBRERIA
        zarLibreria: dLibreriaZar,
