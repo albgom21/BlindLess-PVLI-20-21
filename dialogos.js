@@ -423,16 +423,44 @@
 
 //ESCENA FINAL TABERNA 4 (MAX FALLECE)
     let taberna4M = [];
-    taberna4M.push({texto: '¡Qué pena más grande! ¡Hoy se ha enterrado \nal poeta más grande de España! ¡Qué gran talento poseía!'});
-    taberna4M.push({texto: '¡En su honor, publicaré todos sus escritos! \n¡Merecía el reconocimiento de todo el país, no obstante, vivió de \nla manera más miserable! ¡Qué injusta es la vida para algunos! \n¡Que alguien me ponga algo para beber!'});
-    taberna4M.push({texto: '¡No gaste tanto o se quedará tieso!'});
-    taberna4M.push({texto: '¡Cállese! Tengo dinero hasta para comprarte a ti. '});
-    taberna4M.push({texto: '¿De dónde habrá conseguido usted semejante cantidad \nde dinero? Seguro que cobró el décimo que le vendí a Max.'});
-    taberna4M.push({texto: '¡Jamás haría algo así!'});
-    taberna4M.push({texto: '¡MENTIRA! Todavía me debes esas diez mil pesetas, cobarde.'});
-    taberna4M.push({texto: 'Ya se las devolveré mujer. Leamos el periódico, que \nla situación en España no podría estar peor.'});
+    taberna4M.push({texto: '¡Qué pena más grande! ¡Hoy se ha enterrado al poeta\nmás grande de España! ¡Qué gran talento poseía!', personaje: 'Latino'});
+    taberna4M.push({texto: '¡En su honor, publicaré todos sus escritos! ¡Merecía\nel reconocimiento de todo el país, no obstante, vivió\nde la manera más miserable! ¡Qué injusta es la vida \npara algunos! ¡Que alguien me ponga algo para beber!'});
+    taberna4M.push({texto: '¡No gaste tanto o se quedará tieso!', personaje: 'La Pisa Bien'});
+    taberna4M.push({texto: '¡Cállese! Tengo dinero hasta para comprarte a ti. ', personaje: 'Latino'});
+    taberna4M.push({texto: '¿De dónde habrá conseguido usted semejante cantidad \nde dinero? Seguro que cobró el décimo que le vendí \na Max.', personaje: 'La Pisa Bien'});
+    taberna4M.push({texto: '¡Jamás haría algo así!', personaje: 'Latino'});
+    taberna4M.push({texto: '¡MENTIRA! Todavía me debes esas diez mil pesetas, \ncobarde.', personaje: 'La Pisa Bien'});
+    taberna4M.push({texto: 'Ya se las devolveré mujer. Leamos el periódico, que \nla situación en España no podría estar peor.', personaje: 'Latino'});
     taberna4M.push({texto: 'Han encontrado el cadáver de dos señoras en la calle \nde Bastardillos. ¿Se habrán suicidado?'});
-    taberna4M.push({texto: 'Sospecho que son la esposa y la hija de nuestro Max. \n¡Qué pena más grande!'});
+    taberna4M.push({texto: 'Sospecho que son la esposa y la hija de nuestro Max. \n¡Qué pena más grande!', personaje: 'La Pisa Bien'});
+
+//ESCENA FINAL TABERNA 4 (MAX NO FALLECE Y LE TOCA LA LOTERIA)
+    let taberna4NMSL = [];
+    taberna4NMSL.push({texto: 'Tengo mucha curiosidad por saber si el boleto \nque compré ha sido ganador. Recemos a dios por \nbuena suerte.'});
+    taberna4NMSL.push({texto: '¡Bah, tonterías! La lotería sólo da falsas esperanzas. \nNunca toca nada. Mira, aquí en el periódico podremos \ncomprobarlo.', personaje: 'Latino'});
+    taberna4NMSL.push({texto: '¡MAX! ¡HA TOCADO! ¡MILAGRO! ¡MILAGRO!'});
+    taberna4NMSL.push({texto: '¡NO ES POSIBLE! ¡POR FIN UNA SORPRESA GRATA!'});
+    taberna4NMSL.push({texto: 'Menos mal que te dije de comprar el boleto. Si \nno hubiera sido por mí, no le habría tocado.', personaje: 'Latino',
+          answer: [{texto: '¡Muchas gracias, amigo! Compartiré una cantidad \nsignificativa con usted.', points: 0, life: 0, jump: 0},
+                   {texto: '¡Gracias, amigo! Vamos a celebrarlo, yo pago.', points: 0, life: 0, jump: 1},
+                   {texto: '¡Este boleto lo compré yo! ¡No intentes engañarme!', points: 0, life: 0, jump: 2}]});
+    taberna4NMSL.push({texto: 'Gracias hombre, para eso estamos los amigos', personaje: 'Latino', jump: 2});
+    taberna4NMSL.push({texto: 'Bueno, vale. Con eso me basta. ¡Vamos!', personaje: 'Latino', jump: 1});
+    taberna4NMSL.push({texto: 'Anda que no eres tacaño ni nada.', personaje: 'Latino'});
+    
+//ESCENA FINAL TABERNA 4 (MAX NO FALLECE Y LE TOCA LA LOTERIA)
+    let taberna4NMNL = [];
+    taberna4NMNL.push({texto: 'Tengo mucha curiosidad por saber si el boleto \nque compré ha sido ganador. Recemos a dios por \nbuena suerte.'});
+    taberna4NMNL.push({texto: '¡Bah, tonterías! La lotería sólo da falsas esperanzas. \nNunca toca nada. Mira, aquí en el periódico podremos \ncomprobarlo.', personaje: 'Latino'});
+    taberna4NMNL.push({texto: 'Nada, no ha tocado ni un poco. ¡Ves cómo te dije \nque esto era un engañabobos y una estafa!', personaje: 'Latino',
+          answer: [{texto: 'No se pierde nada intentando. ¡sólo dinero!', points: 0, life: 0, jump: 0},
+                   {texto: 'Mira que eres aguafiestas.', points: 0, life: 0, jump: 0},
+                   {texto: '*No dice nada*', points: 0, life: 0, jump: 0}]});
+    taberna4NMNL.push({texto: 'Bueno, será mejor que nos vayamos ya.', personaje: 'Latino'});
+    
+        
+
+
 
     // BARES (LOTERÍA) ------------------------------------------------------
     let dBares = [];
@@ -566,7 +594,9 @@
 
       // TABERNA
        dTaberna1 : taberna1,
-       dTaberna4: taberna4M,
+       dTaberna4M: taberna4M,
+       dTaberna4NMSL: taberna4NMSL,
+       dTaberna4NMNL: taberna4NMNL,
 
       // BUÑOLERÍA
        dBunyols : dBunyoleria,
