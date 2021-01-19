@@ -11,11 +11,13 @@ export default class Casa2sp extends Phaser.Scene {
     this.menuActivado = false;       
     this.fin = new Array(1); // array con el número de personajes  
     this.key = 'casa2sp';    
-    this.nums = [];
   }
+  
   init(datos){
     this.vidaMax = datos.vidaMax;
+    this.datosInventario = datos.datosInventario;
   }
+  
   create() {  // Refactorizar diálogos y escena      
     this.cameras.main.fadeIn(1500); 
     this.scene.stop('mapa');
@@ -23,8 +25,14 @@ export default class Casa2sp extends Phaser.Scene {
     this.add.image(640, 360, 'fondoShakeDanyo'); 
     this.add.image(640, 360, 'casa');         
     this.madame = new Collet(this, 500, 400, 'madamcuerpo', dialogos.mcCasa2sp, 0); 
+
+    // Botón del inventario.
+    this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
+    if (!this.menuActivado) this.botonT.on('pointerdown', () => this.scene.launch('inventario', {datosInventario : this.datosInventario}));
+    
     this.cameras.main.once('camerafadeoutcomplete', () => {    
-       this.scene.launch('mapa',{antEscena:this.key,proxEscena:'ministerio3casa',nombreEscena:'MINISTERIO',vida:this.vidaMax,suma:2,resta:14});     
+       this.scene.launch('mapa',{antEscena:this.key,proxEscena:'ministerio3casa',nombreEscena:'MINISTERIO',
+       vida:this.vidaMax,suma:2,resta:14, datosInventario : this.datosInventario});     
     });
   }
   finEscena(){    

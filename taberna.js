@@ -9,22 +9,32 @@ export default class Taberna1 extends Phaser.Scene {
       this.key = 'taberna1';    
       this.pointScene = 0;
     } 
-    init(datos) {
+  
+    init(datos){
       this.vidaMax = datos.vidaMax;
+      this.datosInventario = datos.Inventario;
     }
+    
     create() {  
       this.cameras.main.fadeIn(1500); 
       this.scene.stop('mapa');
       this.nameScene = 'TABERNA';    
       this.add.image(640, 360, 'fondoShakeDanyo'); 
       this.add.image(640, 360, 'taberna');   
-      this.latCuerpo = new Latino(this, 500, 400, 'latcuerpo', dialogos.dTaberna1, 0, false);    
-      if(!this.latCuerpo.aparecera){                                   // *****
-        this.add.image(700, 400, 'lapisabiencuerpo');       // *****
-      }
+      this.latCuerpo = new Latino(this, 500, 400, 'latcuerpo', dialogos.dTaberna1, 0, false);  
+      
+      // Botón del inventario.
+      this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
+      if (!this.menuActivado) this.botonT.on('pointerdown', () => this.scene.launch('inventario', {datosInventario : this.datosInventario}));
+    
+      
       this.cameras.main.once('camerafadeoutcomplete', () => {
         //Poner que según los puntos con otro parámetro vaya a ministerio1 o buñoleria
-        this.scene.launch('mapa',{antEscena:this.key, proxEscena:'taberna2', nombreEscena:'TABERNA', vida:this.vidaMax, suma:10, resta:10})
+        if (this.pointScene > 0) this.scene.launch('mapa',{antEscena:this.key, proxEscena:'ministerio1', nombreEscena:'MINISTERIO',
+         vida:this.vidaMax, suma:10, resta:10, datosInventario: this.datosInventario })
+         
+        else this.scene.launch('mapa',{antEscena:this.key, proxEscena:'taberna2', nombreEscena:'TABERNA',
+         vida:this.vidaMax, suma:10, resta:-7, datosInventario: this.datosInventario})
     });
     }
     

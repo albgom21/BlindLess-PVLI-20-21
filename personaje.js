@@ -1,6 +1,6 @@
 import Menu from './menu.js';
 export default class Personaje extends Phaser.GameObjects.Container {
-  constructor(scene, x, y, image, d, xMenu, yMenu, dialogos, fin, aparece, aparecera) {
+  constructor(scene, x, y, image, d, xMenu, yMenu, dialogos, fin, aparece) {
     super(scene);
     this.scene = scene;
     this.x = x;
@@ -13,7 +13,6 @@ export default class Personaje extends Phaser.GameObjects.Container {
     this.m.visible = false;
     this.f = fin;
     this.aparece = aparece;
-    this.aparecera = aparecera;
     
     const imagenDanyo = this.scene.add.image(640, 360, 'danyo').setVisible(false);
     this.scene.cameras.main.on('camerashakestart', function () {
@@ -78,7 +77,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
   } 
 
   //Método que resta/suma vida a Max
-  cambiaVida(vida,razon){
+  cambiaVida(vida, razon){
     if(vida < 0){
       this.dialogos.splice(this.numDial, 0, {texto: ('*Daño: ' + vida + ' de vida debido a ' + razon + '*'), answer: null});
       this.scene.cameras.main.shake(500);
@@ -120,8 +119,7 @@ export default class Personaje extends Phaser.GameObjects.Container {
         this.newAnswer(i, dialogo.answer[i]);
       }
       this.animacionRespuestas(this.botones);
-    }
-    if(this.aparecera) this.scene.aparecer();    
+    } 
     if(dialogo.jump) this.numDial += dialogo.jump;
   }
 

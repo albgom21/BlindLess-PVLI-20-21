@@ -25,7 +25,7 @@ export default class Loteria extends Phaser.GameObjects.Sprite{
 
     // Método que crea un número aleatorio redondeado que va de 100 a 1000.
      numRandom(){
-         this.numTicket = Math.floor(Math.random() * (1000 - 100) + 100);
+         return this.numTicket = Math.floor(Math.random() * (100 - 10) + 10);
      }
 
     // Método que crea el número ganador con numRandom.
@@ -35,8 +35,7 @@ export default class Loteria extends Phaser.GameObjects.Sprite{
      
     // Método que crea un número aleatorio y lo guarda en el array de tickets.
      crearNumero(){
-         this.numRandom();
-         this.txt.text = this.nums;
+        return this.numRandom();
      }
 
     // Método que escribe en pantalla los boletos actuales.

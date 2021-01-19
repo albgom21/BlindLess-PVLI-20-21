@@ -9,9 +9,12 @@ export default class Ministerio2 extends Phaser.Scene {
       this.key = 'ministerio2';    
       this.pointScene = 0;
     } 
-    init(datos) {
+  
+    init(datos){
       this.vidaMax = datos.vidaMax;
+      this.datosInventario = datos.datosInventario;
     }
+    
     create() {  
       this.cameras.main.fadeIn(1500); 
       this.scene.stop('mapa');
@@ -22,8 +25,13 @@ export default class Ministerio2 extends Phaser.Scene {
       // debería ser la imagen del Oficial, no la del gobernante.
       this.oficial = new Oficial(this, 1000, 400, 'gobernantecuerpo', dialogos.ministerio2, 0);
 
+      // Botón del inventario.
+      this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
+      if (!this.menuActivado) this.botonT.on('pointerdown', () => this.scene.launch('inventario', {datosInventario: this.datosInventario}));
+      
       this.cameras.main.once('camerafadeoutcomplete', () => { //FALTA 
-        this.scene.launch('mapa',{antEscena:this.key, proxEscena:'calabozo', nombreEscena:'CALABOZO', vida:this.vidaMax, suma:0, resta:0}) 
+        this.scene.launch('mapa',{antEscena:this.key, proxEscena:'calabozo', nombreEscena:'CALABOZO',
+         vida:this.vidaMax, suma:0, resta:0, datosInventario: this.datosInventario}) 
     });
     }
     

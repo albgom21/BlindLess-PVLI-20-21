@@ -1,6 +1,6 @@
 // CASA1  ------------------------------------------------------
   let dCasa1MC = []; 
-    dCasa1MC.push({texto: 'Ten paciencia, Max. Ya sé que no podemos ganar\ndinero, y además solo te dieron 40 talegos por\nesas cuatro crónicas.'});
+    dCasa1MC.push({texto: 'Ten paciencia, Max. Ya sé que no podemos ganar\ndinero, y además solo te dieron 40 talegos por\nesas cuatro crónicas. Con suerte, el boleto de lotería \nque compramos saldrá premiado.'});
     dCasa1MC.push({texto: 'No temo a la idea del suicidio colectivo, pero\ntenemos una hija, Max. ¡Es muy joven!\nNo puede morir todavía.'});
     dCasa1MC.push({texto: '¿Qué responde Max?',
         answer: [{texto: 'También se matan los jóvenes.', points: 0, life: 0, jump: 0},
@@ -34,7 +34,7 @@
     calle1.push({texto: '¿Qué responde Max?',
     answer: [{texto: 'Sí, me ha venido bien un poco de aire fresco.', points: 10, life: 0, jump: 0},
              {texto: 'Estoy igual de alterado. Creo que es evidente.', points: 10, life: 0, jump: 0},
-             {texto: '*no dice nada*', points: 10, life: 0, jump: 5}]});
+             {texto: '*no dice nada*', points: 10, life: 0, jump: 0}]});
     calle1.push({texto: '¡¡¡VIVA ESPAÑA!!! ¡UNA, GRANDE Y LIBRE!', personaje: 'Peregrino'});
     calle1.push({texto: '¿Qué…? ¡Pero si no es mi gran amigo Don Gay Peregrino! \n¿No estabas en Londres?', personaje: 'Latino'});
     calle1.push({texto: 'Así es, más bien he vuelto aquí de asueto. Volveré a \nInglaterra en unos días.', personaje: 'Peregrino'});
@@ -49,7 +49,7 @@
              {texto: '*se le queda mirando*', points: 0, life: 0, jump: 5}]});
     calle1.push({texto: 'Jajajaja… llevo muchos años viviendo en Inglaterra ya, \nhe acabado cogiéndole gusto. Y, aunque viva lejos, estoy \n sirviéndole a mi patria.'});
     calle1.push({texto: '¿Y cuánto tiempo te quedas? Max y yo ahora íbamos de \n camino a la taberna, ¿quieres venir?', personaje: 'Latino'});
-    calle1.push({texto: 'Me temo que eso no será posible… Una de las facetas más \nimportantes en la vida del hombre es el matrimonio, y \n he de atender a mi esposa ahora.', personaje: 'DonGayPeregrino'});
+    calle1.push({texto: 'Me temo que eso no será posible… Una de las facetas más \nimportantes en la vida del hombre es el matrimonio, y \n he de atender a mi esposa ahora.', personaje: 'Peregrino'});
     calle1.push({texto: 'Vaya, hombre… qué pifia de mozo. Vámonos, Max.', personaje: 'Latino', jump: 10});
     calle1.push({texto: 'He venido a ver a mi mujer, que hace meses que la tengo\ndesatendida.', personaje: 'Peregrino'});
     calle1.push({texto: '¿Y cuánto tiempo te quedas? Max y yo ahora íbamos de\ncamino a la taberna, ¿quieres venir?', personaje: 'Latino'});
@@ -101,35 +101,35 @@
     dLibreriaZar.push({texto: '¡Espera Max no salgas corriendo!'});
 
     // TABERNA2  ------------------------------------------------------
-    let taberna2 = [];
-    taberna2.push({texto:'MeNuDo rrraSpaMoNNedas ell ZzarattuSstra esSe… Yy \npPensarrr qque *hip* sSse ha sSalido cCon la sSuya aúnNn asSsí… *hip*'});
-    taberna2.push({texto:'¿Qué responde Max?',
+    let taberna1 = [];
+    taberna1.push({texto:'MeNuDo rrraSpaMoNNedas ell ZzarattuSstra esSe… Yy \npPensarrr qque *hip* sSse ha sSalido cCon la sSuya aúnNn asSsí… *hip*'});
+    taberna1.push({texto:'¿Qué responde Max?',
     answer:[
-         {texto:'No merece que se le mencione ahora que estamos divirtiéndonos. ', points: 10, life: 0, jump: 0,},
+         {texto:'No merece que se le mencione ahora que estamos divirtiéndonos. ', points: 0, life: 0, jump: 0,},
          {texto:'No sé qué hacer sin la compensación económica que me debía, pero es mejor olvidarle.', points: 10, life: 0, jump: 0},
-         {texto:'¡¡¡NO DESESPERE!!! lA noCCHe esStá paRra ahohgHgar laSs pPenasSs.', points: 10, life: 0, jump: 0}]});
-    taberna2.push({texto:'TiennneSs raZzón, MaXx. ESstToy connTtenNto dde tenneRr \nunn amMiggo comMo tTú.'});
-    taberna2.push({texto:'¡Oye! Tú eres el Max Estrella, ¿verdad?', personaje: 'La Pisa Bien', aparecera:true});
-    taberna2.push({texto:'¿Qué responde Max?',
+         {texto:'¡¡¡NO DESESPERE!!! lA noCCHe esStá paRra ahohgHgar laSs pPenasSs.', points: 0, life: 0, jump: 0}]});
+    taberna1.push({texto:'TiennneSs raZzón, MaXx. ESstToy connTtenNto dde tenneRr \nunn amMiggo comMo tTú.'});
+    taberna1.push({texto:'¡Oye! Tú eres el Max Estrella, ¿verdad?', personaje: 'La Pisa Bien'});
+    taberna1.push({texto:'¿Qué responde Max?',
   answer: [{texto:'Sí, soy yo. ¿qQuÉ ppASa?', points: 0, life: 0, jump: 0},
             {texto:'No lo tengo muy claro.', points: 0, life: 0, jump: 0},
             {texto:'*la ignora* Aldonza, Aldonza… quiero tu amor, \nquiero tu amor, yo quiero, Aldonza, tu amor…', points: 0, life: 0, jump: 0,}]});
-    taberna2.push({texto:'¿Me estás vacilando, badulaque? ¿Has cogido tú el \nboleto del décimo sin pagarlo? ¡Desembucha y dame lo \nque es mío!', personaje: 'La Pisa Bien'});
-    taberna2.push({texto:'¿Qué responde Max?',
+    taberna1.push({texto:'¿Me estás vacilando, badulaque? ¿Has cogido tú el \nboleto del décimo sin pagarlo? ¡Desembucha y dame lo \nque es mío!', personaje: 'La Pisa Bien'});
+    taberna1.push({texto:'¿Qué responde Max?',
     answer: [
           {texto:'Ssí, he siDdo yo el qQkue lo hHa coggidDo, Ppero nNo voy a soltar uNna pPessetTTa.', points: 0, life: +5, jump: 0},
           {texto:'No, se está equivocando usted.', points: 0, life: +10, jump: 0, razon:'No se ha dejado engañar \ny ha sido racional.'},
-          {texto:'Así es, se me ha olvidado por completo pagarle. ¿Puedo?', points: 0, life: -7, jump: 1, razon:'Se ha dejado engañar por \nLa Pisa Bien.'}]});
-    taberna2.push({texto:'Ugh… me las pagarás, necio.', personaje:'La Pisa Bien', jump: 1});
-    taberna2.push({texto:'Oh… claro, debe haber sido un malentendido. ¡Muchas gracias!', personaje:'La Pisa Bien'});
-    taberna2.push({texto:'Qué zzagala tan rarra… *hip* En ffin, ¿has vissto a los \nque estánn disscutiendo ffuera? LosS pPolítticKoss…\ncommo ssieMpre...', personaje: 'Latino'});
-    taberna2.push({texto:'¿Qué responde Max?',
+          {texto:'Así es, se me ha olvidado por completo pagarle. ¿Puedo?', points: 10, life: -7, jump: 1, razon:'Se ha dejado engañar por \nLa Pisa Bien.'}]});
+    taberna1.push({texto:'Ugh… me las pagarás, necio.', personaje:'La Pisa Bien', jump: 1});
+    taberna1.push({texto:'Oh… claro, debe haber sido un malentendido. ¡Muchas gracias!', personaje:'La Pisa Bien'});
+    taberna1.push({texto:'Qué zzagala tan rarra… *hip* En ffin, ¿has vissto a los \nque estánn disscutiendo ffuera? LosS pPolítticKoss…\ncommo ssieMpre...', personaje: 'Latino'});
+    taberna1.push({texto:'¿Qué responde Max?',
   answer: [
     {texto:'¡¡Quiero unirme a ellos!!', points: 0, life: 0, jump: 0},
     {texto:'Sí, mejor que nos vayamos. ', points: 0, life: 0, jump: 0},
     {texto:'No he oído nada…', points: 0, life: 0, jump: 0}
   ]});
-    taberna2.push({texto:'Sí, será mejjor qQue noSs vayYamoss...'});
+    taberna1.push({texto:'Sí, será mejjor qQue noSs vayYamoss...'});
 
     // MINISTERIO1  ------------------------------------------------------
     let ministerio1 = [];
@@ -565,7 +565,7 @@
        premioD : dLibreriaPremioD,
 
       // TABERNA
-       dTaberna1 : taberna2,
+       dTaberna1 : taberna1,
        dTaberna4: taberna4M,
 
       // BUÑOLERÍA

@@ -9,9 +9,12 @@ export default class Ministerio1 extends Phaser.Scene {
       this.key = 'ministerio1';    
       this.pointScene = 0;
     } 
-    init(datos) {
+  
+    init(datos){
       this.vidaMax = datos.vidaMax;
+      this.datosInventario = datos.datosInventario;
     }
+    
     create() {  
       this.cameras.main.fadeIn(1500); 
       this.scene.stop('mapa');
@@ -19,10 +22,17 @@ export default class Ministerio1 extends Phaser.Scene {
       this.add.image(640, 360, 'fondoShakeDanyo'); 
       this.add.image(640, 360, 'ministerio');  
       this.gobernante = new Gobernante(this, 300, 450, 'gobernantecuerpo', dialogos.dMinisterio1, 0);
+      
+      // Botón del inventario.
+      this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
+      if (!this.menuActivado) this.botonT.on('pointerdown', () => this.scene.launch('inventario', {datosInventario : this.datosInventario}));
 
       this.cameras.main.once('camerafadeoutcomplete', () => { //FALTA 
-        if (this.pointScene > 0) this.scene.launch('mapa', {antEscena: this.key, proxEscena: 'casa2', nombreEscena:'CASA', vida:this.vidaMax, suma: 0, resta: 0});
-        else this.scene.launch('mapa',{antEscena:this.key, proxEscena:'calabozo', nombreEscena:'CALABOZO', vida:this.vidaMax, suma: 0, resta: 0});
+        if (this.pointScene > 0) this.scene.launch('mapa', {antEscena: this.key, proxEscena: 'casa2', nombreEscena:'CASA',
+         vida:this.vidaMax, suma: 0, resta: 0, datosInventario : this.datosInventario});
+
+        else this.scene.launch('mapa',{antEscena:this.key, proxEscena:'calabozo', nombreEscena:'CALABOZO',
+         vida:this.vidaMax, suma: 0, resta: 0, datosInventario : this.datosInventario});
     });
     }
     

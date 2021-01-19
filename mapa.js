@@ -10,7 +10,9 @@ export default class Mapa extends Phaser.Scene {
     this.vida = datos.vida;
     this.suma = datos.suma;
     this.resta = datos.resta;
+    this.datosInventario = datos.datosInventario;
   }
+
   create() {         
     //Mapa
     this.cameras.main.fadeIn(1500); 
@@ -18,7 +20,7 @@ export default class Mapa extends Phaser.Scene {
     this.scene.stop(this.antEscena);
     const mapa = this.add.image(640, 360, 'mapa').setInteractive();
     this.cameras.main.once('camerafadeincomplete', () => {
-      mapa.on('pointerdown', () => {this.scene.launch(this.proxEscena,{vidaMax:this.vida})});
+      mapa.on('pointerdown', () => {this.scene.launch(this.proxEscena,{vidaMax:this.vida, datosInventario:this.datosInventario})});
   });
    
     

@@ -12,9 +12,12 @@ export default class Ministerio3calabozo extends Phaser.Scene {
     this.key = 'ministerio3calabozo';    
     this.nums = [];
   }
+  
   init(datos){
     this.vidaMax = datos.vidaMax;
+    this.datosInventario = datos.datosInventario;
   }
+  
   create() {  // Refactorizar diálogos y escena      
     this.cameras.main.fadeIn(1500); 
     this.scene.stop('mapa');
@@ -22,8 +25,14 @@ export default class Ministerio3calabozo extends Phaser.Scene {
     this.add.image(640, 360, 'fondoShakeDanyo'); 
     this.add.image(640, 360, 'ministerio');         
     this.madame = new Gobernante(this, 900, 350, 'gobernantecuerpo', dialogos.goberMinis3Calabozo, 0); 
+
+    // Botón del inventario.
+    this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
+    if (!this.menuActivado) this.botonT.on('pointerdown', () => this.scene.launch('inventario', {datosInventario: this.datosInventario}));
+
     this.cameras.main.once('camerafadeoutcomplete', () => {    
-       this.scene.launch('mapa',{antEscena:this.key,proxEscena:'taberna3',nombreEscena:'TABERNA',vida:this.vidaMax,suma:0,resta:5});     
+       this.scene.launch('mapa',{antEscena:this.key,proxEscena:'taberna3',nombreEscena:'TABERNA',
+       vida:this.vidaMax,suma:0,resta:5, datosInventario : this.datosInventario});     
       });
   }
   finEscena(){    

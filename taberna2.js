@@ -12,11 +12,13 @@ export default class Taberna2 extends Phaser.Scene {
     this.pointScene = 0;
     this.compra = true;
   } 
+
   init(datos) {
     this.vidaMax = datos.vidaMax;
-    this.puntosAnt = datos.puntos; //puntos que vienen de la taberna1
-    this.sumaVida = datos.sumaVida;
+    this.puntosAnt = datos.puntos; // puntos que vienen de la taberna1
+    this.datosInventario = datos.datosInventario;
   }
+  
   create() {  
     this.cameras.main.fadeIn(1500); 
     this.once = false;
@@ -27,11 +29,23 @@ export default class Taberna2 extends Phaser.Scene {
     
     this.vaso = new Vaso(this, 200, 300, 'Vaso', dialogos.vaso, dialogos.vasoD);   
     this.camCuerpo = new Camarero(this,500,281,'camarerocuerpo',dialogos.bares,0,true);    
+    
+    // Botón del inventario.
+    this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
+    if (!this.menuActivado) this.botonT.on('pointerdown', () => this.scene.launch('inventario', {datosInventario: this.datosInventario}));
+  
     if(this.pointScene > 0){ //Si se ha elegido comprar la lotería aparece el boton y el ticket
       this.aparece();      
     }
+    // AQUÍ JUMBERTO UWU  = $  <3 
+  //  if (this.pointScene > 0) this.scene.launch('mapa',{antEscena:this.key, proxEscena:'ministerio1', nombreEscena:'MINISTERIO',
+  //  vida:this.vidaMax, suma:10, resta:10, datosInventario: this.datosInventario })
+    
+ //  else this.scene.launch('mapa',{antEscena:this.key, proxEscena:'taberna2', nombreEscena:'TABERNA',
+  //  vida:this.vidaMax, suma:10, resta:-7, datosInventario: this.datosInventario})
+
     this.cameras.main.once('camerafadeoutcomplete', () => {
-      this.scene.launch('mapa',{antEscena:this.key,proxEscena:'bunyoleria',nombreEscena:'BUÑOLERIA',vida:this.vidaMax,suma:4,resta:4});
+      this.scene.launch('mapa',{antEscena:this.key,proxEscena:'bunyoleria',nombreEscena:'BUÑOLERIA',vida:this.vidaMax,suma:4,resta:4, datosInventario: this.datosInventario});
   });
     this.minijuego = this.add.image(950, 55,'cartel').setInteractive();    
     this.minijuego.on('pointerdown', () => {if(!this.menuActivado){this.scene.launch('minijuego',{vida:this.vidaMax}),this.minijuego.destroy()}});      

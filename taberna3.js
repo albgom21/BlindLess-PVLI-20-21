@@ -11,10 +11,10 @@ export default class Taberna3 extends Phaser.Scene {
     this.pointScene = 0;
     this.compra = true;
   } 
+  
   init(datos) {
     this.vidaMax = datos.vidaMax;
-    this.puntosAnt = datos.puntos; //puntos que vienen de la taberna1
-    this.sumaVida = datos.sumaVida;
+    this.datosInventario = datos.datosInventario;
   }
   create() {  
     this.cameras.main.fadeIn(1500); 
@@ -24,11 +24,18 @@ export default class Taberna3 extends Phaser.Scene {
     this.add.image(640, 360, 'fondoShakeDanyo'); 
     this.add.image(640, 360, 'taberna');   
     this.camCuerpo = new Camarero(this,500,281,'camarerocuerpo',dialogos.bares,0,true);    
+    
+    // Botón del inventario.
+    this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
+    if (!this.menuActivado) this.botonT.on('pointerdown', () => this.scene.launch('inventario', {datosInventario: this.datosInventario}));
+    
+  
     if(this.pointScene > 0){ //Si se ha elegido comprar la lotería aparece el boton y el ticket
       this.aparece();      
     }
     this.cameras.main.once('camerafadeoutcomplete', () => {
-      this.scene.launch('calle2',{antEscena:this.key,proxEscena:'calle2',nombreEscena:'CALLE',vida:this.vidaMax,suma:4,resta:4});
+      this.scene.launch('calle2',{antEscena:this.key,proxEscena:'calle2',nombreEscena:'CALLE',
+      vida:this.vidaMax,suma:4,resta:4, datosInventario : this.datosInventario});
   });
     this.minijuego = this.add.image(950, 55,'cartel').setInteractive();    
     this.minijuego.on('pointerdown', () => {if(!this.menuActivado){this.scene.launch('minijuego',{vida:this.vidaMax}),this.minijuego.destroy()}});

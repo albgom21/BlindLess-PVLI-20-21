@@ -7,8 +7,13 @@ export default class CalleGormada extends Phaser.Scene {
     this.menuActivado = false;   
     this.fin = new Array(1); // array con el número de personajes  
     this.key = 'callegormada';    
-    this.nums = [];
   }
+  
+  init(datos){
+    this.vidaMax = datos.vidaMax;
+    this.datosInventario = datos.datosInventario;
+  }
+  
   create() {  // Refactorizar diálogos y escena      
     this.cameras.main.fadeIn(1500); 
     this.scene.stop('mapa');
@@ -16,9 +21,14 @@ export default class CalleGormada extends Phaser.Scene {
     this.add.image(640, 360, 'fondoShakeDanyo'); 
     this.add.image(640, 360, 'calle');         
     this.latCuerpo = new Latino(this, 400, 500, 'latcuerpo', dialogos.dBunyel, 0);
+
+    // Botón del inventario.
+    this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
+    if (!this.menuActivado) this.botonT.on('pointerdown', () => this.scene.launch('inventario', {datosInventario : this.datosInventario}));
+    
     this.cameras.main.once('camerafadeoutcomplete', () => {
-       this.scene.launch('mapa',{antEscena:this.key,proxEscena:'calabozo',nombreEscena:'CALABOZO',vida:this.vidaMax,suma:0 ,resta:0});
-      
+       this.scene.launch('mapa',{antEscena:this.key,proxEscena:'ministerio2',nombreEscena:'MINISTERIO',
+       vida:this.vidaMax,suma:0 ,resta:0, datosInventario : this.datosInventario});
   });
   }  
 

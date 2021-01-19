@@ -1,6 +1,7 @@
 import Latino from "./latino.js";
 import dialogos from './dialogos.js';
 import Rata from "./rata.js";
+import Loteria from "./loteria.js";
 export default class Calle1 extends Phaser.Scene {  
     constructor() {
       super({ key: "calle1" });  
@@ -9,8 +10,10 @@ export default class Calle1 extends Phaser.Scene {
       this.fin = new Array(1);
       this.key = 'calle1';
     }
+  
     init(datos){
       this.vidaMax = datos.vidaMax;
+      this.datosInventario = datos.datosInventario;
     }
     
   create(){
@@ -23,9 +26,16 @@ export default class Calle1 extends Phaser.Scene {
     this.rata = new Rata(this, 733, 350, 'Rata', dialogos.rata, dialogos.rataD);  
     if(this.pointScene > 10) this.donLatino.aparece = true;
 
-
+    
+    // Botón del inventario.
+    this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
+    if (!this.menuActivado) this.botonT.on('pointerdown', () => this.scene.launch('inventario', {datosInventario: this.datosInventario}));
+    
+  
+     
     this.cameras.main.once('camerafadeoutcomplete', () => {
-      this.scene.launch('mapa',{antEscena:this.key, proxEscena:'taberna1', nombreEscena:'TABERNA', vida:this.vidaMax, suma:10, resta:7}) 
+      this.scene.launch('mapa',{antEscena:this.key, proxEscena:'taberna1', nombreEscena:'TABERNA',
+       vida:this.vidaMax, suma:10, resta:7, datosInventario: this.datosInventario}) 
   });
   }
 

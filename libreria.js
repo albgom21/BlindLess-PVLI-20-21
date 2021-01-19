@@ -11,8 +11,10 @@ export default class Libreria extends Phaser.Scene {
   this.fin = new Array(1); // array con el numero de personajes    
   this.key = 'libreria';
   }
+  
   init(datos){
     this.vidaMax = datos.vidaMax;
+    this.datosInventario = datos.datosInventario;
   }
     
   create(){
@@ -29,8 +31,12 @@ export default class Libreria extends Phaser.Scene {
     this.premio = new Premio(this, 900, 60, 'Premio', dialogos.premio, dialogos.premioD);   
 
     this.cameras.main.once('camerafadeoutcomplete', () => {
-      this.scene.launch('mapa', {antEscena:this.key, proxEscena:'taberna1', nombreEscena:'TABERNA', vida:this.vidaMax, suma:10, resta:7})
-  });
+      this.scene.launch('mapa', {antEscena:this.key, proxEscena:'taberna1', nombreEscena:'TABERNA',
+       vida:this.vidaMax, suma:10, resta:7, datosInventario: this.datosInventario})});
+
+   // Botón del inventario.
+   this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
+   if (!this.menuActivado) this.botonT.on('pointerdown', () => this.scene.launch('inventario', {datosInventario : this.datosInventario}));
   }
   finEscena(){    
     let a = true;

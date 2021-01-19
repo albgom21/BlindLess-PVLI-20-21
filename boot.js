@@ -4,15 +4,14 @@ export default class Inicio extends Phaser.Scene {
   }
 
   preload() {
-    //Sonidos
+   //Sonidos
     this.load.audio("ganarmonedas", "sounds/ganarmonedasminijuego.mp3");
-    this.load.audio("ganarvida", "sounds/ganarvida.wav");
-    this.load.audio("restarvida", "sounds/restarvida.wav");
-    this.load.audio("sacardialogos", "sounds/sacardialogos.mp3");
+    this.load.audio("ganarvida", "sounds/ganarvida.mp3");
+    this.load.audio("restarvida", "sounds/restarvida.mp3");
+    this.load.audio("sacardialogos", "sounds/salirdialogos.mp3");
+    this.load.audio("salirinventario", "sounds/salirinventario.mp3");
 
-
-
-    //Personajes   
+   //Personajes   
     this.load.image('Max','sprites/max.png' );    
     this.load.image('Latino','sprites/latino.png');
     this.load.image('latcuerpo','sprites/latcuerpo.png');
@@ -47,7 +46,8 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('corazon', 'sprites/corazon.png');
     this.load.image('inventario', 'sprites/inventario.png');
 
-    //Objetos
+
+   //Objetos
     this.load.image('sillon','sprites/sillon.png');
     this.load.image('circulo','sprites/circulo.png');
     this.load.image('botont', 'sprites/botontickets.png');
@@ -67,8 +67,7 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('Rata D','sprites/rataD.png');
 
 
-
-    //Coleccionables
+   //Coleccionables
     this.load.image('Baston','coleccionables/baston.png');
     this.load.image('Lacre','coleccionables/lacre.png');
     this.load.image('MonedasChocolate','coleccionables/monedaschocolate.png');
@@ -78,9 +77,9 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('Reloj','coleccionables/reloj.png');
     this.load.image('RelojMano','coleccionables/relojmano.png');
     this.load.image('Sobre','coleccionables/sobre.png');
-    this.load.image('Vela','coleccionables/vela.png');
+    this.load.image('Vela','coleccionables/velagorda.png');
 
-    //Minijuego
+   //Minijuego
     this.load.image('plat', 'spritesminijuego/plat.png');
     this.load.image('m', 'spritesminijuego/m.png');
     this.load.image('mujer', 'spritesminijuego/mujer.png');
@@ -93,7 +92,7 @@ export default class Inicio extends Phaser.Scene {
     this.load.spritesheet('character', 'spritesminijuego/character.png', { frameWidth: 40, frameHeight: 50 });
     
        
-    //Fondos
+   //Fondos
     this.load.image('inicio','fondos/inicio.png');  
     this.load.image('danyo','sprites/danyo.png');
     this.load.image('fondoShakeDanyo','fondos/fondoShakeDanyo.png');    
