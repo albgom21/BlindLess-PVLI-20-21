@@ -12,7 +12,7 @@ export default class Taberna1 extends Phaser.Scene {
   
     init(datos){
       this.vidaMax = datos.vidaMax;
-      this.datosInventario = datos.Inventario;
+      this.datosInventario = datos.datosInventario;
     }
     
     create() {  
@@ -25,16 +25,13 @@ export default class Taberna1 extends Phaser.Scene {
       
       // Botón del inventario.
       this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
-      if (!this.menuActivado) this.botonT.on('pointerdown', () => this.scene.launch('inventario', {datosInventario : this.datosInventario}));
+      this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); }) 
     
       
       this.cameras.main.once('camerafadeoutcomplete', () => {
         //Poner que según los puntos con otro parámetro vaya a ministerio1 o buñoleria
-        if (this.pointScene > 0) this.scene.launch('mapa',{antEscena:this.key, proxEscena:'ministerio1', nombreEscena:'MINISTERIO',
-         vida:this.vidaMax, suma:10, resta:10, datosInventario: this.datosInventario })
-         
-        else this.scene.launch('mapa',{antEscena:this.key, proxEscena:'taberna2', nombreEscena:'TABERNA',
-         vida:this.vidaMax, suma:10, resta:-7, datosInventario: this.datosInventario})
+        this.scene.launch('mapa',{antEscena:this.key, proxEscena:'taberna2', nombreEscena:'TABERNA',
+         vida:this.vidaMax, suma:10, resta:-7, datosInventario: this.datosInventario, puntos : this.pointScene})
     });
     }
     

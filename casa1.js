@@ -3,9 +3,9 @@ import Gafas from './gafas.js';
 import Collet from './collet.js';
 import dialogos from './dialogos.js';
 import Coleccionables from './coleccionables.js';
+
 export default class Casa1 extends Phaser.Scene {
-  
-  constructor() {
+    constructor() {
     super({ key: 'casa1'});    
     this.vidaMax = 100;
     this.pointScene = 0;
@@ -27,23 +27,21 @@ export default class Casa1 extends Phaser.Scene {
     this.add.image(640, 360, 'fondoShakeDanyo'); 
     this.add.image(640, 360, 'casa');         
     this.primerTicket = true;
+    this.objeto = new Coleccionables(this, 220, 360, 'Baston');
     this.madame = new Collet(this, 500, 400, 'madamcuerpo', dialogos.mcCasa1, 0, true);       
     this.g = new Gafas(this, 733, 350, 'Gafas', dialogos.gafasCasa1, dialogos.gafasDCasa1);    
-    const contxt = this.add.image(640, 360, 'contexto').setInteractive();   
+    const contxt = this.add.image(640, 360, 'contexto').setInteractive();
     
-    this.objeto = new Coleccionables(this, 640, 360, 'Baston');
     this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
     this.botonT.visible = false;   
-    contxt.on('pointerdown', () => {contxt.visible = false; this.botonT.visible = true;});  
 
+    contxt.on('pointerdown', () => {contxt.visible = false; this.botonT.visible = true;});  
+    if (this.primerTicket){
+      this.datosInventario.nums.push(Math.floor(Math.random() * (100 - 10) + 10));
+      this.primerTicket = false;
+    }
     // Botón del inventario.
-    this.botonT.on('pointerdown', () => {
-      if (this.primerTicket){
-        this.datosInventario.nums.push(Math.floor(Math.random() * (100 - 10) + 10));
-        this.primerTicket = false;
-      }
-      this.scene.launch('inventario', {datosInventario: this.datosInventario});
-    }) 
+    this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); }) 
 
     this.cameras.main.once('camerafadeoutcomplete', () => {
       if(this.pointScene >= 10){

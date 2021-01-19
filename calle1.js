@@ -1,7 +1,7 @@
 import Latino from "./latino.js";
 import dialogos from './dialogos.js';
 import Rata from "./rata.js";
-import Loteria from "./loteria.js";
+
 export default class Calle1 extends Phaser.Scene {  
     constructor() {
       super({ key: "calle1" });  
@@ -11,10 +11,10 @@ export default class Calle1 extends Phaser.Scene {
       this.key = 'calle1';
     }
   
-    init(datos){
-      this.vidaMax = datos.vidaMax;
-      this.datosInventario = datos.datosInventario;
-    }
+  init(datos){
+    this.vidaMax = datos.vidaMax;
+    this.datosInventario = datos.datosInventario;
+  }
     
   create(){
     this.cameras.main.fadeIn(1500); 
@@ -29,7 +29,7 @@ export default class Calle1 extends Phaser.Scene {
     
     // Botón del inventario.
     this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
-    if (!this.menuActivado) this.botonT.on('pointerdown', () => this.scene.launch('inventario', {datosInventario: this.datosInventario}));
+    this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); }) 
     
   
      
@@ -40,9 +40,9 @@ export default class Calle1 extends Phaser.Scene {
   }
 
   aparece(){
-    this.add.image(600, 400, 'peregrinocuerpo');
-    //this.donLatino2 = new Latino(this, 400, 400, 'latcuerpo', dialogos.dCalle2, 0);
+    this.add.image(600, 400, 'peregrinocuerpo');   
   }
+
   finEscena(){    
     let a = true ;
     let i = 0;

@@ -27,7 +27,7 @@ export default class Ministerio2 extends Phaser.Scene {
 
       // Botón del inventario.
       this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
-      if (!this.menuActivado) this.botonT.on('pointerdown', () => this.scene.launch('inventario', {datosInventario: this.datosInventario}));
+      this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); }) 
       
       this.cameras.main.once('camerafadeoutcomplete', () => { //FALTA 
         this.scene.launch('mapa',{antEscena:this.key, proxEscena:'calabozo', nombreEscena:'CALABOZO',

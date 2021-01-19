@@ -1,6 +1,5 @@
 import Gobernante from './gobernante.js';
 import dialogos from './dialogos.js';
-import Inventario from './inventario.js';
 
 export default class Ministerio3calabozo extends Phaser.Scene {
   
@@ -28,7 +27,7 @@ export default class Ministerio3calabozo extends Phaser.Scene {
 
     // Botón del inventario.
     this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
-    if (!this.menuActivado) this.botonT.on('pointerdown', () => this.scene.launch('inventario', {datosInventario: this.datosInventario}));
+    this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); }) 
 
     this.cameras.main.once('camerafadeoutcomplete', () => {    
        this.scene.launch('mapa',{antEscena:this.key,proxEscena:'taberna3',nombreEscena:'TABERNA',

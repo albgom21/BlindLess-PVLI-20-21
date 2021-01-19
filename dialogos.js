@@ -106,7 +106,7 @@
     taberna1.push({texto:'¿Qué responde Max?',
     answer:[
          {texto:'No merece que se le mencione ahora que estamos divirtiéndonos. ', points: 0, life: 0, jump: 0,},
-         {texto:'No sé qué hacer sin la compensación económica que me debía, pero es mejor olvidarle.', points: 10, life: 0, jump: 0},
+         {texto:'No sé qué hacer sin la compensación económica que me debía, pero es mejor olvidarle.', points: 0, life: 0, jump: 0},
          {texto:'¡¡¡NO DESESPERE!!! lA noCCHe esStá paRra ahohgHgar laSs pPenasSs.', points: 0, life: 0, jump: 0}]});
     taberna1.push({texto:'TiennneSs raZzón, MaXx. ESstToy connTtenNto dde tenneRr \nunn amMiggo comMo tTú.'});
     taberna1.push({texto:'¡Oye! Tú eres el Max Estrella, ¿verdad?', personaje: 'La Pisa Bien'});
@@ -437,7 +437,7 @@
     // BARES (LOTERÍA) ------------------------------------------------------
     let dBares = [];
     dBares.push({texto: 'Buenas, ¿le gustaría comprar algo de lotería\npor 5 puntos de vida?',
-      answer: [{texto: 'Claro, a eso he venido.', points: 1, life: -5, jump: 0, razon:' Gastar el poco dinero\nque tienes.'},
+      answer: [{texto: 'Claro, a eso he venido.', points: 10, life: -5, jump: 0, razon:' Gastar el poco dinero\nque tienes.'},
                {texto: 'No, gracias. Creía que me ofrecería otra cosa.', points: 0, life: 0, jump: 0},
                {texto: 'Me he confundido de garito.', points: 0, life: 0, jump: 0}]});    
     dBares.push({texto: 'Vale, espero verle pronto.'});

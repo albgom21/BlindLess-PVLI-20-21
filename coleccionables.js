@@ -5,7 +5,7 @@ export default class Coleccionables extends Phaser.GameObjects.Sprite {
       this.scene.add.existing(this);
       this.setInteractive();
       this.on('pointerdown', () => {
-          this.scene.coleccionables++;
+          this.scene.datosInventario.coleccionables++;
           this.destroy();
         }
       );

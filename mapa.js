@@ -11,6 +11,7 @@ export default class Mapa extends Phaser.Scene {
     this.suma = datos.suma;
     this.resta = datos.resta;
     this.datosInventario = datos.datosInventario;
+    this.puntosAnt = datos.puntos;
   }
 
   create() {         
@@ -20,7 +21,7 @@ export default class Mapa extends Phaser.Scene {
     this.scene.stop(this.antEscena);
     const mapa = this.add.image(640, 360, 'mapa').setInteractive();
     this.cameras.main.once('camerafadeincomplete', () => {
-      mapa.on('pointerdown', () => {this.scene.launch(this.proxEscena,{vidaMax:this.vida, datosInventario:this.datosInventario})});
+      mapa.on('pointerdown', () => {this.scene.launch(this.proxEscena,{vidaMax:this.vida, datosInventario:this.datosInventario, puntos: this.puntosAnt})});
   });
    
     
@@ -44,7 +45,7 @@ export default class Mapa extends Phaser.Scene {
     else if(this.proxEscena ==='ministerio1'){
       this.add.image(528,483,'circulo');
     }
-    else if(this.proxEscena ==='buñoleria'){
+    else if(this.proxEscena ==='bunyoleria'){
       this.add.image(750,503,'circulo');
     }
     else if(this.proxEscena ==='ministerio2'){

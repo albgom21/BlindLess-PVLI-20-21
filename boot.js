@@ -63,8 +63,8 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('Premio D','sprites/premiod.png');
     this.load.image('Vaso','sprites/vaso.png');
     this.load.image('Vaso D','sprites/vasod.png');
-    this.load.image('Rata','sprites/rata.png');
-    this.load.image('Rata D','sprites/rataD.png');
+    this.load.image('Rata','sprites/ratan.png');
+    this.load.image('Rata D','sprites/ratanD.png');
 
 
    //Coleccionables
