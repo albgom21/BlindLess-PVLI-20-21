@@ -1,4 +1,5 @@
 import Camarero from './barman.js';
+import Vaso from './vaso.js';
 import dialogos from './dialogos.js';
 import Loteria from './loteria.js';
 export default class Taberna2 extends Phaser.Scene {
@@ -23,6 +24,8 @@ export default class Taberna2 extends Phaser.Scene {
     this.nameScene = 'TABERNA';    
     this.add.image(640, 360, 'fondoShakeDanyo'); 
     this.add.image(640, 360, 'taberna');   
+    
+    this.vaso = new Vaso(this, 200, 300, 'Vaso', dialogos.vaso, dialogos.vasoD);   
     this.camCuerpo = new Camarero(this,500,281,'camarerocuerpo',dialogos.bares,0,true);    
     if(this.pointScene > 0){ //Si se ha elegido comprar la lotería aparece el boton y el ticket
       this.aparece();      
@@ -31,7 +34,7 @@ export default class Taberna2 extends Phaser.Scene {
       this.scene.launch('mapa',{antEscena:this.key,proxEscena:'bunyoleria',nombreEscena:'BUÑOLERIA',vida:this.vidaMax,suma:4,resta:4});
   });
     this.minijuego = this.add.image(950, 55,'cartel').setInteractive();    
-    this.minijuego.on('pointerdown', () => {if(!this.menuActivado){this.scene.launch('minijuego',{vida:this.vidaMax}),this.minijuego.destroy()}});
+    this.minijuego.on('pointerdown', () => {if(!this.menuActivado){this.scene.launch('minijuego',{vida:this.vidaMax}),this.minijuego.destroy()}});      
   }  
 
 aparece(){

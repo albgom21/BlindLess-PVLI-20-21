@@ -1,28 +1,32 @@
 import Zaratustra from './zaratustra.js';
 import dialogos from './dialogos.js';
-import Latino from './latino.js';
+import LibroMax from './libromax.js';
+import Libros from './libros.js';
+import Premio from './premio.js';
 export default class Libreria extends Phaser.Scene {  
-    constructor() {
-      super({ key: "libreria" });      
-    this.pointScene = 0;
-    this.menuActivado = false;    
-    this.fin = new Array(1); // array con el numero de personajes    
-    this.key = 'libreria';
-    }
-    init(datos){
-      this.vidaMax = datos.vidaMax;
-    }
+  constructor() {
+    super({ key: "libreria" });      
+  this.pointScene = 0;
+  this.menuActivado = false;    
+  this.fin = new Array(1); // array con el numero de personajes    
+  this.key = 'libreria';
+  }
+  init(datos){
+    this.vidaMax = datos.vidaMax;
+  }
     
   create(){
     this.cameras.main.fadeIn(1500); 
     this.scene.stop('mapa');
     this.nameScene = 'LIBRERIA';
-    this.add.image(640, 360, 'fondoShakeDanyo'); 
+    this.add.image(640, 360, 'fondoShakeDanyo');
     this.add.image(640, 360, 'libreria');
-  
-    this.zarCuerpo = new Zaratustra(this, 1000, 400, 'zaratustracuerpo', dialogos.zarLibreria, 0);  
-    //this.latCuerpo = new Latino(this, 500, 400, 'latcuerpo', dialogos, 1);        
     this.add.image(500, 400, 'latcuerpo');
+
+    this.zarCuerpo = new Zaratustra(this, 1000, 400, 'zaratustracuerpo', dialogos.zarLibreria, 0);
+    this.libromax = new LibroMax(this, 733, 362, 'Libro Max', dialogos.libroMax, dialogos.libroMaxD);   
+    this.libros = new Libros(this, 350, 80, 'Libros', dialogos.libros, dialogos.librosD);  
+    this.premio = new Premio(this, 900, 60, 'Premio', dialogos.premio, dialogos.premioD);   
 
     this.cameras.main.once('camerafadeoutcomplete', () => {
       this.scene.launch('mapa', {antEscena:this.key, proxEscena:'taberna1', nombreEscena:'TABERNA', vida:this.vidaMax, suma:10, resta:7})

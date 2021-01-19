@@ -1,11 +1,12 @@
 import Latino from "./latino.js";
 import dialogos from './dialogos.js';
+import Rata from "./rata.js";
 export default class Calle1 extends Phaser.Scene {  
     constructor() {
       super({ key: "calle1" });  
       this.pointScene = 0;
       this.menuActivado = false;    
-      this.fin = [1];
+      this.fin = new Array(1);
       this.key = 'calle1';
     }
     init(datos){
@@ -16,8 +17,10 @@ export default class Calle1 extends Phaser.Scene {
     this.cameras.main.fadeIn(1500); 
     this.scene.stop('mapa');
     this.nameScene = 'CALLE';
-    this.add.image(640, 360, 'calle');
+    this.add.image(640, 360, 'fondoShakeDanyo'); 
+    this.add.image(640, 360, 'calle');  
     this.donLatino = new Latino(this, 400, 400, 'latcuerpo', dialogos.dCalle1, 0, false);
+    this.rata = new Rata(this, 733, 350, 'Rata', dialogos.rata, dialogos.rataD);  
     if(this.pointScene > 10) this.donLatino.aparece = true;
 
 

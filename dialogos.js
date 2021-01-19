@@ -27,14 +27,7 @@
      ]});
      dCasa1Lat.push({texto: 'Max, el aire te refrescará. Aquí hace un calor de\nhorno, pues en la calle corre fresco.¡Vamos!'});
 
-    let dCasa1Gafas = [];
-    dCasa1Gafas.push({texto: '(Tan solo son unas gafas...)'});
-
-    let dCasa1GafasD = [];
-    dCasa1GafasD.push({texto: '¿Creías que no podía hablar?'});
-    dCasa1GafasD.push({texto: 'No creo que en tu situación te sea de gran ayuda.'});
-
-
+    
     // CALLE1  ------------------------------------------------------
     let calle1 = [];
     calle1.push({texto: 'Ah… la agradable brisa nocturna de las calles de Madrid. \n¿Ya te encuentras mejor, Max?'});
@@ -501,19 +494,62 @@
     calle2Lunares.push({texto: 'Espereme que yo tampoco quiero saber nada', personaje: 'Lunares'});
     calle2Lunares.push({texto: 'Vayamos camino a casa Max, no quiero saber nada de ellos.', personaje: 'Latino'});
 
+    // OBJETOS
+    let dCasa1Gafas = [];
+    dCasa1Gafas.push({texto: '(Tan solo son unas gafas...)'});
+
+    let dCasa1GafasD = [];
+    dCasa1GafasD.push({texto: '¿Creías que no podía hablar?'});
+    dCasa1GafasD.push({texto: 'No creo que en tu situación te sea de gran ayuda.'});
+
+    let dLibreriaLibroMax = [];
+    dLibreriaLibroMax.push({texto: '¿Te resulto familiar? Sigue mirándome...'});
+    let dLibreriaLibroMaxD = [];
+    dLibreriaLibroMaxD.push({texto: 'Así es soy una de tus novelas, no te fíes de nadie\nel siguiente es peor que el anterior.'});
+    
+    let dLibreriaLibros = [];
+    dLibreriaLibros.push({texto: '"Campos de Castilla" y "Niebla" grandes triunfos \ndel 98...'});
+    let dLibreriaLibrosD = [];
+    dLibreriaLibrosD.push({texto: 'Jamás tendrás éxito en esta disciplina,\nprueba mejor en la lotería.'});
+
+    let dLibreriaPremio = [];
+    dLibreriaPremio.push({texto: '*Rubén Darío premio a mejor escritor de la época*'});
+    dLibreriaPremio.push({texto: 'Tss bobadas...'});
+    let dLibreriaPremioD = [];
+    dLibreriaPremioD.push({texto: 'Así debería lucir esta preciosidad, mucho mejor.'});
+
+    let dBarVaso = [];
+    dBarVaso.push({texto: '*Vaso de whisky*'});
+    dBarVaso.push({texto: 'No me importaría bebérmelo.'});
+    let dBarVasoD = [];
+    dBarVasoD.push({texto: 'Viendo el vaso siempre medio lleno y si es de \nalcohol mejor.'});
+    dBarVasoD.push({texto: 'Que positividad traigo siempre.'});
+
+    let dCalle1Rata = [];
+    dCalle1Rata.push({texto: '¡Yyyiiih!'}); 
+    let dCalle1RataD = [];
+    dCalle1RataD.push({texto: 'Déjame en paz, tan solo estaba dando un paseo nocturno.'});
+    dCalle1RataD.push({texto: 'Sí, los animales también hablamos.\nHumanos...'});
+
+
+
     // Identificadores de los diálogos.
     const d = {
 
       // CASA1
-       mcCasa1: dCasa1MC,
-       mcCasa2sp: dCasa2spMadam,
-       mcCasa2cp: dCasa2cpMadam,
+       mcCasa1: dCasa1MC,   
        latCasa1: dCasa1Lat,
        gafasCasa1: dCasa1Gafas,
        gafasDCasa1: dCasa1GafasD,
 
+      // CASA 2
+       mcCasa2sp: dCasa2spMadam,
+       mcCasa2cp: dCasa2cpMadam,
+
       // CALLE1
        dCalle1 : calle1,
+       rata: dCalle1Rata,
+       rataD: dCalle1RataD,
 
       // CALLE2
        dVieja: calle2Vieja,
@@ -521,6 +557,12 @@
 
       // LIBRERIA
        zarLibreria: dLibreriaZar,
+       libroMax : dLibreriaLibroMax,
+       libroMaxD : dLibreriaLibroMaxD,
+       libros : dLibreriaLibros,
+       librosD : dLibreriaLibrosD,
+       premio : dLibreriaPremio,
+       premioD : dLibreriaPremioD,
 
       // TABERNA
        dTaberna1 : taberna2,
@@ -544,7 +586,9 @@
        goberMinis3Calabozo: dMinis3calabozoGober,
       
       // BARES
-       bares: dBares
+       bares: dBares,
+       vaso: dBarVaso,
+       vasoD: dBarVasoD
       }
  
     export default d;

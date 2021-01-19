@@ -31,7 +31,7 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('Mateo', 'sprites/mateo.png');
     this.load.image('mateocuerpo', 'sprites/mateocuerpo.png');
 
-
+   
     this.load.image('lugar','sprites/lugar.png');
     this.load.image('boton','sprites/boton.png');
     this.load.image('boton2','sprites/boton2.png');
@@ -55,13 +55,30 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('botella', 'sprites/botella.png');
     this.load.image('Gafas', 'sprites/gafas.png');
     this.load.image('Gafas D', 'sprites/gafasdef.png');
-    this.load.image('Libro','sprites/libromax.png');
+    this.load.image('Libro Max','sprites/libromax.png');
+    this.load.image('Libro Max D','sprites/libromaxd.png');
     this.load.image('Libros','sprites/libros.png');
     this.load.image('Libros D','sprites/librosd.png');
     this.load.image('Premio','sprites/premio.png');
     this.load.image('Premio D','sprites/premiod.png');
+    this.load.image('Vaso','sprites/vaso.png');
+    this.load.image('Vaso D','sprites/vasod.png');
+    this.load.image('Rata','sprites/rata.png');
+    this.load.image('Rata D','sprites/rataD.png');
 
 
+
+    //Coleccionables
+    this.load.image('Baston','coleccionables/baston.png');
+    this.load.image('Lacre','coleccionables/lacre.png');
+    this.load.image('MonedasChocolate','coleccionables/monedaschocolate.png');
+    this.load.image('Pergamino','coleccionables/pergamino.png');
+    this.load.image('Plumero','coleccionables/plumero.png');
+    this.load.image('Radio','coleccionables/radio.png');
+    this.load.image('Reloj','coleccionables/reloj.png');
+    this.load.image('RelojMano','coleccionables/relojmano.png');
+    this.load.image('Sobre','coleccionables/sobre.png');
+    this.load.image('Vela','coleccionables/vela.png');
 
     //Minijuego
     this.load.image('plat', 'spritesminijuego/plat.png');
