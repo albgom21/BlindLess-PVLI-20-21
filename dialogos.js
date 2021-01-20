@@ -40,27 +40,27 @@
     calle1.push({texto: 'Así es, más bien he vuelto aquí de asueto. Volveré a \nInglaterra en unos días.', personaje: 'Peregrino'});
     calle1.push({texto: ' ¿Qué responde Max?',
     answer: [{texto: '¿Ha estado usted en Inglaterra?', points: 0, life: 0, jump: 0},
-             {texto: '¿Por qué ha vuelto?', points: 0, life: 0, jump: 6},
-             {texto: 'Siempre he querido probar comida inglesa...', points: 0, life: 0, jump: 11}]});
+             {texto: '¿Por qué ha vuelto?', points: 0, life: 0, jump: 7},
+             {texto: 'Siempre he querido probar comida inglesa...', points: 0, life: 0, jump: 10}]});
     calle1.push({texto: '¡Así es! Formo parte de la brigada española que \nejerce en Inglaterra.'});
     calle1.push({texto: ' ¿Qué responde Max?',
     answer: [{texto: '¿No echa de menos los paisajes españoles?', points: 0, life: 0, jump: 0},
              {texto: '¿Cómo puede irse a vivir tan lejos?', points: 0, life: 0, jump: 0},
              {texto: '*se le queda mirando*', points: 0, life: 0, jump: 5}]});
     calle1.push({texto: 'Jajajaja… llevo muchos años viviendo en Inglaterra ya, \nhe acabado cogiéndole gusto. Y, aunque viva lejos, estoy \n sirviéndole a mi patria.'});
+    calle1.push({texto: 'Ya veo...'});
     calle1.push({texto: '¿Y cuánto tiempo te quedas? Max y yo ahora íbamos de \n camino a la taberna, ¿quieres venir?', personaje: 'Latino'});
     calle1.push({texto: 'Me temo que eso no será posible… Una de las facetas más \nimportantes en la vida del hombre es el matrimonio, y \n he de atender a mi esposa ahora.', personaje: 'Peregrino'});
     calle1.push({texto: 'Vaya, hombre… qué pifia de mozo. Vámonos, Max.', personaje: 'Latino', jump: 10});
     calle1.push({texto: 'He venido a ver a mi mujer, que hace meses que la tengo\ndesatendida.', personaje: 'Peregrino'});
     calle1.push({texto: '¿Y cuánto tiempo te quedas? Max y yo ahora íbamos de\ncamino a la taberna, ¿quieres venir?', personaje: 'Latino'});
-    calle1.push({texto: 'Me temo que eso no será posible… Una de las facetas más \nimportantes en la vida del hombre es el matrimonio, y \n he de atender a mi esposa ahora.', personaje: 'Peregrino'});
+    calle1.push({texto: 'Me temo que eso no será posible… Una de las facetas más \nimportantes en la vida del hombre es el matrimonio, y \nhe de atender a mi esposa ahora.', personaje: 'Peregrino'});
     calle1.push({texto: 'Vaya, hombre… qué pifia de mozo. Vámonos, Max.', personaje: 'Latino', jump: 6});
     calle1.push({texto: 'La comida inglesa, en comparación con la española, no \nes más que bazofia. Hazme caso, disfrutas mucho más aquí.',personaje: 'Peregrino'});
     calle1.push({texto: '[Tampoco es que pruebe mucha comida aquí...]'});
-    calle1.push({texto: '¿Y cuánto tiempo te quedas? Max y yo ahora íbamos de camino a la taberna, ¿quieres venir?', personaje: 'Latino'});
+    calle1.push({texto: '¿Y cuánto tiempo te quedas? Max y yo ahora íbamos de \ncamino a la taberna, ¿quieres venir?', personaje: 'Latino'});
     calle1.push({texto: 'Me temo que eso no será posible… Una de las facetas más \nimportantes en la vida del hombre es el matrimonio, y \n he de atender a mi esposa ahora.', personaje: 'Peregrino'});
     calle1.push({texto: 'Vaya, hombre… qué pifia de mozo. Vámonos, Max.', personaje: 'Latino'});
-    calle1.push({texto: 'Ya veo...'});
      
 
     // LIBRERIA  ------------------------------------------------------
