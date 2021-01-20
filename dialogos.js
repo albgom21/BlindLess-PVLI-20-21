@@ -117,9 +117,9 @@
     taberna1.push({texto:'¿Me estás vacilando, badulaque? ¿Has cogido tú el \nboleto del décimo sin pagarlo? ¡Desembucha y dame lo \nque es mío!', personaje: 'La Pisa Bien'});
     taberna1.push({texto:'¿Qué responde Max?',
     answer: [
-          {texto:'Ssí, he siDdo yo el qQkue lo hHa coggidDo, Ppero nNo voy a soltar uNna pPessetTTa.', points: 0, life: +5, jump: 0},
-          {texto:'No, se está equivocando usted.', points: 0, life: +10, jump: 0, razon:'No se ha dejado engañar \ny ha sido racional.'},
-          {texto:'Así es, se me ha olvidado por completo pagarle. ¿Puedo?', points: 10, life: -7, jump: 1, razon:'Se ha dejado engañar por \nLa Pisa Bien.'}]});
+          {texto:'Ssí, he siDdo yo el qQkue lo hHa coggidDo, Ppero nNo voy a soltar uNna pPessetTTa.', points: 0, life: +5, jump: 0, razon: 'no se ha dejado engañar \ny ha sido racional.'},
+          {texto:'No, se está equivocando usted.', points: 0, life: +10, jump: 0, razon:'no se ha dejado engañar \ny ha sido racional.'},
+          {texto:'Así es, se me ha olvidado por completo pagarle. ¿Puedo?', points: 10, life: -7, jump: 1, razon:'se ha dejado engañar por \nLa Pisa Bien.'}]});
     taberna1.push({texto:'Ugh… me las pagarás, necio.', personaje:'La Pisa Bien', jump: 1});
     taberna1.push({texto:'Oh… claro, debe haber sido un malentendido. ¡Muchas gracias!', personaje:'La Pisa Bien'});
     taberna1.push({texto:'Qué zzagala tan rarra… *hip* En ffin, ¿has vissto a los \nque estánn disscutiendo ffuera? LosS pPolítticKoss…\ncommo ssieMpre...', personaje: 'Latino'});
@@ -144,15 +144,15 @@
     ministerio1.push({texto:'¿Qué responde Max?',
     answer: [
      {texto:'Como podrá usted ver… soy ciego, y estoy en una situación económica complicada \npor lo que me preguntaba si podría recibir ayudas del Estado.', points: 0, life: 0, jump: 1},
-     {texto:'¡¡¡AAAAAAAAAAAAAAAHHHHH!!! ¿¿Por qué está hablándome tan alto?? \nNo lo soporto… *se abalanza*', points: 0, life: -10, jump: 0, razon:'Se ha vuelto loco y va al \ncalabozo.'},
-     {texto:'...', points: 0, life: -10, jump: 0, razon:'Ha vacilado al Gobernante y \nva al calabozo.'}
+     {texto:'¡¡¡AAAAAAAAAAAAAAAHHHHH!!! ¿¿Por qué está hablándome tan alto?? \nNo lo soporto… *se abalanza*', points: 0, life: -10, jump: 0, razon:'se ha vuelto loco y va al \ncalabozo.'},
+     {texto:'...', points: 0, life: -10, jump: 0, razon:'ha vacilado al Gobernante y \nva al calabozo.'}
   ]})
     ministerio1.push({texto:'¿Esas se trae usted? ¿¡Se cree que me estoy haciendo \nel primo!? Va a pasar un tiempo en el calabozo, buen \nseñor, hasta que se olvide de cómo volver a coger una \nturca.', jump: 7});
     ministerio1.push({texto:'Verá, el Estado dedica cierto numerario hacia la \ngente que posee discapacidades, tales como la vuestra. \n¿Está usted realmente necesitado de la subvención que \nel Estado pueda proporcionarle?  '});
     ministerio1.push({texto:'¿Qué responde Max?',
     answer: [
-     {texto:'De otro modo, no tengo ni idea de cómo mantener a mi familia…', points: 0, life: +10, jump: 2, razon:'Acepta la \n ayuda del gobierno.'},
-     {texto:'¿No me ha escuchado? ¡¿HE SIDO POCO CLARO?!', points: 0, life: -10, jump: 1, razon:'Se ha vuelto \n loco.'},
+     {texto:'De otro modo, no tengo ni idea de cómo mantener a mi familia…', points: 0, life: +10, jump: 2, razon:'acepta la \n ayuda del gobierno.'},
+     {texto:'¿No me ha escuchado? ¡¿HE SIDO POCO CLARO?!', points: 0, life: -10, jump: 1, razon:'se ha vuelto \n loco.'},
      {texto:'¿Qué? Me duele un poco la cabeza, me retiraré, si no es molestia…', points: 10, life: 0, jump: 0}
 ]});
      ministerio1.push({texto:'Oh… como usted vea. Qué buen vasallo \nsi tuviera buen señor…', jump: 4});
