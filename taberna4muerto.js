@@ -16,6 +16,8 @@ export default class Taberna4muerto extends Phaser.Scene {
     }
     
     create() {  
+      this.musica = this.sound.add("musicataberna",{volume: 0.25,loop: true});
+      this.musica.play();
       this.cameras.main.fadeIn(1500); 
       this.scene.stop('mapa');
       this.nameScene = 'TABERNA';    
@@ -23,6 +25,7 @@ export default class Taberna4muerto extends Phaser.Scene {
       this.add.image(640, 360, 'taberna');   
       this.latCuerpo = new Latino(this, 500, 400, 'latcuerpo', dialogos.dTaberna4M, 0, false); 
       this.cameras.main.once('camerafandeoutcomplete', () => {
+        this.musica.stop(),
         this.scene.launch('mapa',{antEscena:this.key, proxEscena:'fin', nombreEscena:'FIN',
          vida:this.vidaMax, suma:0, resta:0, datosInventario: this.datosInventario, puntos : this.pointScene})
     });

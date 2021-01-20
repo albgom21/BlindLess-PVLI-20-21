@@ -23,6 +23,7 @@ export default class Calle1 extends Phaser.Scene {
     this.add.image(640, 360, 'fondoShakeDanyo'); 
     this.add.image(640, 360, 'calle');  
     this.donLatino = new Latino(this, 400, 400, 'latcuerpo', dialogos.dCalle1, 0, false);
+    this.add.image(1000, 400, 'peregrinocuerpo');
     this.rata = new Rata(this, 733, 350, 'Rata', dialogos.rata, dialogos.rataD);  
     if(this.pointScene > 10) this.donLatino.aparece = true;
 

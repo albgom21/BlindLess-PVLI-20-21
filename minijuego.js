@@ -13,6 +13,9 @@ export default class Minijuego extends Phaser.Scene {
   }  
   
   create() {   
+    this.musica = this.sound.add("musicaminijuego",{volume: 0.05,loop: true});
+    this.musicafin = this.sound.add("ganarminijuego",{volume: 0.15,loop: true});
+    this.musica.play();
     this.cameras.main.fadeIn(500); 
     this.scene.pause('taberna2');
     this.add.image(640,360, 'fondo');    
@@ -76,10 +79,10 @@ this.anims.create({
 
     this.pantallaFin = this.add.image(640,360, 'final').setInteractive();   
     this.pantallaFin.setVisible(false);     
-    this.pantallaFin.on('pointerdown', () => {this.scene.resume('taberna2',{sumaVida:this.player.score}),this.scene.stop('minijuego')});
+    this.pantallaFin.on('pointerdown', () => {this.musicafin.stop(),this.scene.resume('taberna2',{sumaVida:this.player.score}),this.scene.stop('minijuego')});
   }
   finJuego(){
-    this.fin = true;   
+    this.fin = true;       
   }
   spawnCoin(){
     new Coin(this, Phaser.Math.Between(50, 1150),Phaser.Math.Between(10, 650));  
@@ -112,12 +115,14 @@ this.anims.create({
       this.barra.fillRect(0, 0, 1280 * this.timedEventFin.getProgress(), 5);
     }     
     if(this.fin){      
+      this.musica.stop();
       this.stop = true;
       this.timedEventFin.remove(false);     
       this.timedEventPlatforms.remove(false);     
       this.timedEventCoin.remove(false);  
       this.fin = false;
       this.pantallaFin.setVisible(true);        
+      this.musicafin.play();
       const monedas = this.player.score;     
       this.game.monedas = this.player.score;
       const imagen = this.pantallaFin.setDepth(1);

@@ -16,6 +16,8 @@ export default class Taberna1 extends Phaser.Scene {
     }
     
     create() {  
+      this.musica = this.sound.add("musicataberna",{volume: 0.25,loop: true});
+      this.musica.play();
       this.cameras.main.fadeIn(1500); 
       this.scene.stop('mapa');
       this.nameScene = 'TABERNA';    
@@ -29,7 +31,7 @@ export default class Taberna1 extends Phaser.Scene {
     
       
       this.cameras.main.once('camerafadeoutcomplete', () => {
-        //Poner que según los puntos con otro parámetro vaya a ministerio1 o buñoleria
+        this.musica.stop(),
         this.scene.launch('mapa',{antEscena:this.key, proxEscena:'taberna2', nombreEscena:'TABERNA',
          vida:this.vidaMax, suma:10, resta:-7, datosInventario: this.datosInventario, puntos : this.pointScene})
     });

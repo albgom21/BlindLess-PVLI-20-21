@@ -10,6 +10,15 @@ export default class Inicio extends Phaser.Scene {
     this.load.audio("restarvida", "sounds/restarvida.mp3");
     this.load.audio("sacardialogos", "sounds/salirdialogos.mp3");
     this.load.audio("salirinventario", "sounds/salirinventario.mp3");
+    this.load.audio("ganarminijuego", "sounds/ganarminijuego.mp3");
+    this.load.audio("saltominijuego", "sounds/saltominijuego.mp3");
+    this.load.audio("pasardialogo", "sounds/pasardialogo.mp3");
+    this.load.audio("musicaminijuego", "sounds/musicaminijuego.mp3");
+    this.load.audio("musicataberna", "sounds/musicataberna.mp3");
+    this.load.audio("musicalibreria", "sounds/musicalibreria.mp3");
+    this.load.audio("musicacasa", "sounds/musicacasa.mp3");
+    this.load.audio("ganarminijuego", "sounds/ganarminijuego.mp3");
+    this.load.audio("sonidocoleccionable", "sounds/sonidocoleccionable.mp3");
 
    //Personajes   
     this.load.image('Max','sprites/max.png' );    

@@ -34,8 +34,8 @@ export default class Casa1 extends Phaser.Scene {
     
     this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
     this.botonT.visible = false;   
-
-    contxt.on('pointerdown', () => {contxt.visible = false; this.botonT.visible = true;});  
+    this.musica = this.sound.add("musicacasa",{volume: 0.025,loop: true});   
+    contxt.on('pointerdown', () => { this.musica.play();contxt.visible = false; this.botonT.visible = true;});  
     if (this.primerTicket){
       this.datosInventario.nums.push(Math.floor(Math.random() * (100 - 10) + 10));
       this.primerTicket = false;
@@ -45,10 +45,12 @@ export default class Casa1 extends Phaser.Scene {
 
     this.cameras.main.once('camerafadeoutcomplete', () => {
       if(this.pointScene >= 10){
+       this.musica.stop();
        this.scene.launch('mapa',{antEscena:this.key,proxEscena:'libreria',nombreEscena:'LIBRERIA',
        vida:this.vidaMax,suma:2,resta:14, datosInventario: this.datosInventario});
       }
       else{
+      this.musica.stop();
       this.scene.launch('mapa',{antEscena:this.key,proxEscena:'calle1',nombreEscena:'CALLE',
       vida:this.vidaMax,suma:4,resta:11, datosInventario: this.datosInventario});
       }  

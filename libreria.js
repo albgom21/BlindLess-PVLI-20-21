@@ -3,6 +3,8 @@ import dialogos from './dialogos.js';
 import LibroMax from './libromax.js';
 import Libros from './libros.js';
 import Premio from './premio.js';
+import Coleccionables from './coleccionables.js';
+
 export default class Libreria extends Phaser.Scene {  
   constructor() {
     super({ key: "libreria" });      
@@ -18,6 +20,8 @@ export default class Libreria extends Phaser.Scene {
   }
     
   create(){
+    this.musica = this.sound.add("musicalibreria",{volume: 0.15,loop: true});
+    this.musica.play();
     this.cameras.main.fadeIn(1500); 
     this.scene.stop('mapa');
     this.nameScene = 'LIBRERIA';
@@ -25,12 +29,14 @@ export default class Libreria extends Phaser.Scene {
     this.add.image(640, 360, 'libreria');
     this.add.image(500, 400, 'latcuerpo');
 
+    this.objeto = new Coleccionables(this, 320, 460, 'Pergamino');
     this.zarCuerpo = new Zaratustra(this, 1000, 400, 'zaratustracuerpo', dialogos.zarLibreria, 0);
     this.libromax = new LibroMax(this, 733, 362, 'Libro Max', dialogos.libroMax, dialogos.libroMaxD);   
     this.libros = new Libros(this, 350, 80, 'Libros', dialogos.libros, dialogos.librosD);  
     this.premio = new Premio(this, 900, 60, 'Premio', dialogos.premio, dialogos.premioD);   
 
     this.cameras.main.once('camerafadeoutcomplete', () => {
+      this.musica.stop(),
       this.scene.launch('mapa', {antEscena:this.key, proxEscena:'taberna1', nombreEscena:'TABERNA',
        vida:this.vidaMax, suma:10, resta:7, datosInventario: this.datosInventario})});
 

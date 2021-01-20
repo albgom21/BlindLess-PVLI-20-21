@@ -19,6 +19,8 @@ export default class Taberna2 extends Phaser.Scene {
   }
   
   create() {  
+    this.musica = this.sound.add("musicataberna",{volume: 0.25,loop: true});
+    this.musica.play();
     this.game.monedas = 0;
     this.cameras.main.fadeIn(1500); 
     this.once = false;
@@ -37,9 +39,10 @@ export default class Taberna2 extends Phaser.Scene {
       
     this.cameras.main.once('camerafadeoutcomplete', () => {
       if (this.puntosAnt >= 10) {
+        this.musica.stop(),
         this.scene.launch('mapa',{antEscena:this.key, proxEscena:'ministerio1', nombreEscena:'MINISTERIO', vida:this.vidaMax, suma:10, resta:10, datosInventario: this.datosInventario });
       }         
-     else {this.scene.launch('mapa',{antEscena:this.key, proxEscena:'bunyoleria', nombreEscena:'BUÑOLERIA',
+     else {this.musica.stop(),this.scene.launch('mapa',{antEscena:this.key, proxEscena:'bunyoleria', nombreEscena:'BUÑOLERIA',
      vida:this.vidaMax, suma:10, resta:-7, datosInventario: this.datosInventario})}
     });
     

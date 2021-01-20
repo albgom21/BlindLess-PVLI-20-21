@@ -20,7 +20,8 @@ export default class Bunyoleria extends Phaser.Scene {
     this.scene.stop('mapa');
     this.nameScene = 'BUÑOLERíA';
     this.add.image(640, 360, 'fondoShakeDanyo'); 
-    this.add.image(640, 360, 'bunyoleria');         
+    this.add.image(640, 360, 'bunyoleria'); 
+    this.add.image(1000, 500, 'lapisabiencuerpo');           
     this.latCuerpo = new Latino(this, 400, 500, 'latcuerpo', dialogos.dBunyols, 0);
     
     // Botón del inventario.

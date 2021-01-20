@@ -1,6 +1,6 @@
 import Collet from './collet.js';
 import dialogos from './dialogos.js';
-import Inventario from './inventario.js';
+import Coleccionables from './coleccionables.js';
 
 export default class Casa2cp extends Phaser.Scene { 
   constructor() {
@@ -16,19 +16,22 @@ export default class Casa2cp extends Phaser.Scene {
     this.datosInventario = datos.datosInventario;
   }
   
-  create() {  // Refactorizar diálogos y escena      
+  create() {  // Refactorizar diálogos y escena   
+    this.musica = this.sound.add("musicacasa",{volume: 0.025,loop: true});
+    this.musica.play();   
     this.cameras.main.fadeIn(1500); 
     this.scene.stop('mapa');
     this.nameScene = 'CASA';
     this.add.image(640, 360, 'fondoShakeDanyo'); 
     this.add.image(640, 360, 'casa');         
     this.madame = new Collet(this, 500, 400, 'madamcuerpo', dialogos.mcCasa2cp, 0); 
-    
+    this.objeto = new Coleccionables(this, 200, 460, 'Vela');
     // Botón del inventario.
     this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
     this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); }) 
     
     this.cameras.main.once('camerafadeoutcomplete', () => {    
+      this.musica.stop(),
        this.scene.launch('mapa',{antEscena:this.key,proxEscena:'ministerio3casa',nombreEscena:'MINISTERIO',
        vida:this.vidaMax,suma:2,resta:14, datosInventario: this.datosInventario});     
       });

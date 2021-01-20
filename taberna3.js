@@ -17,6 +17,8 @@ export default class Taberna3 extends Phaser.Scene {
     this.datosInventario = datos.datosInventario;
   }
   create() { 
+    this.musica = this.sound.add("musicataberna",{volume: 0.25,loop: true});
+      this.musica.play();
     this.game.monedas = 0; 
     this.cameras.main.fadeIn(1500); 
     this.once = false;
@@ -32,6 +34,7 @@ export default class Taberna3 extends Phaser.Scene {
       
     
     this.cameras.main.once('camerafadeoutcomplete', () => {
+      this.musica.stop(),
       this.scene.launch('calle2',{antEscena:this.key,proxEscena:'calle2',nombreEscena:'CALLE',
       vida:this.vidaMax,suma:4,resta:4, datosInventario : this.datosInventario});  });
       

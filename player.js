@@ -31,6 +31,8 @@ export default class Player extends Phaser.GameObjects.Sprite {
     if(!this.scene.stop){   
       if ((Phaser.Input.Keyboard.JustDown(this.w) || (Phaser.Input.Keyboard.JustDown(this.cursors.up))) && this.body.velocity.y === 0 && !this.body.onCollide) {
         if(this.setas){
+          this.salto = this.scene.sound.add("saltominijuego",{volume: 0.05});
+          this.salto.play();
           this.body.setVelocityY(this.jumpSpeed*2);
           this.setas = false;
           this.scene.ui();  

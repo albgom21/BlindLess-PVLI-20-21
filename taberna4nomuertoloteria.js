@@ -15,7 +15,8 @@ export default class Taberna4nomuertoloteria extends Phaser.Scene {
       this.datosInventario = datos.datosInventario;
     }
     
-    create() {  
+    create() {  this.musica = this.sound.add("musicataberna",{volume: 0.25,loop: true});
+    this.musica.play();
       this.cameras.main.fadeIn(1500); 
       this.scene.stop('mapa');
       this.nameScene = 'TABERNA';    
@@ -28,6 +29,7 @@ export default class Taberna4nomuertoloteria extends Phaser.Scene {
       this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); })
 
       this.cameras.main.once('camerafandeoutcomplete', () => {
+        this.stop(),
         this.scene.launch('mapa',{antEscena:this.key, proxEscena:'fin', nombreEscena:'FIN',
          vida:this.vidaMax, suma:0, resta:0, datosInventario: this.datosInventario, puntos : this.pointScene})
     });
