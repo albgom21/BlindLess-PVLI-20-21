@@ -20,8 +20,7 @@ export default class Ministerio2 extends Phaser.Scene {
       this.scene.stop('mapa');
       this.nameScene = 'MINISTERIO';    
       this.add.image(640, 360, 'fondoShakeDanyo'); 
-      this.add.image(640, 360, 'ministerio');  
-      this.add.image(200, 400, 'gobernantecuerpo');
+      this.add.image(640, 360, 'ministerio');       
       // debería ser la imagen del Oficial, no la del gobernante.
       this.oficial = new Oficial(this, 1000, 400, 'gobernantecuerpo', dialogos.ministerio2, 0);
 

@@ -23,6 +23,7 @@ export default class Taberna1 extends Phaser.Scene {
       this.nameScene = 'TABERNA';    
       this.add.image(640, 360, 'fondoShakeDanyo'); 
       this.add.image(640, 360, 'taberna');   
+      this.add.image(1000, 500, 'lapisabiencuerpo');    
       this.latCuerpo = new Latino(this, 500, 400, 'latcuerpo', dialogos.dTaberna1, 0, false);  
       
       // Botón del inventario.
