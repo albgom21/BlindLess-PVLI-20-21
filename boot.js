@@ -106,14 +106,14 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('danyo','sprites/danyo.png');
     this.load.image('fondoShakeDanyo','fondos/fondoShakeDanyo.png');    
     this.load.image('mapa','fondos/mapa.png');
-    this.load.image('casa','sprites/casa.png')    
+    this.load.image('casa','fondos/casas.png')    
     this.load.image('calle', 'fondos/calle.jpg');
     this.load.image('libreria', 'sprites/libreria.png');
     this.load.image('taberna', 'fondos/taberna.png');
     this.load.image('contexto', 'fondos/contexto.png');
-    this.load.image('ministerio', 'fondos/ministerio.png');
+    this.load.image('ministerio', 'fondos/ministerios.png');
     this.load.image('bunyoleria', 'fondos/bunyoleria.png');
-    this.load.image('calabozo', 'fondos/calabozo.png');
+    this.load.image('calabozo', 'fondos/calabozos.png');
 
     this.load.image('rectangulo', 'sprites/rectangulo.png');
 
