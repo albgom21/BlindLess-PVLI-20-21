@@ -11,6 +11,9 @@ export default class Minijuego extends Phaser.Scene {
     this.stop = false;
     this.tiempoJuego = 45000; //45s
   }  
+  init(datos){
+    this.escenaAnt = datos.scene;
+  }
   
   create() {   
     this.musica = this.sound.add("musicaminijuego",{volume: 0.05,loop: true});
@@ -79,7 +82,7 @@ this.anims.create({
 
     this.pantallaFin = this.add.image(640,360, 'final').setInteractive();   
     this.pantallaFin.setVisible(false);     
-    this.pantallaFin.on('pointerdown', () => {this.musicafin.stop(),this.scene.resume('taberna2',{sumaVida:this.player.score}),this.scene.stop('minijuego')});
+    this.pantallaFin.on('pointerdown', () => {this.musicafin.stop(),this.escenaAnt.musica.play(),this.scene.resume('taberna2',{sumaVida:this.player.score}),this.scene.stop('minijuego')});
   }
   finJuego(){
     this.fin = true;       

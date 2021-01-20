@@ -47,7 +47,7 @@ export default class Taberna2 extends Phaser.Scene {
     });
     
     this.minijuego = this.add.image(950, 55,'cartel').setInteractive();    
-    this.minijuego.on('pointerdown', () => {if(!this.menuActivado){this.scene.launch('minijuego',{vida:this.vidaMax}),this.minijuego.destroy()}});      
+    this.minijuego.on('pointerdown', () => {if(!this.menuActivado){this.musica.stop(),this.scene.launch('minijuego',{scene:this}),this.minijuego.destroy()}});      
   }  
 
 update(){
