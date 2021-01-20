@@ -41,12 +41,12 @@
     calle1.push({texto: ' ¿Qué responde Max?',
     answer: [{texto: '¿Ha estado usted en Inglaterra?', points: 0, life: 0, jump: 0},
              {texto: '¿Por qué ha vuelto?', points: 0, life: 0, jump: 7},
-             {texto: 'Siempre he querido probar comida inglesa...', points: 0, life: 0, jump: 10}]});
+             {texto: 'Siempre he querido probar comida inglesa...', points: 0, life: 0, jump: 12}]});
     calle1.push({texto: '¡Así es! Formo parte de la brigada española que \nejerce en Inglaterra.'});
     calle1.push({texto: ' ¿Qué responde Max?',
     answer: [{texto: '¿No echa de menos los paisajes españoles?', points: 0, life: 0, jump: 0},
              {texto: '¿Cómo puede irse a vivir tan lejos?', points: 0, life: 0, jump: 0},
-             {texto: '*se le queda mirando*', points: 0, life: 0, jump: 5}]});
+             {texto: '*se le queda mirando*', points: 0, life: 0, jump: 2}]});
     calle1.push({texto: 'Jajajaja… llevo muchos años viviendo en Inglaterra ya, \nhe acabado cogiéndole gusto. Y, aunque viva lejos, estoy \n sirviéndole a mi patria.'});
     calle1.push({texto: 'Ya veo...'});
     calle1.push({texto: '¿Y cuánto tiempo te quedas? Max y yo ahora íbamos de \n camino a la taberna, ¿quieres venir?', personaje: 'Latino'});
