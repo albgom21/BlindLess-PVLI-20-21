@@ -55,10 +55,8 @@ export default class Ui extends Phaser.Scene {
     
     
     const botonHablar = this.add.image(869,645, 'botonhablar').setInteractive();
-    botonHablar.on('pointerdown', () => {
-      this.personaje.seguirDialogos();
-      this.pasardialogo = this.scene.sound.add("pasardialogo",{volume: 5}); //Cambiar sonido, no se oye
-      this.pasardialogo.play();
+    botonHablar.on('pointerdown', () => {     
+      this.personaje.seguirDialogos();     
       });
 
     this.objectsUi.push(fondoLugar);

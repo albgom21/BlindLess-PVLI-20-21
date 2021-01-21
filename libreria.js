@@ -55,7 +55,7 @@ export default class Libreria extends Phaser.Scene {
     { //que hayan hablado todos los personajes de la escena
       a = false;
       const botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();
-      botonEscena.once('pointerdown', () => {this.cameras.main.fadeOut(1500)});          
+      botonEscena.once('pointerdown', () => {this.paso = this.sound.add("pasarescena",{volume:1}); this.paso.play();this.cameras.main.fadeOut(1500)});          
     }       
   }  
 }

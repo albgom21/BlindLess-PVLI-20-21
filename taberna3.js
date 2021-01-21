@@ -1,6 +1,6 @@
 import Camarero from './barman.js';
 import dialogos from './dialogos.js';
-
+import Coleccionables from './coleccionables.js';
 export default class Taberna3 extends Phaser.Scene {
   
   constructor() {
@@ -27,7 +27,7 @@ export default class Taberna3 extends Phaser.Scene {
     this.add.image(640, 360, 'fondoShakeDanyo'); 
     this.add.image(640, 360, 'taberna');   
     this.camCuerpo = new Camarero(this,500,281,'camarerocuerpo',dialogos.bares,0,false);    
-    
+    this.objeto = new Coleccionables(this, 950, 250, 'Vela');
     // Botón del inventario.
     this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
     this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); }) 
@@ -68,7 +68,7 @@ finEscena() {
         }
       }      
       let botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();
-      botonEscena.once('pointerdown', () => {this.cameras.main.fadeOut(1500)});     
+      botonEscena.once('pointerdown', () => {this.paso = this.sound.add("pasarescena",{volume:1}); this.paso.play();this.cameras.main.fadeOut(1500)});     
   }       
 }  
 }

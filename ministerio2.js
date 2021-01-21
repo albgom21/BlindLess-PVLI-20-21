@@ -1,5 +1,6 @@
 import dialogos from './dialogos.js';
 import Oficial from './oficial.js';
+import Coleccionables from './coleccionables.js';
 export default class Ministerio2 extends Phaser.Scene {
   
     constructor() {
@@ -22,8 +23,8 @@ export default class Ministerio2 extends Phaser.Scene {
       this.add.image(640, 360, 'fondoShakeDanyo'); 
       this.add.image(640, 360, 'ministerio');       
       // debería ser la imagen del Oficial, no la del gobernante.
-      this.oficial = new Oficial(this, 1000, 400, 'gobernantecuerpo', dialogos.ministerio2, 0);
-
+      this.oficial = new Oficial(this, 1000, 400, 'gobernantecuerpo', dialogos.ministerio2, 0); //PONER OFICIALCUERPO
+      this.objeto = new Coleccionables(this, 760, 410, 'Plumero');
       // Botón del inventario.
       this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
       this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); }) 
@@ -44,7 +45,7 @@ export default class Ministerio2 extends Phaser.Scene {
     if(a) { //Que hayan hablado todos los personajes de la escena
       a = false;
       let botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();       
-        botonEscena.once('pointerdown', () => {this.cameras.main.fadeOut(1500)});
+        botonEscena.once('pointerdown', () => {this.paso = this.sound.add("pasarescena",{volume:1}); this.paso.play();this.cameras.main.fadeOut(1500)});
     }      
 }
 }

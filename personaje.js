@@ -36,10 +36,12 @@ export default class Personaje extends Phaser.GameObjects.Container {
       this.image.on('pointerdown', () => {
         if(!this.scene.menuActivado){
           this.m.visible = true;
+          this.sonido = this.scene.sound.add("clickobjeto",{volume: 0.25});
+          this.sonido.play();
           this.m.animacionMenu()
           this.scene.menuActivado = true;}
         });
-      this.space.on('down', () => {
+      this.space.on('down', () => {        
         this.seguirDialogos();
       });      
     this.scene.add.existing(this);
@@ -55,6 +57,8 @@ export default class Personaje extends Phaser.GameObjects.Container {
 
   // Método que deforma los objetos (aún no hecho). 
   deformar(newImage, dialogo){   
+    this.sonidodeformar = this.scene.sound.add("deformar",{volume: 3});
+    this.sonidodeformar.play();
     this.scene.menuActivado = false;    
     this.m.visible = false;
     this.m.buttonGastado(1);
@@ -127,6 +131,8 @@ export default class Personaje extends Phaser.GameObjects.Container {
     if(this.estaHablando){
       this.numDial++;
       if(this.numDial < this.dialogos.length){
+        this.sonidodia = this.scene.sound.add("pasardialogo",{volume: 1}); 
+        this.sonidodia.play();
         this.hablarDialogo(this.dialogos[this.numDial]);
       }
       else{
@@ -148,7 +154,9 @@ export default class Personaje extends Phaser.GameObjects.Container {
     this.botones[i * 2 + 1] = this.scene.add.text(650, 100 + i * 100, answer.texto, { fontFamily: 'VT323',fontSize: '26px', color: '#000000' });
     Phaser.Display.Align.In.Center(this.botones[i * 2 + 1], this.botones[i * 2]);
 
-    this.botones[i * 2].on('pointerdown', () => {  
+    this.botones[i * 2].on('pointerdown', () => { 
+      this.sonidores = this.scene.sound.add("respuesta",{volume: 1}); 
+      this.sonidores.play(); 
       this.scene.pointScene += answer.points;
       this.cambiaVida(answer.life,answer.razon);
       if(this.numDial < this.dialogos.length){

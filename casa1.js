@@ -29,7 +29,7 @@ export default class Casa1 extends Phaser.Scene {
     this.primerTicket = true;
     this.objeto = new Coleccionables(this, 220, 360, 'Baston');
     this.madame = new Collet(this, 500, 400, 'madamcuerpo', dialogos.mcCasa1, 0, true);       
-    this.g = new Gafas(this, 733, 350, 'Gafas', dialogos.gafasCasa1, dialogos.gafasDCasa1);    
+    this.g = new Gafas(this, 733, 350, 'Gafas', dialogos.gafasCasa1, dialogos.gafasDCasa1);         
     const contxt = this.add.image(640, 360, 'contexto').setInteractive();
     
     this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
@@ -44,7 +44,7 @@ export default class Casa1 extends Phaser.Scene {
     this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); }) 
 
     this.cameras.main.once('camerafadeoutcomplete', () => {
-      if(this.pointScene >= 10){
+      if(this.pointScene >= 10){      
        this.musica.stop();
        this.scene.launch('mapa',{antEscena:this.key,proxEscena:'libreria',nombreEscena:'LIBRERIA',
        vida:this.vidaMax,suma:2,resta:14, datosInventario: this.datosInventario});
@@ -79,7 +79,7 @@ aparece(){
     if(a) { //Que hayan hablado todos los personajes de la escena
       a = false;
       let botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();    
-        botonEscena.once('pointerdown', () => {this.cameras.main.fadeOut(1500)});     
+        botonEscena.once('pointerdown', () => { this.paso = this.sound.add("pasarescena",{volume:1}); this.paso.play(); this.cameras.main.fadeOut(1500)});     
     }       
   }    
 }

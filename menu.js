@@ -31,6 +31,8 @@ export default class Menu extends Phaser.GameObjects.Container {
     this.button[i*2] = {button: buttonImage, myX:buttonImage.x, myY:buttonImage.y};
     this.button[i*2 + 1] = {button: buttonText, myX:buttonText.x, myY:buttonText.y};
     this.button[i*2].button.on('pointerdown', () => {
+      this.sonido = this.scene.sound.add("seleccionmenu",{volume: 0.25});
+      this.sonido.play();
       if(!this.botonGastadoH && i === 0) f();
       else if(!this.botonGastadoD && i === 1) f();
       else this.personaje.salir();

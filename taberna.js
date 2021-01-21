@@ -1,5 +1,7 @@
 import dialogos from './dialogos.js';
 import Latino from './latino.js';
+import Veneno from './veneno.js';
+import Coleccionables from './coleccionables.js';
 export default class Taberna1 extends Phaser.Scene {
   
     constructor() {
@@ -24,6 +26,8 @@ export default class Taberna1 extends Phaser.Scene {
       this.add.image(640, 360, 'fondoShakeDanyo'); 
       this.add.image(640, 360, 'taberna');   
       this.add.image(1000, 500, 'lapisabiencuerpo');    
+      this.objeto = new Coleccionables(this, 650, 180, 'Radio');
+      this.x = new Veneno(this, 933, 66, 'Bebida', dialogos.dVeneno, dialogos.dVenenoD); 
       this.latCuerpo = new Latino(this, 500, 400, 'latcuerpo', dialogos.dTaberna1, 0, false);  
       
       // Botón del inventario.
@@ -48,7 +52,7 @@ export default class Taberna1 extends Phaser.Scene {
     if(a) { //Que hayan hablado todos los personajes de la escena
       a = false;
       let botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();     
-        botonEscena.once('pointerdown', () => {this.cameras.main.fadeOut(1500)});     
+        botonEscena.once('pointerdown', () => {this.paso = this.sound.add("pasarescena",{volume:1}); this.paso.play();this.cameras.main.fadeOut(1500)});     
     }      
 }
 }

@@ -1,6 +1,5 @@
 import Collet from './collet.js';
 import dialogos from './dialogos.js';
-import Coleccionables from './coleccionables.js';
 
 export default class Casa2sp extends Phaser.Scene {
   
@@ -26,8 +25,7 @@ export default class Casa2sp extends Phaser.Scene {
     this.add.image(640, 360, 'fondoShakeDanyo'); 
     this.add.image(640, 360, 'casa');         
     this.madame = new Collet(this, 500, 400, 'madamcuerpo', dialogos.mcCasa2sp, 0); 
-    this.objeto = new Coleccionables(this, 200, 460, 'Vela');
-
+ 
     // Botón del inventario.
     this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
     this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); }) 
@@ -48,7 +46,7 @@ export default class Casa2sp extends Phaser.Scene {
     if(a) { //Que hayan hablado todos los personajes de la escena
       a = false;
       let botonEscena = this.add.image(1175, 100, 'botonescena').setInteractive();    
-        botonEscena.once('pointerdown', () => {this.cameras.main.fadeOut(1500)});     
+        botonEscena.once('pointerdown', () => {this.paso = this.sound.add("pasarescena",{volume:1}); this.paso.play();this.cameras.main.fadeOut(1500)});     
     }       
   }  
 }

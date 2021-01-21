@@ -102,7 +102,7 @@
 
     // TABERNA2  ------------------------------------------------------
     let taberna1 = [];
-    taberna1.push({texto:'MeNuDo rrraSpaMoNNedas ell ZzarattuSstra esSe… Yy \npPensarrr qque *hip* sSse ha sSalido cCon la sSuya aúnNn asSsí… *hip*'});
+    taberna1.push({texto:'MeNuDo rrraSpaMoNNedas ell ZzarattuSstra esSe… Yy \npPensarrr qque *hip* sSse ha sSalido cCon la sSuya \naúnNn asSsí… *hip*'});
     taberna1.push({texto:'¿Qué responde Max?',
     answer:[
          {texto:'No merece que se le mencione ahora que estamos divirtiéndonos. ', points: 0, life: 0, jump: 0,},
@@ -272,7 +272,7 @@
       {texto:'Entonces, ¿le dejarán salir, verdad? No ha cometido ningún delito.', points: 0, life: 0, jump: 2}
         ]});
 
-    dCalabozo.push({texto:'Bueno, no pretendo amuermarle con mi historia… De \ncualquier modo dentro de nada me sacarán de aquí, para siempre.'});
+    dCalabozo.push({texto:'Bueno, no pretendo amuermarle con mi historia… De \ncualquier modo dentro de nada me sacarán de aquí, \npara siempre.'});
     dCalabozo.push({texto:'¿Qué responde Max?',
     answer: [
       {texto:'¿A qué se refiere con para siempre? ¿Queda exento de por vida?', points: 0, life: 0, jump: 0},
@@ -464,8 +464,8 @@
 
     // BARES (LOTERÍA) ------------------------------------------------------
     let dBares = [];
-    dBares.push({texto: 'Buenas, ¿le gustaría comprar algo de lotería\npor 5 puntos de vida?',
-      answer: [{texto: 'Claro, a eso he venido.', points: 10, life: -5, jump: 0, razon:' Gastar el poco dinero\nque tienes.'},
+    dBares.push({texto: 'Buenas, ¿le gustaría comprar algo de lotería\npor 10 puntos de vida?',
+      answer: [{texto: 'Claro, a eso he venido.', points: 10, life: -10, jump: 0, razon:'gastar el poco dinero\nque tienes.'},
                {texto: 'No, gracias. Creía que me ofrecería otra cosa.', points: 0, life: 0, jump: 0},
                {texto: 'Me he confundido de garito.', points: 0, life: 0, jump: 0}]});    
     dBares.push({texto: 'Vale, espero verle pronto.'});
@@ -559,6 +559,12 @@
     dCalle1RataD.push({texto: 'Déjame en paz, tan solo estaba dando un paseo nocturno.'});
     dCalle1RataD.push({texto: 'Sí, los animales también hablamos.\nHumanos...'});
 
+    let dTaberna1Veneno = [];
+    dTaberna1Veneno.push({texto: '¿Qué clase de bebida es esta?\nNo estoy seguro de probarla.'}); 
+    let dTaberna1VenenoD = [];
+    dTaberna1VenenoD.push({texto: '¡Oh no! era veneno...'});
+    dTaberna1VenenoD.push({texto: 'No me encuentro muy bien.'});
+
 
 
     // Identificadores de los diálogos.
@@ -594,6 +600,8 @@
 
       // TABERNA
        dTaberna1 : taberna1,
+       dVeneno : dTaberna1Veneno,
+       dVenenoD : dTaberna1VenenoD,
        dTaberna4M: taberna4M,
        dTaberna4NMSL: taberna4NMSL,
        dTaberna4NMNL: taberna4NMNL,

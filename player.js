@@ -9,12 +9,14 @@ export default class Player extends Phaser.GameObjects.Sprite {
     this.body.setCollideWorldBounds();
     this.speed = 300;
     this.jumpSpeed = -450;
-    this.label = this.scene.add.text(15, 15,'Score: ' + this.score ,{ fontFamily: 'VT323',fontSize: '26px', color: '#281501' });
+    this.label = this.scene.add.text(15, 15,'Monedas: ' + this.score ,{ fontFamily: 'VT323',fontSize: '26px', color: '#281501' });
     this.cursors = this.scene.input.keyboard.createCursorKeys();    
     this.w = scene.input.keyboard.addKey('W');
     this.a = scene.input.keyboard.addKey('A');
     this.d = scene.input.keyboard.addKey('D');
     this.setas = false;
+    this.salto = this.scene.sound.add("saltominijuego",{volume: 0.1});
+    this.saltopeq = this.scene.sound.add("saltominijuego",{volume: 0.025});
   }
   
   seta(){
@@ -23,21 +25,21 @@ export default class Player extends Phaser.GameObjects.Sprite {
   }
   updateScore() {
     this.score++;
-    this.label.text = 'Score: ' + this.score;
+    this.label.text = 'Monedas: ' + this.score;
   }   
 
   preUpdate(t,d) {    
     super.preUpdate(t,d);         
     if(!this.scene.stop){   
       if ((Phaser.Input.Keyboard.JustDown(this.w) || (Phaser.Input.Keyboard.JustDown(this.cursors.up))) && this.body.velocity.y === 0 && !this.body.onCollide) {
-        if(this.setas){
-          this.salto = this.scene.sound.add("saltominijuego",{volume: 0.05});
+        if(this.setas){         
           this.salto.play();
           this.body.setVelocityY(this.jumpSpeed*2);
           this.setas = false;
           this.scene.ui();  
         }
         else{
+          this.saltopeq.play();
           this.body.setVelocityY(this.jumpSpeed);
         }     
         this.play('jump',false);  

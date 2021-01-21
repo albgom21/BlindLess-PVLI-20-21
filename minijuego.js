@@ -88,7 +88,7 @@ this.anims.create({
     this.fin = true;       
   }
   spawnCoin(){
-    new Coin(this, Phaser.Math.Between(50, 1150),Phaser.Math.Between(10, 650));  
+    new Coin(this, Phaser.Math.Between(175, 1100),Phaser.Math.Between(25, 650));  
   }
   platfoms(){
     let rndY = Phaser.Math.Between(110, 700);

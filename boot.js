@@ -11,13 +11,18 @@ export default class Inicio extends Phaser.Scene {
     this.load.audio("sacardialogos", "sounds/salirdialogos.mp3");
     this.load.audio("salirinventario", "sounds/salirinventario.mp3");
     this.load.audio("ganarminijuego", "sounds/ganarminijuego.mp3");
-    this.load.audio("saltominijuego", "sounds/saltominijuego.mp3");
-    this.load.audio("pasardialogo", "sounds/pasardialogo.mp3");
+    this.load.audio("saltominijuego", "sounds/saltominijuego.mp3");  
     this.load.audio("musicaminijuego", "sounds/musicaminijuego.mp3");
     this.load.audio("musicataberna", "sounds/musicataberna.mp3");
     this.load.audio("musicalibreria", "sounds/musicalibreria.mp3");
     this.load.audio("musicacasa", "sounds/musicacasa.mp3");
+    this.load.audio("clickobjeto", "sounds/clickobjeto.mp3");
     this.load.audio("ganarminijuego", "sounds/ganarminijuego.mp3");
+    this.load.audio("seleccionmenu", "sounds/seleccionmenu.mp3");
+    this.load.audio("pasardialogo", "sounds/pasardialogo.mp3");
+    this.load.audio("respuesta", "sounds/respuesta.mp3");
+    this.load.audio("pasarescena", "sounds/pasarescena.mp3");
+    this.load.audio("deformar", "sounds/deformar.mp3");
     this.load.audio("sonidocoleccionable", "sounds/sonidocoleccionable.mp3");
 
    //Personajes   
@@ -75,19 +80,21 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('Vaso D','sprites/vasod.png');
     this.load.image('Rata','sprites/ratan.png');
     this.load.image('Rata D','sprites/ratanD.png');
+    this.load.image('Bebida','sprites/bebida.png');
+    this.load.image('Veneno','sprites/veneno.png');
 
 
    //Coleccionables
-    this.load.image('Baston','coleccionables/baston.png');
+    this.load.image('Baston','coleccionables/baston.png'); //casa1
     this.load.image('Lacre','coleccionables/lacre.png');
-    this.load.image('MonedasChocolate','coleccionables/monedaschocolate.png');
-    this.load.image('Pergamino','coleccionables/pergamino.png');
-    this.load.image('Plumero','coleccionables/plumero.png');
-    this.load.image('Radio','coleccionables/radio.png');
-    this.load.image('Reloj','coleccionables/reloj.png');
-    this.load.image('RelojMano','coleccionables/relojmano.png');
-    this.load.image('Sobre','coleccionables/sobre.png');
-    this.load.image('Vela','coleccionables/velagorda.png');
+    this.load.image('MonedasChocolate','coleccionables/monedaschocolate.png'); //calabozo
+    this.load.image('Pergamino','coleccionables/pergamino.png'); //libreria
+    this.load.image('Plumero','coleccionables/plumero.png'); //ministerio2
+    this.load.image('Radio','coleccionables/radio.png');  //taberna1
+    this.load.image('Reloj','coleccionables/reloj.png'); //bunyoleria
+    this.load.image('RelojMano','coleccionables/relojmano.png'); //taberna2
+    this.load.image('Sobre','coleccionables/sobre.png'); //taberna4
+    this.load.image('Vela','coleccionables/velagorda.png'); //taberna3
 
    //Minijuego
     this.load.image('plat', 'spritesminijuego/plat.png');
