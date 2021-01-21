@@ -35,7 +35,7 @@ export default class Taberna3 extends Phaser.Scene {
     
     this.cameras.main.once('camerafadeoutcomplete', () => {
       this.musica.stop(),
-      this.scene.launch('calle2',{antEscena:this.key,proxEscena:'calle2',nombreEscena:'CALLE',
+      this.scene.launch('mapa',{antEscena:this.key,proxEscena:'casa3',nombreEscena:'CASA',
       vida:this.vidaMax,suma:4,resta:4, datosInventario : this.datosInventario});  });
       
     this.minijuego = this.add.image(950, 55,'cartel').setInteractive();    

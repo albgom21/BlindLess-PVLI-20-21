@@ -421,6 +421,27 @@
     dMinis3casaGober.push({texto: 'Pues eso sería todo. En unos días le notificaremos\npara hablar de trámites.'});
     dMinis3casaGober.push({texto: 'Muchas gracias por todo.'});
 
+//ESCENA CASA 3
+    let dCasa3MC = [];
+    dCasa3MC.push({texto: '¡Por fin llegas a casa! Me tenías más que preocupada, \npensaba que te había ocurrido algo.'});
+    dCasa3MC.push({texto: 'Perdóname mujer, que nos hemos entretenido en la calle \ny ahora estoy congelado.'});
+    dCasa3MC.push({texto: 'Si es que a quién se le ocurre ir por la calle con \nestas temperaturas tan bajas. ¡Mira que te lo tengo \ndicho!'});
+    dCasa3MC.push({texto: 'Bueno, ¿al final te han ofrecido la paga del ministerio?',
+          answer: [{texto: '¡El dinero de las pagas lo sacan de fondos públicos!', points: 0, life: 0, jump: 0},
+                   {texto: 'Está todo arreglado, no te preocupes.', points: 0, life: 0, jump: 1},
+                   {texto: '*No dice nada*', points: 0, life: 0, jump: 2}]});
+    dCasa3MC.push({texto: '¡Mira que son sinvergüenzas! Aunque una cosa te digo, \nesto es vida o muerte. Supervivencia.', jump: 3});
+    dCasa3MC.push({texto: 'Menos mal, porque ese dinero lo necesitamos urgente- \nmente', jump: 2});
+    dCasa3MC.push({texto: '¿Pero te pasa algo? ¿Por qué te muerdes la lengua \nahora?'});
+    dCasa3MC.push({texto: 'Es que estoy congelado, ¿Puedo descansar un poco?', jump: 1});
+    dCasa3MC.push({texto: 'Cariño, no me encuentro bien, estoy muerto de frío'});
+    dCasa3MC.push({texto: 'Deja que te acompañe al sofá y descansas un poco, \nque menudo trote llevas.',
+          answer: [{texto: '*Se desmaya*', points: 0, life: -45, jump: 0, razon: 'no soportar el frío'}]});
+    dCasa3MC.push({texto: '¡MAX!'});
+
+
+
+
 //ESCENA FINAL TABERNA 4 (MAX FALLECE)
     let taberna4M = [];
     taberna4M.push({texto: '¡Qué pena más grande! ¡Hoy se ha enterrado al poeta\nmás grande de España! ¡Qué gran talento poseía!', personaje: 'Latino'});
@@ -579,6 +600,9 @@
       // CASA 2
        mcCasa2sp: dCasa2spMadam,
        mcCasa2cp: dCasa2cpMadam,
+
+      //CASA 3
+       mcCasa3: dCasa3MC,
 
       // CALLE1
        dCalle1 : calle1,
