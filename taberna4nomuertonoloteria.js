@@ -6,7 +6,8 @@ export default class Taberna4nomuertonoloteria extends Phaser.Scene {
     constructor() {
       super({ key: 'taberna4nomuertonoloteria'});     
       this.menuActivado = false;       
-      this.fin = new Array(1); // array con el numero de personajes con los que hablar
+      this.fin = [];
+      this.fin[0] = false; // array con el numero de personajes con los que hablar
       this.key = 'taberna4nomuertonoloteria';    
       this.pointScene = 0;
     } 

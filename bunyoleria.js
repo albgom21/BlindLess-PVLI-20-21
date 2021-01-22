@@ -7,7 +7,8 @@ export default class Bunyoleria extends Phaser.Scene {
     super({ key: 'bunyoleria'});    
     this.menuActivado = false;   
     this.pointScene = 0;
-    this.fin = new Array(1); // array con el número de personajes  
+    this.fin = [];
+    this.fin[0] = false;
     this.key = 'bunyoleria';   
   }
 

@@ -11,7 +11,9 @@ export default class Casa1 extends Phaser.Scene {
     this.pointScene = 0;
     this.menuActivado = false;   
     this.apareceLatino = false;
-    this.fin = new Array(2); // array con el número de personajes  
+    this.fin = [];
+    this.fin[0] = false;
+    this.fin[1] = false;
     this.key = 'casa1';    
     this.datosInventario = {
       coleccionables : 0,

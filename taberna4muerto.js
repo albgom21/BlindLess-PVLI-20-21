@@ -6,7 +6,8 @@ export default class Taberna4muerto extends Phaser.Scene {
     constructor() {
       super({ key: 'taberna4muerto'});     
       this.menuActivado = false;       
-      this.fin = new Array(1); // array con el numero de personajes con los que hablar
+      this.fin = [];
+      this.fin[0] = false;
       this.key = 'taberna4muerto';    
       this.pointScene = 0;
     } 

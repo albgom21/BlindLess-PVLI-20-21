@@ -7,7 +7,8 @@ export default class Ministerio3calabozo extends Phaser.Scene {
     super({ key: 'ministerio3calabozo'});        
     this.pointScene = 0;
     this.menuActivado = false;       
-    this.fin = new Array(1); // array con el número de personajes  
+    this.fin = [];
+    this.fin[0] = false;
     this.key = 'ministerio3calabozo';    
     this.nums = [];
   }

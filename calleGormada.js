@@ -5,7 +5,8 @@ export default class CalleGormada extends Phaser.Scene {
   constructor() {
     super({ key: 'callegormada'});    
     this.menuActivado = false;   
-    this.fin = new Array(1); // array con el número de personajes  
+    this.fin = [];
+    this.fin[0] = false;
     this.key = 'callegormada';    
   }
   

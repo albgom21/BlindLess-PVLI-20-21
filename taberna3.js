@@ -6,7 +6,8 @@ export default class Taberna3 extends Phaser.Scene {
   constructor() {
     super({ key: 'taberna3'});     
     this.menuActivado = false;       
-    this.fin = new Array(1); // array con el numero de personajes con los que hablar
+    this.fin = [];
+    this.fin[0] = false;
     this.key = 'taberna3';    
     this.pointScene = 0;
     this.compra = true;

@@ -7,7 +7,9 @@ export default class Calle2 extends Phaser.Scene {
       super({ key: "calle2" });  
       this.pointScene = 0;
       this.menuActivado = false;    
-      this.fin = new Array(2);
+      this.fin = [];
+      this.fin[0] = false;
+      this.fin[1] = false;
       this.key = 'calle2';
     }
   

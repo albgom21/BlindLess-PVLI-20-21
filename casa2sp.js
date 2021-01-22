@@ -7,7 +7,8 @@ export default class Casa2sp extends Phaser.Scene {
     super({ key: 'casa2sp'});        
     this.pointScene = 0;
     this.menuActivado = false;       
-    this.fin = new Array(1); // array con el número de personajes  
+    this.fin = [];
+    this.fin[0] = false;
     this.key = 'casa2sp';    
   }
   

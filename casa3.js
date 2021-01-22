@@ -6,7 +6,8 @@ export default class Casa3 extends Phaser.Scene {
     super({ key: 'casa3'});    
     this.pointScene = 0;
     this.menuActivado = false;   
-    this.fin = new Array(1); // array con el número de personajes  
+    this.fin = [];
+    this.fin[0] = false;
     this.key = 'casa3';    
   }
   init(datos){

@@ -5,7 +5,8 @@ export default class Ministerio1 extends Phaser.Scene {
     constructor() {
       super({ key: 'ministerio1'});     
       this.menuActivado = false;       
-      this.fin = new Array(1); // array con el numero de personajes con los que hablar
+      this.fin = [];
+      this.fin[0] = false;
       this.key = 'ministerio1';    
       this.pointScene = 0;
     } 

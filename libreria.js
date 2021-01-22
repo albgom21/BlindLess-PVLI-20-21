@@ -10,7 +10,8 @@ export default class Libreria extends Phaser.Scene {
     super({ key: "libreria" });      
   this.pointScene = 0;
   this.menuActivado = false;    
-  this.fin = new Array(1); // array con el numero de personajes    
+  this.fin = [];
+  this.fin[0] = false;
   this.key = 'libreria';
   }
   
