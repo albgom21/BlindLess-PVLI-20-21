@@ -183,40 +183,27 @@ Varios personajes aparecen en la taberna celebrando que se ha repartido el núme
 # Primeros minutos de juego
 
 Al empezar el juego, el jugador verá una pantalla de inicio que le indique que haga clic para empezar a jugar.
+La primera escena, mostrará una escena en casa de Max en la que se verán los muebles de su casa, junto con su mujer. El jugador podrá posicionar el cursor sobre los objetos y personajes que sean interactuables, y clicar sobre ellos para abordar una interacción. Partimos las interacciones - si el jugador clica sobre:
 
-La primera escena, mostrará una escena en casa de Max en la que se verán los muebles de su casa, junto con su madre y su hija. El jugador podrá posicionar el cursor sobre los objetos y personajes que sean interactuables, y estos aparecerán con un resaltado blanco, indicando que pueden ser clicados. Aquí, el jugador podrá interactuar con 3 objetos:
+El _BOTÓN DE INVENTARIO_, aparecerá en pantalla el inventario actual de Max Estrella, conteniendo 0 coleccionables y 1 boleto de lotería. 
 
-Los textos escritos:
+![botonI](./sprites/botontickets.png)
 
-DIÁLOGO: _Restan 2 de vida_ - Max es ciego.
+El _BASTÓN_, se añadirá 1 al total de coleccionables recogidos, que podrá verse en el inventario.
 
-DEFORMAR: Aparece el texto y Max es capaz de leerlo.
+![baston](./coleccionables/baston.png)
 
-Los pañuelos:
+Las _GAFAS_, tendrá la opción de hablar con ellas, y de deformarlas. Si decide deformarlas, su apariencia cambiará y al volver a hablar con ellas herirán a Max.
 
-DIÁLOGO: _Restan 2 de vida_ - La mujer de Max está apenada.
+![gafas](./sprites/gafas.png) ![gafasD](./sprites/gafasdef.png)
 
-Pluma de escritor: _Coleccionable_.
+_MADAME COLLET_, tendrá la opción de hablar con ella, lo cual iniciará el primer diálogo principal del juego. Al acabar dicho diálogo, aparecerá DON LATINO.
 
-También podrá interactuar con su mujer, lo cual dará lugar a un diálogo de la misión principal. Aquí, Max hablará con su mujer y el jugador podrá elegir las respuestas que le haga.
+![madameCollet](./sprites/madamecuerpo.png) ![madame](./sprites/madameCollet.png)
 
-MAX: _Vuelve a leerme la carta del Buey Apis._
+_DON LATINO_, se seguirá el diálogo principal y al terminarlo, aparecerá el BOTÓN DE PASE DE ESCENA, el cual, si es clicado, procederá a pasar de escena.
 
-MADAMA COLLET: _Ten paciencia, Max._
-
-MAX: Elección entre 3 opciones
-
- &quot;Pudo esperar a que me enterrasen&quot;
-
-Madama Collet sentirá pena por Max, el cual no posee ganas de vivir y le hablará con un tono apenado, preocupándose por él. Si el jugador elige esta opción, la siguiente escena será la librería, ya que Max decide irse de casa para no preocupar más a su mujer.
-
- &quot;¡Estoy olvidado! Léeme la carta del Buey Apis&quot;
-
-Madama Collet leerá la carta del Buey Apis a Max, y éste la escuchará. Cuando acabe, Max irá a la calle a buscar a Buey Apis.
-
- &quot;¡Veo, y veo magníficamente&quot;
-
-Max está actuando extraño. Por ello, su mujer se sentirá confundida y no sabrá qué palabras escoger, quedándose callada. Tras un silencio incómodo, Max saldrá a la calle.
+![latino](./sprites/latcuerpo.png) ![donlatino](./sprites/latino.png)
 
 
 # Referencias
