@@ -19,7 +19,7 @@
 ## LOGO
 ![Logo](/favicon.png)
 
-**Capturas de juego** ![Cap](./images/captura.png)![Cap2](./images/captura2.png)![Cap3](./images/captura3.png)
+**Capturas de juego** ![Cap](./images/captura0.png)![Cap2](./images/captura1.png)![Cap3](./images/captura2.png)
 
 
 # Aspectos generales
@@ -194,6 +194,7 @@ Varios personajes aparecen en la taberna celebrando que se ha repartido el núme
 
 
 # Primeros minutos de juego
+![Pri](./images/primerosminutos.png)
 
 Al empezar el juego, el jugador verá una pantalla de inicio que le indique que haga clic para empezar a jugar.
 La primera escena, mostrará una escena en casa de Max en la que se verán los muebles de su casa, junto con su mujer. El jugador podrá posicionar el cursor sobre los objetos y personajes que sean interactuables, y clicar sobre ellos para abordar una interacción. Partimos las interacciones - si el jugador clica sobre:
