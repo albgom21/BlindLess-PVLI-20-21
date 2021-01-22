@@ -1,4 +1,4 @@
-# BlindLess-PVLI-20-21
+# **BLINDLESS**
 
 ## Integrantes de MASA:
 * Adrián Migueles D'Ambrosio
@@ -8,15 +8,16 @@
 
 ## [WEB](https://albgom21.github.io/BlindLess-PVLI-20-21/)
 ## [PIVOTAL](https://www.pivotaltracker.com/n/projects/2469517)
+## ARQUITECTURA UML
+ .
 ![UML](./images/uml.png)
-
-# **BLINDLESS**
 
 | **Géneros:** Novela Interactiva | **Modos:** Solitario |
 | --- | --- |
 | **Público objetivo:** Dirigido a personas de entre 10 a 50 años | **Plataformas:** Página Web |
 
-**Logo:** ![Logo](/favicon.png)
+## LOGO
+![Logo](/favicon.png)
 
 **Capturas de juego** ![Cap](./images/captura.png)![Cap2](./images/captura2.png)![Cap3](./images/captura3.png)
 
@@ -28,15 +29,17 @@ BlindLess es un juego basado en el libro &quot;Luces de bohemia&quot; del autor 
 El juego trata de ir avanzando en la historia pudiendo elegir distintos caminos con diferentes finales con las decisiones que tome el jugador.
 
 
-# Menú ![Menu](./images/Mapaideas.png)
+# Menú ![Menu](./images/mapakeys.png)
 En el menú del mapa se puede visualizar los distintos caminos que se tomarán según las decisiones del jugador, a la derecha se muestra una breve descripción de la próxima escena.
 
 
-## Interfaz y control ![UML](./images/interfaz.png)
+## Interfaz y control 
+![UML](./images/interfaz.jpg)
 
 _**(Interfaz del juego)**_
 
-La forma con la que se interactúa con el mundo mediante clics del ratón. Esto le permite al jugador interaccionar con objetos y personajes, con los que podrá mantener conversaciones y tener el poder de decidir por dónde quiere que vaya la historia. Para avanzar en los diálogos se pulsa espacio.
+La forma con la que se interactúa con el mundo mediante clics del ratón. Esto le permite al jugador interaccionar con objetos y personajes, con los que podrá mantener conversaciones y tener el poder de decidir por dónde quiere que vaya la historia. Para avanzar en los diálogos se puede hacer con clics pero también pulsando espacio.
+En cuanto al minijuego, los controles serán A (moverse hacia la izquierda), W (saltar) y D (moverse hacia la derecha).
 
 
 # Jugabilidad
@@ -48,8 +51,7 @@ La deformación es una mecánica que otorga al jugador la oportunidad de poder d
 
 Entre las deformaciones se puede encontrar:
 
-- Recibir diálogo/acciones de objetos
-- Animalizar a seres humanos hasta el punto de no entenderles
+- Recibir diálogo/acciones de objetos.
 
 ### VIDA
 
@@ -57,23 +59,28 @@ A medida que el jugador vaya interactuando con el entorno y tomando decisiones, 
 
 ### LOTERÍA
 
-El jugador podrá comprar lotería en los bares u obtenerla en alguna de las escenas. En la última escena se descubrirá el boleto ganador y la historia cambiará según el resultado.
+El jugador podrá comprar lotería en los bares u obtenerla en alguna de las escenas. Se restarán puntos de vida a Max al comprar un boleto.
 
+### INVENTARIO
 
+El inventario contendrá el número de coleccionables recogidos actualmente más los boletos de lotería que se posean. Para acceder a él, se clicará un botón colocado en la parte superior izquierda de la pantalla.
+    
 ## Dinámica
 
 La dinámica principal del juego es avanzar en la escena que te encuentras e ir decidiendo por que camino de la historia prefieres ir avanzando mediante las diferentes decisiones que te da a elegir.
 
 El poder de decisión lo tiene el jugador, es decir, dependiendo de las opciones que elija a la hora de interactuar con el mapa del camino escogido, la historia irá avanzando por este. Una dinámica puede ser recrear la narrativa del libro, escogiendo las opciones correspondientes a la historia real o por el contrario elegir la opción que más se adecue a la manera de pensar del jugador.
 
-Otra dinámica incluida es el sistema de lotería. El jugador podrá obtener varios boletos para así aumentar las posibilidades de poder ganarla.
+Otra dinámica incluida es el sistema de lotería. El jugador descubrirá al final de la partida si alguno de los boletos de lotería que ha comprado anteriormente han sido premiados.
 
 
 ## Estética
 
 ### AMBIENTACIÓN Y GRÁFICOS
 
-La estética del juego se basará en un estilo 2D en 8bits de los lugares típicos de Madrid en la década de 1920, al igual que el ambiente de la obra.
+La estética del juego se basará en un estilo 2D en 8bits de los lugares típicos de Madrid en la década de 1920, al igual que el ambiente de la obra. 
+Los colores, para ser más característicos de la obra, serán colores apagados y con abundancia de tonalidades marrones y amarillas. También aparecen tonos azulados, pues la obra transcurre en una noche. 
+
 
 ### EXPERIENCIA DE JUEGO
 
@@ -100,6 +107,10 @@ Claudinita: Hija de Max Estrella y Madame Collet.
 Don Gay Peregrino: Hombre flaco, alto y moreno, según la descripción de Ramon María del Valle-Inclán. Intercambia de posición su nombre.
 
 La Pisa Bien: Joven de baja clase social, que representa la sociedad marginal madrileña de la época.
+
+La Lunares: Es una prostituta, joven y honesta, incluso inocente.
+
+La Vieja Pintada: Es una prostituta en sus últimos años. Descarada y desvergonzada.
 
 ### RESUMEN DE ESCENAS
 
@@ -187,7 +198,7 @@ La primera escena, mostrará una escena en casa de Max en la que se verán los m
 
 El _BOTÓN DE INVENTARIO_, aparecerá en pantalla el inventario actual de Max Estrella, conteniendo 0 coleccionables y 1 boleto de lotería. 
 
-![botonI](./sprites/botontickets.png)
+![botonI](./sprites/botontickets.png) ![inventarioC](./images/inventarioPM.png)
 
 El _BASTÓN_, se añadirá 1 al total de coleccionables recogidos, que podrá verse en el inventario.
 
