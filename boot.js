@@ -43,7 +43,12 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('lapisabiencuerpo', 'sprites/lapisabiencuerpo.png');
     this.load.image('Mateo', 'sprites/mateo.png');    
     this.load.image('mateocuerpo', 'sprites/mateocuerpo.png');
-    this.load.image('Oficial', 'sprites/zaratustra.png'); //poner el del oficial
+    this.load.image('Oficial', 'sprites/zaratustra.png');
+    this.load.image('oficialcuerpo', 'sprites/oficialcuerpo.png');
+    this.load.image('La Lunares', 'sprites/lalunares.png');
+    this.load.image('lalunarescuerpo','sprites/lalunarescuerpo.png');
+    this.load.image('Vieja', 'sprites/vieja.png');
+    this.load.image('viejacuerpo', 'sprites/viejacuerpo.png');
 
    
     this.load.image('lugar','sprites/lugar.png');

@@ -35,8 +35,8 @@ export default class Taberna3 extends Phaser.Scene {
     
     this.cameras.main.once('camerafadeoutcomplete', () => {
       this.musica.stop(),
-      this.scene.launch('mapa',{antEscena:this.key,proxEscena:'casa3',nombreEscena:'CASA',
-      vida:this.vidaMax,suma:4,resta:4, datosInventario : this.datosInventario});  });
+      this.scene.launch('mapa',{antEscena:this.key,proxEscena:'calle2',nombreEscena:'CALLE',
+      vida:this.vidaMax,suma:5,resta:18, datosInventario : this.datosInventario});  });
       
     this.minijuego = this.add.image(950, 55,'cartel').setInteractive();    
     this.minijuego.on('pointerdown', () => {if(!this.menuActivado){this.musica.stop(),this.scene.launch('minijuego',{scene:this}),this.minijuego.destroy()}}); 
