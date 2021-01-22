@@ -237,3 +237,5 @@ La comunicación se ha establecido mediante la plataforma Discord, con varios ca
 # Gestión
 
 La gestión del proyecto se ha hecho mediante la plataforma Pivotal Tracker, con dailies semanales para repartir el trabajo de cada miembro cada semana, siguiendo la metodología ágil de Scrum.
+
+# [Diálogos PDF](https://albgom21.github.io/BlindLess-PVLI-20-21/Dialogos/DIALOGOS_BLINDLESS.pdf)
