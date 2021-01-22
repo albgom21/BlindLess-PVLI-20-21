@@ -41,7 +41,7 @@
     calle1.push({texto: ' ¿Qué responde Max?',
     answer: [{texto: '¿Ha estado usted en Inglaterra?', points: 0, life: 0, jump: 0},
              {texto: '¿Por qué ha vuelto?', points: 0, life: 0, jump: 7},
-             {texto: 'Siempre he querido probar comida inglesa...', points: 0, life: 0, jump: 12}]});
+             {texto: 'Siempre he querido probar comida inglesa...', points: 0, life: 0, jump: 11}]});
     calle1.push({texto: '¡Así es! Formo parte de la brigada española que \nejerce en Inglaterra.'});
     calle1.push({texto: ' ¿Qué responde Max?',
     answer: [{texto: '¿No echa de menos los paisajes españoles?', points: 0, life: 0, jump: 0},
@@ -121,7 +121,7 @@
           {texto:'No, se está equivocando usted.', points: 0, life: +10, jump: 0, razon:'no se ha dejado engañar \ny ha sido racional.'},
           {texto:'Así es, se me ha olvidado por completo pagarle. ¿Puedo?', points: 10, life: -7, jump: 1, razon:'se ha dejado engañar por \nLa Pisa Bien.'}]});
     taberna1.push({texto:'Ugh… me las pagarás, necio.', personaje:'La Pisa Bien', jump: 1});
-    taberna1.push({texto:'Oh… claro, debe haber sido un malentendido. ¡Muchas gracias!', personaje:'La Pisa Bien'});
+    taberna1.push({texto:'Oh… claro, debe haber sido un malentendido. \n¡Muchas gracias!', personaje:'La Pisa Bien'});
     taberna1.push({texto:'Qué zzagala tan rarra… *hip* En ffin, ¿has vissto a los \nque estánn disscutiendo ffuera? LosS pPolítticKoss…\ncommo ssieMpre...', personaje: 'Latino'});
     taberna1.push({texto:'¿Qué responde Max?',
   answer: [
@@ -151,7 +151,7 @@
     ministerio1.push({texto:'Verá, el Estado dedica cierto numerario hacia la \ngente que posee discapacidades, tales como la vuestra. \n¿Está usted realmente necesitado de la subvención que \nel Estado pueda proporcionarle?  '});
     ministerio1.push({texto:'¿Qué responde Max?',
     answer: [
-     {texto:'De otro modo, no tengo ni idea de cómo mantener a mi familia…', points: 0, life: +10, jump: 2, razon:'acepta la \n ayuda del gobierno.'},
+     {texto:'De otro modo, no tengo ni idea de cómo mantener a mi familia…', points: 20, life: +10, jump: 2, razon:'acepta la \n ayuda del gobierno.'},
      {texto:'¿No me ha escuchado? ¡¿HE SIDO POCO CLARO?!', points: 0, life: -10, jump: 1, razon:'se ha vuelto \n loco.'},
      {texto:'¿Qué? Me duele un poco la cabeza, me retiraré, si no es molestia…', points: 10, life: 0, jump: 0}
 ]});

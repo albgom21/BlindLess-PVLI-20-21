@@ -15,7 +15,7 @@ export default class Bunyoleria extends Phaser.Scene {
     this.datosInventario = datos.datosInventario;
   }
   
-  create() {  // Refactorizar diálogos y escena      
+  create() {       
     this.cameras.main.fadeIn(1500); 
     this.scene.stop('mapa');
     this.nameScene = 'CALABOZO';
@@ -29,7 +29,7 @@ export default class Bunyoleria extends Phaser.Scene {
     
     this.cameras.main.once('camerafadeoutcomplete', () => {
        this.scene.launch('mapa',{antEscena:this.key, proxEscena:'ministerio3calabozo', nombreEscena: 'MINISTERIO',
-        vida:this.vidaMax, suma: 5, resta: 7, datosInventario : this.datosInventario});
+        vida:this.vidaMax, suma: 7, resta: 3, datosInventario : this.datosInventario});
   });
   }  
 

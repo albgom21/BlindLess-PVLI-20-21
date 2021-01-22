@@ -41,10 +41,10 @@ export default class Taberna2 extends Phaser.Scene {
     this.cameras.main.once('camerafadeoutcomplete', () => {
       if (this.puntosAnt >= 10) {
         this.musica.stop(),
-        this.scene.launch('mapa',{antEscena:this.key, proxEscena:'ministerio1', nombreEscena:'MINISTERIO', vida:this.vidaMax, suma:10, resta:10, datosInventario: this.datosInventario });
+        this.scene.launch('mapa',{antEscena:this.key, proxEscena:'ministerio1', nombreEscena:'MINISTERIO', vida:this.vidaMax, suma:10, resta:20, datosInventario: this.datosInventario });
       }         
      else {this.musica.stop(),this.scene.launch('mapa',{antEscena:this.key, proxEscena:'bunyoleria', nombreEscena:'BUÑOLERIA',
-     vida:this.vidaMax, suma:10, resta:-7, datosInventario: this.datosInventario})}
+     vida:this.vidaMax, suma:4, resta:14, datosInventario: this.datosInventario})}
     });
     
     this.minijuego = this.add.image(950, 55,'cartel').setInteractive();    

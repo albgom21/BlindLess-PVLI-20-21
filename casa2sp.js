@@ -33,7 +33,7 @@ export default class Casa2sp extends Phaser.Scene {
     this.cameras.main.once('camerafadeoutcomplete', () => {    
       this.musica.stop(),
        this.scene.launch('mapa',{antEscena:this.key,proxEscena:'ministerio3casa',nombreEscena:'MINISTERIO',
-       vida:this.vidaMax,suma:2,resta:14, datosInventario : this.datosInventario});     
+       vida:this.vidaMax,suma:12,resta:13, datosInventario : this.datosInventario});     
     });
   }
   finEscena(){    

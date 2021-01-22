@@ -139,7 +139,6 @@ this.anims.create({
       }
      
       Phaser.Display.Align.In.Center(this.texto, imagen);
-    }   
-    
+    }       
   }
 }

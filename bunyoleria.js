@@ -16,7 +16,7 @@ export default class Bunyoleria extends Phaser.Scene {
     this.datosInventario = datos.datosInventario;
   }
   
-  create() {  // Refactorizar diálogos y escena  
+  create() { 
     this.musica = this.sound.add("musicabun",{volume: 0.25,loop: true});
     this.musica.play();    
     this.cameras.main.fadeIn(1500); 

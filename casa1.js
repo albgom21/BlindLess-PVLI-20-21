@@ -20,7 +20,7 @@ export default class Casa1 extends Phaser.Scene {
     }
   }
 
-  create() {  // Refactorizar diálogos y escena      
+  create() {  
     this.cameras.main.fadeIn(1500); 
     this.scene.stop('inicio');
     this.nameScene = 'CASA';
@@ -47,12 +47,12 @@ export default class Casa1 extends Phaser.Scene {
       if(this.pointScene >= 10){      
        this.musica.stop();
        this.scene.launch('mapa',{antEscena:this.key,proxEscena:'libreria',nombreEscena:'LIBRERIA',
-       vida:this.vidaMax,suma:2,resta:14, datosInventario: this.datosInventario});
+       vida:this.vidaMax,suma:11,resta:18, datosInventario: this.datosInventario});
       }
       else{
       this.musica.stop();
       this.scene.launch('mapa',{antEscena:this.key,proxEscena:'calle1',nombreEscena:'CALLE',
-      vida:this.vidaMax,suma:4,resta:11, datosInventario: this.datosInventario});
+      vida:this.vidaMax,suma:0,resta:5, datosInventario: this.datosInventario});
       }  
   });
   }  

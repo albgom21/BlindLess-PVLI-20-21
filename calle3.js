@@ -24,18 +24,13 @@ export default class Calle3 extends Phaser.Scene {
     this.add.image(640, 360, 'fondoShakeDanyo'); 
     this.add.image(640, 360, 'calle');  
     this.donLatino = new Latino(this, 400, 400, 'latcuerpo', dialogos.dLatinoCalle3, 0, false);
-
-    
     // Botón del inventario.
     this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
-    this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); }) 
-    
-  
-     
+    this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); })     
     this.cameras.main.once('camerafadeoutcomplete', () => {
       this.musica.stop();
       this.scene.launch('mapa',{antEscena:this.key, proxEscena:'casa3', nombreEscena:'CASA',
-       vida:this.vidaMax, suma:10, resta:7, datosInventario: this.datosInventario}) // Falta poner daños y sanacion
+       vida:this.vidaMax, suma:0, resta:45, datosInventario: this.datosInventario})
   });
   }
 

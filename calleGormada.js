@@ -14,7 +14,9 @@ export default class CalleGormada extends Phaser.Scene {
     this.datosInventario = datos.datosInventario;
   }
   
-  create() {  // Refactorizar diálogos y escena      
+  create() {  // Refactorizar diálogos y escena  
+    this.musica = this.sound.add("calle",{volume: 0.5,loop: true});
+    this.musica.play();    
     this.cameras.main.fadeIn(1500); 
     this.scene.stop('mapa');
     this.nameScene = 'CALLE';
@@ -27,6 +29,7 @@ export default class CalleGormada extends Phaser.Scene {
     if (!this.menuActivado) this.botonT.on('pointerdown', () => this.scene.launch('inventario', {datosInventario : this.datosInventario}));
     
     this.cameras.main.once('camerafadeoutcomplete', () => {
+       this.musica.stop(); 
        this.scene.launch('mapa',{antEscena:this.key,proxEscena:'ministerio2',nombreEscena:'MINISTERIO',
        vida:this.vidaMax,suma:0 ,resta:0, datosInventario : this.datosInventario});
   });

@@ -38,7 +38,7 @@ export default class Taberna1 extends Phaser.Scene {
       this.cameras.main.once('camerafadeoutcomplete', () => {
         this.musica.stop(),
         this.scene.launch('mapa',{antEscena:this.key, proxEscena:'taberna2', nombreEscena:'TABERNA',
-         vida:this.vidaMax, suma:10, resta:-7, datosInventario: this.datosInventario, puntos : this.pointScene})
+         vida:this.vidaMax, suma:0, resta:13, datosInventario: this.datosInventario, puntos : this.pointScene})
     });
     }
     

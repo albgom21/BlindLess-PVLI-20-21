@@ -31,9 +31,10 @@ export default class Ministerio1 extends Phaser.Scene {
 
       this.cameras.main.once('camerafadeoutcomplete', () => { 
         this.musica.stop(); 
-        if (this.pointScene > 0) this.scene.launch('mapa', {antEscena: this.key, proxEscena: 'casa2', nombreEscena:'CASA',
-         vida:this.vidaMax, suma: 0, resta: 0, datosInventario : this.datosInventario});
-
+        if (this.pointScene === 10) this.scene.launch('mapa', {antEscena: this.key, proxEscena: 'casa2sp', nombreEscena:'CASA',
+         vida:this.vidaMax, suma: 5, resta: 5, datosInventario : this.datosInventario});
+        else if (this.pointScene === 20) this.scene.launch('mapa', {antEscena: this.key, proxEscena: 'casa2cp', nombreEscena:'CASA',
+         vida:this.vidaMax, suma: 8, resta: 0, datosInventario : this.datosInventario});
         else this.scene.launch('mapa',{antEscena:this.key, proxEscena:'calabozo', nombreEscena:'CALABOZO',
          vida:this.vidaMax, suma: 0, resta: 0, datosInventario : this.datosInventario});
     });

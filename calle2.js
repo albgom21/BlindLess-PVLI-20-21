@@ -29,20 +29,17 @@ export default class Calle2 extends Phaser.Scene {
     
     // Botón del inventario.
     this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
-    this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); }) 
-    
-  
-     
+    this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); })     
     this.cameras.main.once('camerafadeoutcomplete', () => {
         if(this.pointScene === 0) {
             this.musica.stop();
             this.scene.launch('mapa',{antEscena:this.key,proxEscena:'casa3',nombreEscena:'CASA',
-            vida:this.vidaMax,suma:2,resta:11, datosInventario: this.datosInventario});
+            vida:this.vidaMax,suma:0,resta:45, datosInventario: this.datosInventario});
         }
         else {
            this.musica.stop();
            this.scene.launch('mapa',{antEscena:this.key,proxEscena:'calle3',nombreEscena:'CALLE',
-           vida:this.vidaMax,suma:4,resta:11, datosInventario: this.datosInventario}); // Falta poner daños y sanacion
+           vida:this.vidaMax,suma:2,resta:18, datosInventario: this.datosInventario}); // Falta poner daños y sanacion
         } 
     });
 }

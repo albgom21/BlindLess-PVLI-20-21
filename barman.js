@@ -6,7 +6,6 @@ export default class Camarero extends Personaje {
     this.scene = scene;
   }   
   hablar(){    
-    super.hablar()
-    //this.scene.fin[0] = true;
+    super.hablar();    
   }   
 }

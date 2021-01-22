@@ -6,6 +6,6 @@ export default class Collet extends Personaje {
     this.scene = scene;
   }   
   hablar(){    
-    super.hablar()    
+    super.hablar();   
   }      
 }

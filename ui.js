@@ -45,15 +45,12 @@ export default class Ui extends Phaser.Scene {
     
     // InfoLugar
     const fondoLugar = this.add.image(640, 360, 'lugar');
-    const nombreLugar = this.add.text(640, 695, this.personaje.scene.nameScene, {fontFamily: 'VT323', fontSize: '26px', color: '#000000' }); 
+    const nombreLugar = this.add.text(640, 695, this.personaje.scene.nameScene, {fontFamily: 'VT323', fontSize: '22px', color: '#000000' }); 
     
-    // if(this.restar<0) this.scene.cameras.shake(500);
-
     Phaser.Display.Align.In.Center(fondoLugar, nombreLugar);
     Phaser.Display.Align.In.Center(p1fondoN,p1N);
     Phaser.Display.Align.In.Center(p2fondoN,p2N);
-    
-    
+        
     const botonHablar = this.add.image(869,645, 'botonhablar').setInteractive();
     botonHablar.on('pointerdown', () => {     
       this.personaje.seguirDialogos();     
@@ -68,7 +65,6 @@ export default class Ui extends Phaser.Scene {
     this.objectsUi.push(botonHablar);
     
     if(this.primerTexto) this.animacionPrimerTexto(this.objectsUi);
-
     
   }
 

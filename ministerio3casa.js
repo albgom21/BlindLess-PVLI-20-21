@@ -18,7 +18,7 @@ export default class Ministerio3casa extends Phaser.Scene {
     this.datosInventario = datos.datosInventario;
   }
   
-  create() {  // Refactorizar diálogos y escena    
+  create() {      
     this.musica = this.sound.add("musicaministerio",{volume: 0.25,loop: true});
     this.musica.play();  
     this.cameras.main.fadeIn(1500); 
@@ -35,7 +35,7 @@ export default class Ministerio3casa extends Phaser.Scene {
     this.cameras.main.once('camerafadeoutcomplete', () => {    
        this.musica.stop(); 
        this.scene.launch('mapa',{antEscena:this.key,proxEscena:'taberna3',nombreEscena:'TABERNA',
-       vida:this.vidaMax,suma:0,resta:5, datosInventario : this.datosInventario});     
+       vida:this.vidaMax,suma:0,resta:10, datosInventario : this.datosInventario});     
       });
   }
   finEscena(){    

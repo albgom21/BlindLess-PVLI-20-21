@@ -13,7 +13,3 @@ export default class Coleccionables extends Phaser.GameObjects.Sprite {
       );
     }
 }
-      
-    
-  
-  

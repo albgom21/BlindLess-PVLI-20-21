@@ -32,14 +32,11 @@ export default class Calle1 extends Phaser.Scene {
     
     // Botón del inventario.
     this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
-    this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); }) 
-    
-  
-     
+    this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); })     
     this.cameras.main.once('camerafadeoutcomplete', () => {
       this.musica.stop();
       this.scene.launch('mapa',{antEscena:this.key, proxEscena:'taberna1', nombreEscena:'TABERNA',
-       vida:this.vidaMax, suma:10, resta:7, datosInventario: this.datosInventario}) 
+       vida:this.vidaMax, suma:10, resta:27, datosInventario: this.datosInventario}) 
   });
   }
 

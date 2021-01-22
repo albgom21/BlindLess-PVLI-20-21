@@ -2,7 +2,6 @@ import Collet from './collet.js';
 import dialogos from './dialogos.js';
 
 export default class Casa3 extends Phaser.Scene {
-
    constructor() {
     super({ key: 'casa3'});    
     this.pointScene = 0;
@@ -15,7 +14,7 @@ export default class Casa3 extends Phaser.Scene {
     this.datosInventario = datos.datosInventario;
   }
 
-  create() {  // Refactorizar diálogos y escena
+  create() { 
     this.musica = this.sound.add("musicacasa",{volume: 0.025,loop: true});
     this.musica.play();      
     this.cameras.main.fadeIn(1500); 
@@ -29,13 +28,11 @@ export default class Casa3 extends Phaser.Scene {
     // Botón del inventario.
     this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
     this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); })
-
-
     this.cameras.main.once('camerafadeoutcomplete', () => {
       this.musica.stop();
       if(this.vidaMax <= 0){     
        this.scene.launch('mapa',{antEscena:this.key,proxEscena:'taberna4muerto',nombreEscena:'TABERNA',
-       vida:this.vidaMax,suma:0,resta:45, datosInventario: this.datosInventario});
+       vida:this.vidaMax,suma:0,resta:0, datosInventario: this.datosInventario});
       }
       else{
         this.numeroGanador = Math.floor(Math.random() * (100 - 10) + 10);        

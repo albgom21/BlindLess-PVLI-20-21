@@ -146,8 +146,7 @@ export default class Inicio extends Phaser.Scene {
         },
         active: function () // se llama a esta función cuando está cargada
         {            
-          self.scene.launch('inicio'); 
-          //'mapa',{proxEscena:'game',nombreEscena:'TABERNA',vida:10, suma: 20, resta: 30}); 
+          self.scene.launch('inicio');           
         }        
     });    
   }
