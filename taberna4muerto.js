@@ -24,13 +24,12 @@ export default class Taberna4muerto extends Phaser.Scene {
       this.nameScene = 'TABERNA';    
       this.add.image(640, 360, 'fondoShakeDanyo'); 
       this.add.image(640, 360, 'taberna');   
+      this.add.image(1000, 500, 'lapisabiencuerpo');
       this.objeto = new Coleccionables(this, 650, 180, 'Sobre');
       this.latCuerpo = new Latino(this, 500, 400, 'latcuerpo', dialogos.dTaberna4M, 0, false); 
-      this.cameras.main.once('camerafandeoutcomplete', () => {
-        this.musica.stop(),
-        this.scene.launch('mapa',{antEscena:this.key, proxEscena:'fin', nombreEscena:'FIN',
-         vida:this.vidaMax, suma:0, resta:0, datosInventario: this.datosInventario, puntos : this.pointScene})
-    });
+      this.cameras.main.once('camerafadeoutcomplete', () => {
+        this.musica.stop();
+        this.scene.launch('fin');});
     }
     
   finEscena(){    

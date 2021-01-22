@@ -14,6 +14,7 @@ export default class Taberna4nomuertoloteria extends Phaser.Scene {
     init(datos){
       this.vidaMax = datos.vidaMax;
       this.datosInventario = datos.datosInventario;
+      this.numeroGanador = datos.boletoganador;
     }
     
     create() {  this.musica = this.sound.add("musicataberna",{volume: 0.25,loop: true});
@@ -25,15 +26,17 @@ export default class Taberna4nomuertoloteria extends Phaser.Scene {
       this.add.image(640, 360, 'taberna');   
       this.objeto = new Coleccionables(this, 650, 180, 'Sobre');
       this.latCuerpo = new Latino(this, 500, 400, 'latcuerpo', dialogos.dTaberna4NMSL, 0, false);
+      this.add.image(623, 65, 'boletog');    
+      this.add.text(850, 45,  this.numeroGanador, {fontFamily: 'VT323', fontSize: '40px', color: '#4B3621' });
+      this.add.text(800, 45,  this.datosInventario.fijo, {fontFamily: 'VT323', fontSize: '40px', color: '#4B3621' });
       
       // Botón del inventario.
       this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
       this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); })
 
-      this.cameras.main.once('camerafandeoutcomplete', () => {
-        this.stop(),
-        this.scene.launch('mapa',{antEscena:this.key, proxEscena:'fin', nombreEscena:'FIN',
-         vida:this.vidaMax, suma:0, resta:0, datosInventario: this.datosInventario, puntos : this.pointScene})
+      this.cameras.main.once('camerafadeoutcomplete', () => {
+        this.musica.stop(),
+        this.scene.launch('fin');
     });
     }
     

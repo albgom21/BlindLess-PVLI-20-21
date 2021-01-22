@@ -16,7 +16,9 @@ export default class Bunyoleria extends Phaser.Scene {
     this.datosInventario = datos.datosInventario;
   }
   
-  create() {  // Refactorizar diálogos y escena      
+  create() {  // Refactorizar diálogos y escena  
+    this.musica = this.sound.add("musicabun",{volume: 0.25,loop: true});
+    this.musica.play();    
     this.cameras.main.fadeIn(1500); 
     this.scene.stop('mapa');
     this.nameScene = 'BUÑOLERíA';
@@ -30,6 +32,7 @@ export default class Bunyoleria extends Phaser.Scene {
     
   
     this.cameras.main.once('camerafadeoutcomplete', () => {
+        this.musica.stop();   
        if (this.pointScene > 10) this.scene.launch('callegormada');
        else this.scene.launch('mapa',{antEscena:this.key,proxEscena:'ministerio2',
        nombreEscena:'MINISTERIO',vida:this.vidaMax,suma:0 ,resta:3, datosInventario : this.datosInventario});

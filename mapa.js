@@ -12,6 +12,7 @@ export default class Mapa extends Phaser.Scene {
     this.resta = datos.resta;
     this.datosInventario = datos.datosInventario;
     this.puntosAnt = datos.puntos;
+    this.boletoG = datos.boletoganador;
   }
 
   create() {         
@@ -21,7 +22,7 @@ export default class Mapa extends Phaser.Scene {
     this.scene.stop(this.antEscena);
     const mapa = this.add.image(640, 360, 'mapa').setInteractive();
     this.cameras.main.once('camerafadeincomplete', () => {
-      mapa.on('pointerdown', () => {this.scene.launch(this.proxEscena,{vidaMax:this.vida, datosInventario:this.datosInventario, puntos: this.puntosAnt})});
+      mapa.on('pointerdown', () => {this.scene.launch(this.proxEscena,{vidaMax:this.vida, datosInventario:this.datosInventario, puntos: this.puntosAnt,boletoganador: this.boletoG})});
   });
    
     
@@ -72,7 +73,7 @@ export default class Mapa extends Phaser.Scene {
     else if(this.proxEscena ==='casa3'){
       this.add.image(632,114,'circulo');
     }
-    else if(this.proxEscena ==='taberna4'){
+    else if(this.proxEscena ==='taberna4muerto' || this.proxEscena ==='taberna4nomuertoloteria' || this.proxEscena ==='taberna4nomuertonoloteria'){
       this.add.image(632,47,'circulo');
     }
     

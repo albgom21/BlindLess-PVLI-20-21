@@ -23,6 +23,9 @@ export default class Inicio extends Phaser.Scene {
     this.load.audio("respuesta", "sounds/respuesta.mp3");
     this.load.audio("pasarescena", "sounds/pasarescena.mp3");
     this.load.audio("deformar", "sounds/deformar.mp3");
+    this.load.audio("calle", "sounds/calle.mp3");
+    this.load.audio("musicabun", "sounds/musicabun.mp3");
+    this.load.audio("musicaministerio", "sounds/musicaministerio.mp3");
     this.load.audio("sonidocoleccionable", "sounds/sonidocoleccionable.mp3");
 
    //Personajes   
@@ -43,7 +46,7 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('lapisabiencuerpo', 'sprites/lapisabiencuerpo.png');
     this.load.image('Mateo', 'sprites/mateo.png');    
     this.load.image('mateocuerpo', 'sprites/mateocuerpo.png');
-    this.load.image('Oficial', 'sprites/zaratustra.png');
+    this.load.image('Oficial', 'sprites/oficial.png');
     this.load.image('oficialcuerpo', 'sprites/oficialcuerpo.png');
     this.load.image('La Lunares', 'sprites/lalunares.png');
     this.load.image('lalunarescuerpo','sprites/lalunarescuerpo.png');
@@ -52,6 +55,7 @@ export default class Inicio extends Phaser.Scene {
 
    
     this.load.image('lugar','sprites/lugar.png');
+    this.load.image('boletog','sprites/boletog.png');
     this.load.image('boton','sprites/boton.png');
     this.load.image('boton2','sprites/boton2.png');
     this.load.image('botonhablar','sprites/botonhablar.png');
@@ -91,7 +95,7 @@ export default class Inicio extends Phaser.Scene {
 
    //Coleccionables
     this.load.image('Baston','coleccionables/baston.png'); //casa1
-    this.load.image('Lacre','coleccionables/lacre.png');
+    this.load.image('Lacre','coleccionables/lacre.png'); //ministerio3
     this.load.image('MonedasChocolate','coleccionables/monedaschocolate.png'); //calabozo
     this.load.image('Pergamino','coleccionables/pergamino.png'); //libreria
     this.load.image('Plumero','coleccionables/plumero.png'); //ministerio2
@@ -127,6 +131,7 @@ export default class Inicio extends Phaser.Scene {
     this.load.image('ministerio', 'fondos/ministerios.png');
     this.load.image('bunyoleria', 'fondos/bunyoleria.png');
     this.load.image('calabozo', 'fondos/calabozos.png');
+    this.load.image('fin', 'fondos/fin.png');
 
     this.load.image('rectangulo', 'sprites/rectangulo.png');
 

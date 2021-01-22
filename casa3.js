@@ -32,29 +32,27 @@ export default class Casa3 extends Phaser.Scene {
 
 
     this.cameras.main.once('camerafadeoutcomplete', () => {
-      if(this.vidaMax <= 0){      
-       this.musica.stop();
+      this.musica.stop();
+      if(this.vidaMax <= 0){     
        this.scene.launch('mapa',{antEscena:this.key,proxEscena:'taberna4muerto',nombreEscena:'TABERNA',
        vida:this.vidaMax,suma:0,resta:45, datosInventario: this.datosInventario});
       }
       else{
-      for(let i = 0; i < datosInventario.nums.length ; i++)
-      {
-          if(Math.floor(Math.random() * (100 - 10) + 10) === datosInventario.nums[i])
-          {
-            this.ganarLoteria = true;
-            this.musica.stop();
-            this.scene.launch('mapa',{antEscena:this.key,proxEscena:'taberna4nomuertoloteria',nombreEscena:'TABERNA',
-            vida:this.vidaMax,suma:0,resta:0, datosInventario: this.datosInventario});
+        this.numeroGanador = Math.floor(Math.random() * (100 - 10) + 10);        
+      for(const i of this.datosInventario.nums) {
+          if( this.numeroGanador === i){
+            this.ganarLoteria = true;            
           }
       }
-          if(!this.ganarLoteria)
-          {
-            this.musica.stop();
-            this.scene.launch('mapa',{antEscena:this.key,proxEscena:'taberna4nomuertonoloteria',nombreEscena:'TABERNA',
-            vida:this.vidaMax,suma:0,resta:0, datosInventario: this.datosInventario});
-          }
-        }});
+      if(this.ganarLoteria){
+        this.scene.launch('mapa',{antEscena:this.key,proxEscena:'taberna4nomuertoloteria',nombreEscena:'TABERNA',
+            vida:this.vidaMax,suma:0,resta:0, datosInventario: this.datosInventario, boletoganador: this.numeroGanador});
+      }
+      else {          
+        this.scene.launch('mapa',{antEscena:this.key,proxEscena:'taberna4nomuertonoloteria',nombreEscena:'TABERNA',
+        vida:this.vidaMax,suma:0,resta:0, datosInventario: this.datosInventario,boletoganador: this.numeroGanador});
+      }
+      }});
   }  
   finEscena(){    
     let a = true ;

@@ -16,6 +16,8 @@ export default class Ministerio1 extends Phaser.Scene {
     }
     
     create() {  
+      this.musica = this.sound.add("musicaministerio",{volume: 0.25,loop: true});
+      this.musica.play();
       this.cameras.main.fadeIn(1500); 
       this.scene.stop('mapa');
       this.nameScene = 'MINISTERIO';    
@@ -27,7 +29,8 @@ export default class Ministerio1 extends Phaser.Scene {
       this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
       this.botonT.on('pointerdown', () => {  if(!this.menuActivado) this.scene.launch('inventario', {datosInventario: this.datosInventario}); }) 
 
-      this.cameras.main.once('camerafadeoutcomplete', () => { //FALTA 
+      this.cameras.main.once('camerafadeoutcomplete', () => { 
+        this.musica.stop(); 
         if (this.pointScene > 0) this.scene.launch('mapa', {antEscena: this.key, proxEscena: 'casa2', nombreEscena:'CASA',
          vida:this.vidaMax, suma: 0, resta: 0, datosInventario : this.datosInventario});
 

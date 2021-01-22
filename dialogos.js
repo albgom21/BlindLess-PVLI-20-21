@@ -469,7 +469,7 @@
     taberna4NMSL.push({texto: 'Bueno, vale. Con eso me basta. ¡Vamos!', personaje: 'Latino', jump: 1});
     taberna4NMSL.push({texto: 'Anda que no eres tacaño ni nada.', personaje: 'Latino'});
     
-//ESCENA FINAL TABERNA 4 (MAX NO FALLECE Y LE TOCA LA LOTERIA)
+//ESCENA FINAL TABERNA 4 (MAX NO FALLECE Y NO LE TOCA LA LOTERIA)
     let taberna4NMNL = [];
     taberna4NMNL.push({texto: 'Tengo mucha curiosidad por saber si el boleto \nque compré ha sido ganador. Recemos a dios por \nbuena suerte.'});
     taberna4NMNL.push({texto: '¡Bah, tonterías! La lotería sólo da falsas esperanzas. \nNunca toca nada. Mira, aquí en el periódico podremos \ncomprobarlo.', personaje: 'Latino'});

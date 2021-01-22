@@ -16,6 +16,8 @@ export default class Calle3 extends Phaser.Scene {
   }
     
   create(){
+    this.musica = this.sound.add("calle",{volume: 0.5,loop: true});
+    this.musica.play();
     this.cameras.main.fadeIn(1500); 
     this.scene.stop('mapa');
     this.nameScene = 'CALLE';
@@ -31,6 +33,7 @@ export default class Calle3 extends Phaser.Scene {
   
      
     this.cameras.main.once('camerafadeoutcomplete', () => {
+      this.musica.stop();
       this.scene.launch('mapa',{antEscena:this.key, proxEscena:'casa3', nombreEscena:'CASA',
        vida:this.vidaMax, suma:10, resta:7, datosInventario: this.datosInventario}) // Falta poner daños y sanacion
   });
