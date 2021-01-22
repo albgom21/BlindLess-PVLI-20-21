@@ -24,8 +24,6 @@ export default class Calle2 extends Phaser.Scene {
     this.add.image(640, 360, 'calle');  
     this.vieja = new Vieja(this, 400, 400, 'viejacuerpo', dialogos.dVieja, 0, true);
 
-    if(this.pointScene >= 10)
-
     
     // Botón del inventario.
     this.botonT = this.add.image(60, 60, 'botonTicket').setInteractive();
@@ -34,13 +32,11 @@ export default class Calle2 extends Phaser.Scene {
   
      
     this.cameras.main.once('camerafadeoutcomplete', () => {
-        if(this.pointScene === 0) {      
-            this.musica.stop();
+        if(this.pointScene === 0) {
             this.scene.launch('mapa',{antEscena:this.key,proxEscena:'calle3',nombreEscena:'CALLE',
             vida:this.vidaMax,suma:2,resta:11, datosInventario: this.datosInventario});
         }
         else {
-           this.musica.stop();
            this.scene.launch('mapa',{antEscena:this.key,proxEscena:'casa3',nombreEscena:'CASA',
            vida:this.vidaMax,suma:4,resta:11, datosInventario: this.datosInventario}); // Falta poner daños y sanacion
         } 
@@ -61,7 +57,7 @@ export default class Calle2 extends Phaser.Scene {
       })
     }
     else
-        for(const n of this.fin) n = true;
+        this.fin[1] = true;
   }
 
   finEscena(){    
