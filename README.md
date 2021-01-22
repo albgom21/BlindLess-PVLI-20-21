@@ -29,8 +29,9 @@ BlindLess es un juego basado en el libro &quot;Luces de bohemia&quot; del autor 
 El juego trata de ir avanzando en la historia pudiendo elegir distintos caminos con diferentes finales con las decisiones que tome el jugador.
 
 
-# Menú ![Menu](./images/mapakeys.png)
-En el menú del mapa se puede visualizar los distintos caminos que se tomarán según las decisiones del jugador, a la derecha se muestra una breve descripción de la próxima escena.
+# Menú ![Menu](./fondos/mapa.png)
+En el menú del mapa se pueden visualizar los distintos caminos que se tomarán según las decisiones del jugador. A la derecha se muestra una breve descripción de la próxima escena, incluyendo el nombre de esta, los puntos de vida posibles a ganar/perder y la vida actual de Max.  
+La escena a la que se vaya a pasar aparecerá con el icono resaltado en el mapa.
 
 
 ## Interfaz y control 
@@ -38,7 +39,8 @@ En el menú del mapa se puede visualizar los distintos caminos que se tomarán s
 
 _**(Interfaz del juego)**_
 
-La forma con la que se interactúa con el mundo mediante clics del ratón. Esto le permite al jugador interaccionar con objetos y personajes, con los que podrá mantener conversaciones y tener el poder de decidir por dónde quiere que vaya la historia. Para avanzar en los diálogos se puede hacer con clics pero también pulsando espacio.
+La forma con la que se interactúa con el mundo mediante clics del ratón. Esto le permite al jugador interaccionar con objetos y personajes, con los que podrá mantener conversaciones y tener el poder de decidir por dónde quiere que vaya la historia.  
+Para avanzar en los diálogos se puede hacer con clics pero también pulsando espacio.  
 En cuanto al minijuego, los controles serán A (moverse hacia la izquierda), W (saltar) y D (moverse hacia la derecha).
 
 
