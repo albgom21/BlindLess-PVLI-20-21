@@ -36,12 +36,12 @@ export default class Calle2 extends Phaser.Scene {
     this.cameras.main.once('camerafadeoutcomplete', () => {
         if(this.pointScene === 0) {
             this.musica.stop();
-            this.scene.launch('mapa',{antEscena:this.key,proxEscena:'calle3',nombreEscena:'CALLE',
+            this.scene.launch('mapa',{antEscena:this.key,proxEscena:'casa3',nombreEscena:'CASA',
             vida:this.vidaMax,suma:2,resta:11, datosInventario: this.datosInventario});
         }
         else {
            this.musica.stop();
-           this.scene.launch('mapa',{antEscena:this.key,proxEscena:'casa3',nombreEscena:'CASA',
+           this.scene.launch('mapa',{antEscena:this.key,proxEscena:'calle3',nombreEscena:'CALLE',
            vida:this.vidaMax,suma:4,resta:11, datosInventario: this.datosInventario}); // Falta poner daños y sanacion
         } 
     });
